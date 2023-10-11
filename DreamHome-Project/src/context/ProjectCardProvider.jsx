@@ -33,21 +33,6 @@ function ProjectCardProvider(props){
          ProjectSubHeading: "Dubailand, Dubai, United Arab Emirates",
          ProjectParagraph: 'An established and prestigious international golf Project in Dubailand comprising luxury villas, apartments and a hotel',
          ProjectImage: dummyImage,
-         ProjectId: '1'},
-         {ProjectHeading: 'DAMAC HILLS',
-         ProjectSubHeading: "Dubailand, Dubai, United Arab Emirates",
-         ProjectParagraph: 'An established and prestigious international golf Project in Dubailand comprising luxury villas, apartments and a hotel',
-         ProjectImage: dummyImage,
-         ProjectId: '1'},
-         {ProjectHeading: 'DAMAC HILLS',
-         ProjectSubHeading: "Dubailand, Dubai, United Arab Emirates",
-         ProjectParagraph: 'An established and prestigious international golf Project in Dubailand comprising luxury villas, apartments and a hotel',
-         ProjectImage: dummyImage,
-         ProjectId: '1'},
-         {ProjectHeading: 'DAMAC HILLS',
-         ProjectSubHeading: "Dubailand, Dubai, United Arab Emirates",
-         ProjectParagraph: 'An established and prestigious international golf Project in Dubailand comprising luxury villas, apartments and a hotel',
-         ProjectImage: dummyImage,
          ProjectId: '1'}
         ]);
 
