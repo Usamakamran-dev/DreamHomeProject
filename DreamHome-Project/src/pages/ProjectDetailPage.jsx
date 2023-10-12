@@ -1,14 +1,14 @@
-import Navbar from "../components/Navbar";
+import useShowFooter from "../context/useShowFooter";
+import Footer from '../components/Footer';
 import './Custom.css';
 import projectImage from './../assets/Images/dubaiImage.jpg';
 import ProjectGallery from '../components/ProjectGallery';
 import locationImage from './../assets/Images/location.png';
 
-
-
 function ProjectDetailPage(){
+    const showFooter=useShowFooter();
     return(
-         <div className="overflow-hidden">
+         <div className="overflow-hidden mb-5">
          <div className="row row-cols-1 row-cols-md-2 p-5">
          <div className="rounded m-0 p-0 ">
           <img src={projectImage} alt="project-Image" className="w-100 h-100 m-0 p-0 image-fluid rounded" />
@@ -47,10 +47,8 @@ function ProjectDetailPage(){
          </div>
          </div>
          </div>
-        
-
+         { showFooter && <Footer show={showFooter} />}
          </div>
-    )
-}
-
-export default ProjectDetailPage;
+         )}
+         
+         export default ProjectDetailPage;

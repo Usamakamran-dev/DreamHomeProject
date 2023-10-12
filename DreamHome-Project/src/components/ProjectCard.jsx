@@ -1,5 +1,4 @@
 
-
 function ProjectCard(props){
   return(
     <div className="d-flex flex-column gap-2 rounded shadow-sm card-hover">
@@ -10,7 +9,6 @@ function ProjectCard(props){
         <p className="fw-semibold fs-para font-color-light">{props.paragraph}</p>
         </div>
     </div>
-  )
-}
+    )}
 
-export default ProjectCard;
+    export default ProjectCard;

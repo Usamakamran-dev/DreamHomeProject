@@ -1,8 +1,11 @@
-import dubaiImage from './../assets/Images/dubaiImage.jpg'
+import useShowFooter from "../context/useShowFooter";
+import dubaiImage from './../assets/Images/dubaiImage.jpg';
+import Footer from '../components/Footer';
 
 function Blog(){
+    const showFooter=useShowFooter();
     return(
-        <div class="container">
+        <div class="container mb-5">
          <div class="row">
           {/*Main Blog Data  */}
           <div class="col-8 shadow-sm mt-3 px-4 py-4 d-flex flex-column gap-4">
@@ -13,7 +16,7 @@ function Blog(){
             <div className='rounded m-0 p-0'><img src={dubaiImage} alt="dubai-Image" className='w-100 h-100 rounded img-fluid'/></div>
             </div>
             {/* Dummy Blog Data */}
-                <p className='font-color-light'>
+                <p className='font-color-light'  id="show-footer">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a egestas orci, 
                     congue euismod sapien. Mauris cursus volutpat mauris porttitor feugiat. Pellentesque varius 
                     ut lorem in pharetra. Suspendisse ut nibh id ex eleifend posuere.  <br /><br /> Donec ac odio vitae erat 
@@ -35,13 +38,10 @@ function Blog(){
                     fringilla. Aliquam eu sollicitudin <br /><br />lacus. Vestibulum risus elit, auctor ut lacinia et, 
                     dictum vitae erat. Quisque feugiat ante tortor, ac sodales arcu vestibulum a. Pellentesque
                         suscipit molestie ipsum ut malesuada.</p>
-            </div>
-          {/* for ads */}
-          <div class="col-3"></div>
-         </div>
-        </div>
-
-    )
-}
-
-export default Blog;
+                    </div>
+                    {/* for ads */}
+                    <div class="col-3"></div>
+                  </div>
+                  { showFooter && <Footer show={showFooter} />}
+                </div> )}
+                export default Blog;

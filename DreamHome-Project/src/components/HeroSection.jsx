@@ -8,7 +8,7 @@ function HeroSection() {
     const [index, setIndex] = useState(0);
     const handleSelect = (selectedIndex) => {setIndex(selectedIndex)};
     return (
-    <Carousel activeIndex={index} onSelect={handleSelect} className='mb-5'>
+    <Carousel activeIndex={index} onSelect={handleSelect} className='mb-5 carousel-fade'>
         <Carousel.Item>
         <div className="position-relative">
         <img className="d-block w-100 slider-image-style" src={sliderImage1} alt="Slider-Image1" />

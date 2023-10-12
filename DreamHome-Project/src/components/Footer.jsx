@@ -2,15 +2,13 @@ import enquire from './../assets/Icons/enquire.svg';
 import contact from './../assets/Icons/contact.svg';
 import phone from './../assets/Icons/phone.svg';
 import whatsapp from './../assets/Icons/whatsapp.svg';
-import EnquiryForm from '../Forms/EnquiryForm';
+import EnquiryForm from '../forms/EnquiryForm';
 import { useState } from 'react';
 
 function Footer({show}) {
   const [showEnquiryForm, setShowEnquiryForm] = useState(false);
   const enquiryFormHandler = () => { setShowEnquiryForm(true) }
   const cancelEnquiryForm = () => { setShowEnquiryForm(false) }
-
-  
   return (
     <>
     <nav className={`container-fluid bg-white shadow-lg fixed-bottom mt-5 ${show ? 'visible' : 'hidden'}`}>
@@ -41,5 +39,4 @@ function Footer({show}) {
       {showEnquiryForm && <EnquiryForm onCancel={cancelEnquiryForm}/>}
       </>
       )}
-
-export default Footer;
+      export default Footer;

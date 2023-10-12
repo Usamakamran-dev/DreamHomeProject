@@ -37,7 +37,8 @@ function ProjectGallery() {
   };
    
   return (
-       <div className="d-flex flex-column gap-5 position-relative p-5 mt-5">
+       <div id="show-footer"
+       className="d-flex flex-column gap-5 position-relative p-5 mt-5">
             <div className="d-flex flex-row align-items-center justify-content-between">
             <h1 className="text-white fs-1 fw-bold">PROJECT GALLERY</h1>
              <div className="d-flex flex-row align-items-center gap-4 px-3">

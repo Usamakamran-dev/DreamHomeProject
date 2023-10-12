@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import logo from './../assets/Icons/Realtor9.svg';
-import { NavLink , Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => { setIsOpen(!isOpen) };
-
   return (
     <nav className="navbar navbar-expand-md navbar-NavLinkght p-0 shadow-sm">
       <div className="container d-flex flex-row justify-content-between">
@@ -39,8 +38,6 @@ function Navbar() {
           </ul>
         </div>
       </div>
-    </nav>
-  );
-}
-
-export default Navbar;
+    </nav> 
+    );}
+    export default Navbar;
