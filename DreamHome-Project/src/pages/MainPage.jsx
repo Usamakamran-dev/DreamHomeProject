@@ -5,7 +5,7 @@ import ProjectCard from "../components/ProjectCard";
 import BlogCard from "../components/BlogCard";
 import PartnerSlider from "../components/PartnerSlider";
 import Footer from "../components/Footer";
-import './MainPage.css';
+import './Custom.css';
 import { ProjectCardContext } from "../context/ProjectCardProvider";
 import { BlogContext } from "../context/BlogProvider";
 
@@ -34,7 +34,6 @@ function MainPage() {
     // ____________________________________________________________________________________________________
     return(
         <div className="overflow-hidden">
-            <Navbar></Navbar>
             <HeroSection></HeroSection>
             {/* .................................................................................. */}
             <div id="project-section" className="container-fluid d-flex flex-column align-items-center gap-4 p-2 p-md-5">
@@ -52,9 +51,9 @@ function MainPage() {
               {/* ................................................................................. */}
              <PartnerSlider></PartnerSlider>
              {/* .................................................................................. */}
-             <div className="container-fluid d-flex flex-column align-items-center gap-4 p-5 mt-3">
+             <div className="container-fluid d-flex flex-column align-items-center gap-4 p-5 mt-3 mb-5 ">
              <h1 className="font-color-primary fw-bold fs-1">BLOGS</h1>
-             <div className="row row-cols-1 row-cols-md-3 g-4 px-5">
+             <div className="row row-cols-1 row-cols-md-3 g-4 px-5 mb-5">
               {BlogDetails.map((array, index) => (
               <div className="col" key={index}>
               <BlogCard heading={array.BlogHeading} source={array.BlogSource}
@@ -63,7 +62,8 @@ function MainPage() {
               ))}
               </div>
               </div>
-             { showFooter && <Footer></Footer>}
+             { showFooter && <Footer show={showFooter} />
+}
             
              </div>)}
 export default MainPage;
