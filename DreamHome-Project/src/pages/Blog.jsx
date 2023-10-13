@@ -1,17 +1,23 @@
+import { useContext } from "react";
 import useShowFooter from "../context/useShowFooter";
+import { useEffect } from "react";
 import dubaiImage from './../assets/Images/dubaiImage.jpg';
 import Footer from '../components/Footer';
+import { CurrentDataContext } from "../context/CurrentDataProvider";
 
 function Blog(){
-    const showFooter=useShowFooter();
+  const { currentBlogData } = useContext(CurrentDataContext);
+  const showFooter=useShowFooter();
+  if(!currentBlogData) return   
+  useEffect(() => { window.scrollTo(0, 0);}, []); 
+  
     return(
-        <div class="container mb-5">
-         <div class="row">
+        <div className="container mb-5">
+         <div className="row">
           {/*Main Blog Data  */}
-          <div class="col-8 shadow-sm mt-3 px-4 py-4 d-flex flex-column gap-4">
+          <div className="col-8 shadow-sm mt-3 px-4 py-4 d-flex flex-column gap-4">
             <div className='d-flex flex-column align-items-start  gap-3'>
-            <h1 className="fs-2 fw-bold font-color-primary m-0">Dubai ranked as the world’s 
-            <span className="fs-2 fw-bold font-color-secondary"> fourth most active</span> luxury residential market</h1>
+            <h1 className="fs-2 fw-bold font-color-primary m-0">{currentBlogData.BlogHeading}</h1>
             <p className="font-color-light fw-semibold m-0">Published on 8 MARCH 2023</p>
             <div className='rounded m-0 p-0'><img src={dubaiImage} alt="dubai-Image" className='w-100 h-100 rounded img-fluid'/></div>
             </div>

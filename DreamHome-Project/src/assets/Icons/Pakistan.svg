@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 39.6">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #01411c;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="Pakistan">
+      <g id="Group_10" data-name="Group 10">
+        <rect class="cls-2" width="60" height="39.6"/>
+        <rect class="cls-1" x="12" width="48" height="39.6"/>
+      </g>
+      <g>
+        <path class="cls-2" d="m46.72,23.46c-2.28,4.97-8.15,7.15-13.12,4.88-3.52-1.61-5.78-5.13-5.78-9-.02-4.3,2.75-8.11,6.85-9.41-.17.16-.33.25-.5.41-3.74,3.33-4.07,9.06-.74,12.79s9.06,4.07,12.79.74c.18-.12.35-.26.5-.41Z"/>
+        <path class="cls-2" d="m43.17,16.11l2.31.5-1.57-1.82,1.24-2.06-2.23.99-1.57-1.82.25,2.39-2.23.99,2.31.5.25,2.39,1.24-2.07Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

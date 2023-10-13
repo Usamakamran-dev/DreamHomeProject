@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-md navbar-NavLinkght p-0 shadow-sm">
       <div className="container d-flex flex-row justify-content-between">
-          <img className='navbar-brand p-0' src={logo} alt="Website-Logo" width="120" height="auto"/>
+          <img className='navbar-brand p-0' src={logo} alt="Website-Logo" width="100" height="auto"/>
         <button
           className={`navbar-toggler ${isOpen ? 'collapsed' : ''}`}
           type="button"
@@ -21,7 +21,7 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className={`collapse navbar-collapse p-0 justify-content-end ${isOpen ? 'show' : ''} `} id="navbarNav">
+        <div className={`collapse navbar-collapse d-flex flex-row gap-5 p-0 justify-content-end ${isOpen ? 'show' : ''} `} id="navbarNav">
           <ul className="navbar-nav d-flex flex-row gap-4">
             <NavLink 
                className="text-decoration-none font-color-primary fw-semibold"  to="/">Home
@@ -30,12 +30,13 @@ function Navbar() {
                className="text-decoration-none font-color-primary fw-semibold"  to="/projects">Projects
             </NavLink>
             <NavLink 
-               className="text-decoration-none font-color-primary fw-semibold"  to="/blog">Blogs
+               className="text-decoration-none font-color-primary fw-semibold"  to="/blogs">Blogs
             </NavLink>
             <NavLink 
                className="text-decoration-none font-color-primary fw-semibold"  to="/contact">Contact
             </NavLink>
           </ul>
+          <button className='background-color-secondary fw-semibold text-white border-0 rounded px-3 py-1'>Log In</button>
         </div>
       </div>
     </nav> 
