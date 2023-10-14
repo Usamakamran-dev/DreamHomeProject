@@ -1,23 +1,75 @@
+import { useState , useContext } from "react";
+import { CountryDataContext } from "../context/CountryDataProvider";
+import flagIcon from './../assets/Icons/Pakistan.svg';
+import dropdown from './../assets/Icons/Dropdown black.svg';
+import cancelIcon from './../assets/Icons/cancel.svg';
 
-function EnquiryForm(){
+function EnquiryForm(props){
+    const countryData=useContext(CountryDataContext);
+    if(!countryData) return 
+    const [dropdownOpen, setDropDownOpen] = useState(false);
+    const toggleDropdown = () => {setDropDownOpen(!dropdownOpen)};
+    const [selectedCountry,setSelectedCountry]=useState(
+      {
+        name: "Pakistan",
+        phoneLength: 10,
+        flags: {
+          svg: flagIcon,
+        },
+        idd: {
+          root: "+9",
+          suffixes: "2",
+        },
+      }
+      );
+    function handleSelectedCountry(arr){
+        setSelectedCountry(arr);
+        setDropDownOpen(!dropdownOpen)
+      }
+  
     return(
         <div className="light-black-bg fixed-top start-0 bottom-0 end-0 position-fixed d-flex align-items-center justify-content-center w-100 h-100">
-            <form className="rounded p-5 bg-light d-flex flex-column align-items-start gap-2">
-            {/* Form Heading  */}
-            <div className="d-flex flex-row align-items-center gap-5">
-             <h1 className="font-color-primary fs-2 fw-bold m-0">Register Your Interest</h1>
-             <img src="" alt="cancel-icon" />
-             </div>
-             <p className="m-0 font-color-secondary fw-semibold">All fields are required *</p>
-             {/* Form fields */}
-             <div className="row row-cols-2 row-cols-md-2 mt-3 gx-1">
-                <input className="py-2 px-3 shadow-sm input-width" type="text" />
-                <input className="py-2 px-3 shadow-sm" type="text" />
-                <input className="py-2 px-3 shadow-sm" type="text" />
-                <input className="py-2 px-3 shadow-sm" type="text" />    
-             </div>
-            </form>
-            
+            <div className="bg-white w-50  p-5 rounded d-flex flex-column gap-5">
+                <div className="d-flex flex-row align-items-start justify-content-between gap-5">
+                  <div className="d-flex flex-column align-items-start gap-2">
+                <h1 className="fs-2 fw-bold font-color-primary m-0">Register Your <span className="font-color-secondary">Interest</span></h1>
+                <p className="fw-medium font-color-secondary">All fields are required *</p>
+                  </div>
+                  <img onClick={props.onCancel} src={cancelIcon} alt="cancel-icon" width='30' height='auto' className="py-1"/>
+                </div>
+            <form className='d-flex flex-column align-items-start gap-4'>
+                <input type="text" placeholder='Enter First Name' 
+                className='border-0 fw-medium input-field-style py-2 w-100'/>
+                <input type="text" placeholder='Enter Last Name' 
+                className='border-0 fw-medium input-field-style py-2 w-100' />
+                <input type="email" placeholder='Enter Email' 
+                className='border-0 fw-medium input-field-style py-2 w-100'/>
+                {/* Phone */}
+                <div className='d-flex flex-row align-items-end gap-4 w-100 position-relative'>
+                  <div className='d-flex flex-row gap-4 w-100'>
+                  <div onClick={toggleDropdown}
+                  className='d-flex flex-row align-items-center gap-3 input-field-style py-2'>
+                  <img src={selectedCountry.flags.svg} alt="flag-icon" className='w-auto' style={{height: '1rem'}} />
+                  <span className='fw-medium' style={{width: '4rem', cursor:'pointer'}}>{`${selectedCountry.idd.root}${selectedCountry.idd.suffixes}`}</span>
+                  <img src={dropdown} alt="dropdown-menu" className='w-auto ' style={{height: '0.5rem'}}/>
+                 </div>
+                 <input type="text" placeholder='Enter Phone' 
+                 className='border-0 fw-medium input-field-style py-2 w-100'/>
+                 </div>
+                {dropdownOpen && (
+               <div className='position-absolute bg-light custom-dropdown-style shadow-sm d-flex flex-column gap-2 p-2'>
+               {countryData.sort((a, b) => a.name.common.localeCompare(b.name.common)).map((arr, index) => (
+                <div className='d-flex flex-row align-items-center gap-5' onClick={() => handleSelectedCountry(arr)}>
+                 <img src={arr.flags.svg} alt='Flag' className='h-auto' style={{width: '1.5rem'}}/>
+                 <label className='text-start' style={{width: '2rem'}}>{`${arr.idd.root}${arr.idd.suffixes}`.substring(0, 5)}</label>
+                 <label className='text-start'>{arr.name.common.substring(0, 21)}</label>
+                </div>))}
+               </div>
+                 )}
+                </div>
+                <button className="button-hover-primary py-3 mt-4 w-100 fs-para fw-bold text-white background-color-primary border-0 rounded">ENQUIRE NOW</button>
+                </form>
+                </div>
         </div>
     )
 }

@@ -4,19 +4,19 @@ const useShowFooter = () => {
   const [showFooter, setShowFooter] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      const projectSection = document.getElementById("show-footer");
       const scrollPoint = window.scrollY;
-      const threshold = 500;
-      if (scrollPoint >= projectSection.offsetTop - threshold) {
+      const threshold = 100;
+      if (scrollPoint >= threshold) {
         setShowFooter(true);
       } else {
         setShowFooter(false);
-      }}
+      }
+    }      
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  return showFooter;};
-
-export default useShowFooter;
+  return showFooter;
+  }
+  export default useShowFooter;

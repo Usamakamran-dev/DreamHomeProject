@@ -29,7 +29,7 @@ function ProjectGallery() {
           key={index}
           src={images[index]}
           alt={`Image-Section ${index}`}
-          className="slider-image rounded"
+          className="slider-image"
         />
       );
     }
@@ -37,14 +37,13 @@ function ProjectGallery() {
   };
    
   return (
-       <div id="show-footer"
-       className="d-flex flex-column gap-5 position-relative p-3 p-md-5 mt-5">
+       <div className="d-flex flex-column gap-5 position-relative p-3 p-md-5 mt-5">
             <div className="d-flex flex-row align-items-center justify-content-between">
-            <h1 className="text-white fs-4 fs-md-1 fw-bold">PROJECT GALLERY</h1>
+            <h1 className="text-white fs-1 fs-md-4 fw-bold">PROJECT GALLERY</h1>
              <div className="d-flex flex-row align-items-center gap-2 gap-md-4 px-3">
-                <img src={backArrow} alt="next-arrow" className='w-auto' style={{height: '2rem'}}
+                <img src={backArrow} alt="next-arrow" className='w-auto gallery-arrow-transition' style={{height: '2rem'}}
                 onClick={handlePreviousBtn} />
-                <img src={nextArrow} alt="next-arrow" className='w-auto' style={{height: '2rem'}}
+                <img src={nextArrow} alt="next-arrow" className='w-auto gallery-arrow-transition' style={{height: '2rem'}}
                 onClick={handleNextBtn}/>
              </div>
             </div>

@@ -5,7 +5,7 @@ import dubaiImage from './../assets/Images/dubaiImage.jpg';
 import Footer from '../components/Footer';
 import { CurrentDataContext } from "../context/CurrentDataProvider";
 
-function Blog(){
+function BlogDetailPage(){
   const { currentBlogData } = useContext(CurrentDataContext);
   const showFooter=useShowFooter();
   if(!currentBlogData) return   
@@ -16,13 +16,13 @@ function Blog(){
          <div className="row">
           {/*Main Blog Data  */}
           <div className="col-8 shadow-sm mt-3 px-4 py-4 d-flex flex-column gap-4">
-            <div className='d-flex flex-column align-items-start  gap-3'>
+            <div className='d-flex flex-column align-items-start gap-3'>
             <h1 className="fs-2 fw-bold font-color-primary m-0">{currentBlogData.BlogHeading}</h1>
-            <p className="font-color-light fw-semibold m-0">Published on 8 MARCH 2023</p>
+            <p className="font-color-secondary fw-medium m-0">Published on 8 MARCH 2023</p>
             <div className='rounded m-0 p-0'><img src={dubaiImage} alt="dubai-Image" className='w-100 h-100 rounded img-fluid'/></div>
             </div>
             {/* Dummy Blog Data */}
-                <p className='font-color-light'  id="show-footer">
+                <p className="font-color-light fw-medium">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a egestas orci, 
                     congue euismod sapien. Mauris cursus volutpat mauris porttitor feugiat. Pellentesque varius 
                     ut lorem in pharetra. Suspendisse ut nibh id ex eleifend posuere.  <br /><br /> Donec ac odio vitae erat 
@@ -50,4 +50,4 @@ function Blog(){
                   </div>
                   { showFooter && <Footer show={showFooter} />}
                 </div> )}
-                export default Blog;
+                export default BlogDetailPage;

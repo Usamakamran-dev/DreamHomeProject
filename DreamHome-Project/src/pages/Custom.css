@@ -1,4 +1,6 @@
-
+body {
+  font-family: 'Onest', sans-serif;
+}
 .font-color-primary{ color: var(--color-primary);}
 .font-color-secondary{color: var(--color-secondary);}
 .font-color-light{color: var(--color-light);}
@@ -9,10 +11,6 @@
     height: 90vh;
     max-height: 90vh;
     object-fit: cover;
-  }
-.partner-image-style{
-    width: auto;
-    height: 8rem;
   }
 .card-hover {transition: all 0.3s; }
 .card-hover:hover {
@@ -36,6 +34,10 @@
   width: 25rem;
   height: 20rem;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.slider-image:hover{
+  transform: scale(1.1);
 }
 .half-background-primary {
   background-color: var(--color-primary);
@@ -46,37 +48,39 @@
   height: 70%; 
   z-index: -1;
 }
-.carousel-fade .carousel-inner .carousel-item { transition-duration: 0.5s;}
+.carousel-fade .carousel-inner .carousel-item { transition-duration: 0.8s;}
 .input-field-style{
-  border-bottom: 2px solid var(--color-primary) !important ;
+  border-bottom: 2px solid var(--color-light) !important ;
   color: var(--color-primary)!important;
 }
 .input-field-style:focus {
   outline: none;
   border: none;
+  border-bottom: 3px solid var(--color-primary) !important;
+}
+.input-field-style::placeholder{
+  font-weight: 400;
   opacity: 0.6;
-  border-bottom: 2px solid var(--color-primary) !important;
+}
+.contact-page-width{ 
+  max-width: 70%;
 }
 .enquiry-icon{height: 1.2rem;}
 .call-icon{height: 1.5rem;}
 .whatsapp-icon{height: 1.6rem;}
 .contact-icon{height: 1.6rem;}
-
 .moving-button {
   animation: moveUpDown 2s infinite alternate;
   position: relative;
 }
-
 @keyframes moveUpDown {
   0% {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(10px); 
+    transform: translateY(5px); 
   }
 }
-
-
 
 /* ...................Media query */
 @media (max-width: 768px) {
@@ -90,9 +94,30 @@
     .call-icon{height: 1.2rem;}
     .whatsapp-icon{height: 1.3rem;}
     .contact-icon{height: 1.3rem;}
-}
-
-
-
-
-
+  }
+  .custom-dropdown-style {
+    max-height: 10rem;
+    height: 10rem;
+    overflow-x: hidden; 
+    overflow-y: auto;
+    z-index: 999;
+    top:2.5rem;
+  }
+  .button-hover-secondary { transition: background-color 0.5s, transform 0.5s;}
+  .button-hover-secondary:hover {
+    background-color: rgb(231, 78, 78);
+    transform: scale(1.1);
+  }
+  .button-hover-primary { transition: background-color 0.5s, transform 0.5s;}
+  .button-hover-primary:hover {
+    background-color: #28386b;
+    transform: scale(1.1);
+  }.button-hover-light { transition: background-color 0.5s, transform 0.5s;}
+  .button-hover-light:hover {
+    background-color: #d4cece8f;
+    transform: scale(1.1);
+  }
+  .gallery-arrow-transition{ transition: all 0.3s; }
+  .gallery-arrow-transition:hover{
+    transform: scale(1.1);
+  }
