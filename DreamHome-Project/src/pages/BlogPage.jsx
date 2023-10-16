@@ -18,7 +18,6 @@ function BlogPage(){
       }
     useEffect(() => { window.scrollTo(0, 0);}, []);
 
-
     return(
         <div className="px-2 px-md-5 py-5 d-flex flex-column align-items-center gap-5  mb-5">
           <div className="d-flex flex-column align-items-center">           

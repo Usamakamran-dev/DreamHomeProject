@@ -5,10 +5,10 @@ import dropdown from './../assets/Icons/Dropdown black.svg';
 import { CountryDataContext } from '../context/CountryDataProvider';
 
 function Contact(){
-  const countryData=useContext(CountryDataContext);
-  if(!countryData) return 
   const [dropdownOpen, setDropDownOpen] = useState(false);
   const toggleDropdown = () => {setDropDownOpen(!dropdownOpen)};
+  const countryData=useContext(CountryDataContext);
+  if(!countryData) return 
   const [selectedCountry,setSelectedCountry]=useState(
     {
       name: "Pakistan",
@@ -66,13 +66,13 @@ function Contact(){
                </div>
                  )}
                 </div>
-                <button className="py-3 mt-4 project-button-width fs-para fw-bold text-white background-color-primary border-0 rounded">ENQUIRE NOW</button>
+                <button className="py-3 mt-4 button-hover-primary project-button-width fs-para fw-bold text-white background-color-primary border-0 rounded">ENQUIRE NOW</button>
                 </form>
-              </div>
-              <div className="m-0 rounded order-1 order-md-2">
+               </div>
+               <div className="m-0 rounded order-1 order-md-2">
                 <img src={contactImage} alt="Contact-Us-Image" className="w-100 h-100 py-5 image-fluid rounded"/>
-              </div>  
-             </div>
+               </div>  
               </div>
-    )}
+              </div>
+              )}
     export default Contact;

@@ -30,7 +30,7 @@ function BlogProvider(props){
          BlogImage: dummyImage,
          BlogId: '1'},
          {BlogHeading: '6 Dubai ranked as the world’s fourth most active luxury residential market',
-        BlogSource: "The National",
+         BlogSource: "The National",
          BlogDate: '8 MARCH 2023',
          BlogImage: dummyImage,
          BlogId: '1'}

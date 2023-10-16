@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import dubaiImage from './../assets/Images/dubaiImage.jpg';
 import Footer from '../components/Footer';
 import { CurrentDataContext } from "../context/CurrentDataProvider";
+import MetaTags from "../components/MetaTags";
 
 function BlogDetailPage(){
   const { currentBlogData } = useContext(CurrentDataContext);
@@ -44,9 +45,15 @@ function BlogDetailPage(){
                     fringilla. Aliquam eu sollicitudin <br /><br />lacus. Vestibulum risus elit, auctor ut lacinia et, 
                     dictum vitae erat. Quisque feugiat ante tortor, ac sodales arcu vestibulum a. Pellentesque
                         suscipit molestie ipsum ut malesuada.</p>
+                         {/* Use the MetaTags component to set meta tags */}
+                       <MetaTags
+                       title={currentBlogData.BlogHeading}
+                       description={currentBlogData.BlogSource}
+                       publishedDate={currentBlogData.BlogDate}
+                       />
                     </div>
                     {/* for ads */}
-                    <div class="col-3"></div>
+                    <div className="col-3"></div>
                   </div>
                   { showFooter && <Footer show={showFooter} />}
                 </div> )}

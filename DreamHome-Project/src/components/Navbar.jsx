@@ -10,7 +10,9 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-md navbar-NavLinkght p-0 shadow-sm overflow-hidden">
       <div className="container d-flex flex-row justify-content-between">
+          <NavLink to="/">
           <img className='navbar-brand p-0' src={logo} alt="Website-Logo" width="100" height="auto"/>
+          </NavLink>
         <button
           className={`navbar-toggler ${isOpen ? 'collapsed' : ''}`}
           type="button"

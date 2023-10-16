@@ -9,17 +9,14 @@ function ProjectGallery() {
   const images = [img1,img1,img1,img2,img2,img2];
   const totalImages = images.length;
   const visibleImages = 3;
-
   const handleNextBtn = () => {
     const nextIndex = (currentIndex + 1) % totalImages;
     setCurrentIndex(nextIndex);
   };
-
   const handlePreviousBtn = () => {
     const previousIndex = (currentIndex - 1 + totalImages) % totalImages;
     setCurrentIndex(previousIndex);
   };
-
   const getVisibleImages = () => {
     const visible = [];
     for (let i = 0; i < visibleImages; i++) {
@@ -33,11 +30,10 @@ function ProjectGallery() {
         />
       );
     }
-    return visible;
-  };
+    return visible};
    
-  return (
-       <div className="d-flex flex-column gap-5 position-relative p-3 p-md-5 mt-5">
+    return (
+       <div className="d-flex background-color-primary flex-column gap-5 position-relative p-3 p-md-5">
             <div className="d-flex flex-row align-items-center justify-content-between">
             <h1 className="text-white fs-1 fs-md-4 fw-bold">PROJECT GALLERY</h1>
              <div className="d-flex flex-row align-items-center gap-2 gap-md-4 px-3">
@@ -52,6 +48,6 @@ function ProjectGallery() {
             </div>
             <div className="half-background-primary"></div>
        </div>
-  );}
+      );}
 
-export default ProjectGallery;
+      export default ProjectGallery;

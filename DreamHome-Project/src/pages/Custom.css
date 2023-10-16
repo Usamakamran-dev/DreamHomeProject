@@ -79,22 +79,7 @@ body {
   }
   100% {
     transform: translateY(5px); 
-  }
-}
-
-/* ...................Media query */
-@media (max-width: 768px) {
-  .project-button-width {width: 9rem !important; }
-  .fs-para{ font-size: 0.7rem ;}
-  .slider-image{
-    width: 18rem;
-    height: 13rem;
-    object-fit: cover;}
-    .enquiry-icon{height: 1rem;}
-    .call-icon{height: 1.2rem;}
-    .whatsapp-icon{height: 1.3rem;}
-    .contact-icon{height: 1.3rem;}
-  }
+  }}
   .custom-dropdown-style {
     max-height: 10rem;
     height: 10rem;
@@ -120,4 +105,32 @@ body {
   .gallery-arrow-transition{ transition: all 0.3s; }
   .gallery-arrow-transition:hover{
     transform: scale(1.1);
+  }
+  .transparent-section{
+    background-image: url("./../assets/Images/dummyImage.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .bg-white-transparent{ background-color: rgba(255, 255, 255, 0.781);}
+  .circle-image{
+    border-radius: 100rem;
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+  }
+
+  /* ...................Media query */
+@media (max-width: 768px) {
+  .project-button-width {width: 9rem !important; }
+  .fs-para{ font-size: 0.7rem ;}
+  .slider-image{
+    width: 18rem;
+    height: 13rem;
+    object-fit: cover;}
+    .enquiry-icon{height: 1rem;}
+    .call-icon{height: 1.2rem;}
+    .whatsapp-icon{height: 1.3rem;}
+    .contact-icon{height: 1.3rem;}
   }
