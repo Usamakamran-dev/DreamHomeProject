@@ -1,15 +1,24 @@
-import { useContext , useEffect } from "react";
+import { useContext , useEffect , useState } from "react";
 import { ProjectCardContext } from "../context/ProjectCardProvider";
 import { CurrentDataContext } from "../context/CurrentDataProvider";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
 import useShowFooter from "../context/useShowFooter";
 import { useNavigate } from "react-router-dom";
+import LoadingSpinner from "../components/LoadingSpinner";
+import EnquiryIcon from '../components/EnquiryIcon';
+import EnquiryForm from "../forms/EnquiryForm";
 
 function ProjectPage(){
     const navigate=useNavigate();
     const showFooter=useShowFooter();
+    const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+    const enquiryFormHandler = () => { setShowEnquiryForm(true) }
+    const cancelEnquiryForm = () => { setShowEnquiryForm(false) }
     const ProjectCardDetails=useContext(ProjectCardContext);
+    if(!ProjectCardDetails){
+     return <LoadingSpinner></LoadingSpinner>
+    }
     const { setCurrentProjectData} = useContext(CurrentDataContext);
     function currentProjectHandler(currentProjectData,id){
         setCurrentProjectData(currentProjectData);
@@ -39,6 +48,8 @@ function ProjectPage(){
                     ))}
                   </div>
                   {showFooter && <Footer show={showFooter} />}
+                  {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
+                  <EnquiryIcon onClick={enquiryFormHandler}></EnquiryIcon>
                </div>
                  )}
            export default ProjectPage;

@@ -1,26 +1,31 @@
 import './Custom.css';
-import { useContext } from "react";
-import useShowFooter from "../context/useShowFooter";
-import HeroSection from "../components/HeroSection";
-import AboutUs from '../components/AboutUs';
-import ProjectCard from "../components/ProjectCard";
-import BlogCard from "../components/BlogCard";
-import Footer from "../components/Footer";
-import Testimonial from '../components/Testimonial';
+import { useContext , useState } from "react";
 import { ProjectCardContext } from "../context/ProjectCardProvider";
 import { BlogContext } from "../context/BlogProvider";
 import { CurrentDataContext } from "../context/CurrentDataProvider";
 import { useNavigate } from "react-router-dom";
-import partnerLogo from "./../assets/PartnerLogos/paramount-hotel.svg";
+import useShowFooter from "../context/useShowFooter";
+import HeroSection from "../components/HeroSection";
+import ProjectCard from "../components/ProjectCard";
+import BlogCard from "../components/BlogCard";
+import Footer from "../components/Footer";
+import partnerLogo  from "./../assets/PartnerLogos/paramount-hotel.svg";
 import partnerLogo2 from "./../assets/PartnerLogos/cavalli.svg";
 import partnerLogo3 from "./../assets/PartnerLogos/deGRISOGONO.svg";
 import partnerLogo4 from "./../assets/PartnerLogos/Radisson.svg";
 import partnerLogo5 from "./../assets/PartnerLogos/Rotana.svg";
 import partnerLogo6 from "./../assets/PartnerLogos/zuhairmurad.svg";
 import partnerLogo7 from "./../assets/PartnerLogos/Trump.svg";
+import aboutUsImage from './../assets/Images/Project Image.jpg';
+import EnquiryIcon from '../components/EnquiryIcon';
+import FeedbackSlider from '../components/FeedbackSlider';
+import EnquiryForm from '../forms/EnquiryForm';
 
 function MainPage() {
     const navigate=useNavigate();
+    const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+    const enquiryFormHandler = () => { setShowEnquiryForm(true) }
+    const cancelEnquiryForm = () => { setShowEnquiryForm(false) }
     const ProjectCardDetails = useContext(ProjectCardContext);
     const { setCurrentProjectData, setCurrentBlogData } = useContext(CurrentDataContext);
     const BlogDetails = useContext(BlogContext);
@@ -38,8 +43,30 @@ function MainPage() {
         return(
           <div className="overflow-hidden mb-5 transparent-section">
               <HeroSection></HeroSection>
-              <AboutUs></AboutUs>
-              <div className="bg-light container-fluid d-flex flex-column align-items-center gap-4 p-2 p-md-5">
+              <div className='bg-white'>
+                <div className="row py-5 container mx-auto">
+                 <div className="col-md-6 py-5 d-flex flex-column gap-4 align-items-center justify-content-center align-items-md-start">
+                    <h2 className="fs-1 fw-bold mb-4 font-color-primary text-start text-md-start">
+                    ABOUT <span className='font-color-secondary'>US</span></h2>
+                    <p className="font-color-light text-start fw-medium">
+                    SAMANA Manhattan - an exceptional residential development that sets a new standard for contemporary living.
+                    This innovative project by SAMANA Developers, located in Jumeirah Village Circle (JVC), is designed to provide residents with an unparalleled lifestyle; blended with luxurious amenities, stunning designs, and a prime location.  SAMANA Manhattan - an exceptional residential development that sets a new standard for contemporary living.
+                    This innovative project by SAMANA Developers
+                    </p> 
+                    <div className='d-flex flex-row gap-4'>
+                    <button  onClick={enquiryFormHandler} style={{width: '12rem'}} 
+                    className='background-color-primary button-hover-primary py-3 rounded fs-para fw-semibold text-white'>ENQUIRE NOW</button>
+                    <button style={{width: '12rem'}} className='background-color-secondary button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>DOWNLOAD BROCHURE</button>
+                    </div>
+                 </div>
+                 <div className="col-md-6 p-0 py-5 px-md-5 m-0 rounded">
+                 <img src={aboutUsImage} alt="AboutUs-Image"className="h-100 w-100 img-fluid p-0 m-0 rounded"/>
+                 </div>
+                 {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
+                 <EnquiryIcon onClick={enquiryFormHandler}></EnquiryIcon>
+               </div>
+              </div>             
+               <div className="bg-light container-fluid d-flex flex-column align-items-center gap-4 p-2 p-md-5">
                  <h1 className="font-color-primary fw-bold fs-1">OUR <span 
                  className="font-color-secondary fw-bold fs-1">PROJECTS</span></h1>
                  <div className="row row-cols-1 row-cols-md-3 gy-5 px-2 px-md-5">
@@ -58,7 +85,7 @@ function MainPage() {
                  className="moving-button bg-light fs-6 bg-light border-0 fw-medium font-color-light">See more</button>
                </div>
               {/*Transparent Section*/}
-              <div style={{width: '100%' , height: "30rem"}}></div>
+              <div style={{width: '100%',height: "30rem"}}></div>
               {/* Partner Section*/}
               <div className='bg-white py-5'>
                 <div className="contact-page-width mx-auto d-flex flex-column align-items-center py-2 py-md-5 gap-5">
@@ -67,7 +94,7 @@ function MainPage() {
                     <p  className="font-color-light fw-medium px-5 text-center">We collaborate with a diverse network of 
                     industry leaders and innovators to bring you the best solutions 
                     and services,ensuring your success every step of the way.</p>
-                  </div>
+                   </div>
                    <div className="row row-cols-2 row-cols-md-4 g-5 justify-content-center px-2 py-2 py-md-4 px-md-5">
                      {partnerImages.map((arr, index) => (
                       <div className="col" key={index}>
@@ -75,7 +102,7 @@ function MainPage() {
                       className="image-fluid w-100 h-100 p-3" />
                      </div> ))}
                   </div>
-               </div>     
+                </div>     
               </div>
              {/* Blog Section*/}
              <div className='bg-white'>
@@ -95,9 +122,9 @@ function MainPage() {
              </div>
              {/*Testimonial Section*/}
              <div className='bg-white'>
-               <div className='container d-flex flex-column align-items-center gap-3 py-5'>
+               <div className='w-100 d-flex flex-column align-items-center gap-3 py-5'>
                <h1 className="font-color-primary fw-bold fs-1">WHAT OUR <span className='font-color-secondary'>CLIENT SAYS</span></h1>
-               <Testimonial></Testimonial>
+               <FeedbackSlider></FeedbackSlider>
                </div>
              </div>
               {showFooter && <Footer show={showFooter} />}</div>)}

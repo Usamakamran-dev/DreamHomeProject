@@ -40,7 +40,7 @@ function Navbar() {
                className="text-decoration-none font-color-primary fw-medium"  to="/contact">Contact
             </NavLink>
             <button onClick={()=> navigate("/login")}
-            className='button-hover-secondary background-color-secondary fw-medium text-white border-0 rounded px-4 py-2'>Log In</button>
+            className='button-hover-secondary background-color-secondary fs-6 fw-medium text-white border-0 rounded px-4 py-2'>Log In</button>
           </ul>
         </div>
       </div>

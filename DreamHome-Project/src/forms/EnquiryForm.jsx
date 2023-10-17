@@ -47,7 +47,7 @@ function EnquiryForm(props){
     }
   
     return(
-        <div className="light-black-bg fixed-top start-0 bottom-0 end-0 position-fixed d-flex align-items-center justify-content-center w-100 h-100">
+        <div style={{zIndex: '1000000'}} className="light-black-bg fixed-top start-0 bottom-0 end-0 position-fixed d-flex align-items-center justify-content-center w-100 h-100">
             <div className="bg-white w-50  p-5 rounded d-flex flex-column gap-5">
                 <div className="d-flex flex-row align-items-start justify-content-between gap-5">
                   <div className="d-flex flex-column align-items-start gap-2">

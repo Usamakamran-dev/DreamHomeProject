@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
-import img1 from './../assets/Images/Studio_6.jpg';
-import img2 from './../assets/Images/Studio_7.jpg';
-import nextArrow from './../assets/Icons/next.png';
-import backArrow from './../assets/Icons/back.png';
+import nextArrow from './../assets/Icons/right-arrow.png';
+import backArrow from './../assets/Icons/left-arrow.png';
 
-function ProjectGallery() {
+function ProjectGallery(props) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [img1,img1,img1,img2,img2,img2];
+  const images = props.images;
   const totalImages = images.length;
   const visibleImages = 3;
+
   const handleNextBtn = () => {
     const nextIndex = (currentIndex + 1) % totalImages;
     setCurrentIndex(nextIndex);
   };
+
   const handlePreviousBtn = () => {
     const previousIndex = (currentIndex - 1 + totalImages) % totalImages;
     setCurrentIndex(previousIndex);
   };
+
   const getVisibleImages = () => {
     const visible = [];
     for (let i = 0; i < visibleImages; i++) {
@@ -26,28 +27,31 @@ function ProjectGallery() {
           key={index}
           src={images[index]}
           alt={`Image-Section ${index}`}
-          className="slider-image"
+          className="slider-image img-fluid"
         />
       );
     }
-    return visible};
-   
-    return (
-       <div className="d-flex background-color-primary flex-column gap-5 position-relative p-3 p-md-5">
-            <div className="d-flex flex-row align-items-center justify-content-between">
-            <h1 className="text-white fs-1 fs-md-4 fw-bold">PROJECT GALLERY</h1>
-             <div className="d-flex flex-row align-items-center gap-2 gap-md-4 px-3">
-                <img src={backArrow} alt="next-arrow" className='w-auto gallery-arrow-transition' style={{height: '2rem'}}
-                onClick={handlePreviousBtn} />
-                <img src={nextArrow} alt="next-arrow" className='w-auto gallery-arrow-transition' style={{height: '2rem'}}
-                onClick={handleNextBtn}/>
-             </div>
-            </div>
-            <div className="d-flex flex-row gap-4 overflow-hidden">
-              {getVisibleImages()}
-            </div>
-            <div className="half-background-primary"></div>
-       </div>
-      );}
+    return visible;
+  };
 
-      export default ProjectGallery;
+  return (
+    <div className="position-relative container mx-auto">
+      <div className="d-flex flex-row gap-4 overflow-hidden">
+        {getVisibleImages()}
+      </div>
+      <img style={{width: '4rem' , left: '-1rem'}}
+        src={backArrow}
+        alt="Back"
+        onClick={handlePreviousBtn}
+        className="shadow position-absolute bg-light rounded-circle p-4 top-50  translate-middle-y cursor-pointer h-auto"
+      />
+      <img style={{width: '4rem' , right : '-1rem' }}
+        src={nextArrow}
+        alt="Next"
+        onClick={handleNextBtn}
+        className="shadow position-absolute bg-light rounded-circle p-4 top-50 translate-middle-y cursor-pointer  h-auto"
+      />
+    </div>
+    );}
+
+    export default ProjectGallery;

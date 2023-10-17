@@ -1,14 +1,19 @@
-import { useContext, useEffect} from "react";
+import { useContext, useEffect , useState} from "react";
 import { BlogContext } from "../context/BlogProvider";
 import { CurrentDataContext } from "../context/CurrentDataProvider";
 import BlogCard from "../components/BlogCard";
 import Footer from "../components/Footer";
 import useShowFooter from "../context/useShowFooter";
 import { useNavigate } from "react-router-dom";
+import EnquiryIcon from '../components/EnquiryIcon';
+import EnquiryForm from "../forms/EnquiryForm";
 
 function BlogPage(){
     const navigate=useNavigate();
     const showFooter=useShowFooter();
+    const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+    const enquiryFormHandler = () => { setShowEnquiryForm(true) }
+    const cancelEnquiryForm = () => { setShowEnquiryForm(false) }
     const BlogDetails = useContext(BlogContext);
     const { setCurrentBlogData } = useContext(CurrentDataContext);
      // Setting the currently clicked blog card
@@ -35,6 +40,8 @@ function BlogPage(){
         ))}
         </div>
         {showFooter && <Footer show={showFooter} />}
+        {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
+        <EnquiryIcon onClick={enquiryFormHandler}></EnquiryIcon>
         </div>
     )
 }
