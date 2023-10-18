@@ -1,23 +1,41 @@
 import { useContext,useEffect,useState } from "react";
-import useShowFooter from "../context/useShowFooter";
-import dubaiImage from './../assets/Images/dubaiImage.jpg';
-import Footer from '../components/Footer';
 import { CurrentDataContext } from "../context/CurrentDataProvider";
+import useShowFooter from "../context/useShowFooter";
+import Footer from '../components/Footer';
+import EnquiryTop from '../components/EnquiryTop';
+import EnquiryForm from "../forms/EnquiryForm";
 import facebookIcon from './../assets/social media/facebook.png';
 import whatsappIcon from './../assets/social media/whatsapp.png';
 import linkedinIcon from './../assets/social media/linkedin.png';
 import twitterIcon from './../assets/social media/twitter.png';
-import EnquiryTop from '../components/EnquiryTop';
-import EnquiryForm from "../forms/EnquiryForm";
+import dubaiImage from './../assets/Images/dubaiImage.jpg';
+import eyeIcon from './../assets/Icons/eye.png';
 
 function BlogDetailPage(){
   const { currentBlogData } = useContext(CurrentDataContext);
   const [showEnquiryForm, setShowEnquiryForm] = useState(false);
-  const enquiryFormHandler = () => { setShowEnquiryForm(true) }
-  const cancelEnquiryForm = () => { setShowEnquiryForm(false) }
+  const [isFixed, setIsFixed] = useState(false);
   const showFooter=useShowFooter();
   if(!currentBlogData) return   
-  useEffect(() => { window.scrollTo(0, 0);}, []); 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPoint = window.scrollY;
+       if (scrollPoint >= 350) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+      if(scrollPoint >= 1140){
+        setIsFixed(false);
+      }};
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.scrollTo(0, 0);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  const enquiryFormHandler = () => { setShowEnquiryForm(true) }
+  const cancelEnquiryForm = () => { setShowEnquiryForm(false) }
   
     return(
         <div className="container mb-5">
@@ -26,12 +44,18 @@ function BlogDetailPage(){
           <div className="col-md-8 shadow-sm mt-3 px-4 py-4 d-flex flex-column gap-4">
             <div className='d-flex flex-column align-items-start gap-3'>
             <h1 className="fs-2 fw-bold font-color-primary m-0">{currentBlogData.BlogHeading}</h1>
+            <div className="w-100 d-flex flex-row align-items-center justify-content-between">
             <p className="font-color-secondary fw-medium m-0">Published on 8 MARCH 2023</p>
+             <div className="d-flex flex-row align-items-center gap-2">
+              <img src={eyeIcon} alt="eye-icon" width='20' />
+              <label className="fs-6 fw-medium font-primary-light"> 2.09K</label>
+             </div>
+            </div>
             <div className=' m-0 p-0'><img src={dubaiImage} alt="dubai-Image" className='w-100 h-100  img-fluid'/></div>
             </div>
             {/* Dummy Blog Data */}
-                <p className="font-color-light fw-medium">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a egestas orci, 
+                <p id='paragraph-section' className="font-color-light fw-medium">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a egestas orci, 
                     congue euismod sapien. Mauris cursus volutpat mauris porttitor feugiat. Pellentesque varius 
                     ut lorem in pharetra. Suspendisse ut nibh id ex eleifend posuere.  <br /><br /> Donec ac odio vitae erat 
                     vestibulum facilisis. Nullam eu dolor gravida ex venenatis tempor pellentesque non risus. Sed 
@@ -56,23 +80,23 @@ function BlogDetailPage(){
                      <label className="fs-5 fw-semibold font-color-primary m-0">Share Now</label>
                      <div className="d-flex flex-row align-items-center gap-3">
                       <div  style={{backgroundColor: "#3b5998"}} className="rounded-circle p-2 card-hover" >
-                      <img width="50" className="h-auto p-2" src={facebookIcon} alt="facebook-icon" />
+                      <img width="40" className="h-auto p-1 p-md-2" src={facebookIcon} alt="facebook-icon" />
                       </div>
                       <div style={{backgroundColor: "#25D366"}} className="rounded-circle p-2 card-hover" >
-                      <img width="50" className="h-auto p-2" src={whatsappIcon} alt="whatsapp-icon" />
+                      <img width="40" className="h-auto p-1 p-md-2" src={whatsappIcon} alt="whatsapp-icon" />
                       </div>
                       <div  style={{backgroundColor: "#0A66C2"}} className="rounded-circle p-2 card-hover" >
-                      <img width="50" className="h-auto p-2" src={twitterIcon} alt="whatsapp-icon" />
+                      <img width="40" className="h-auto p-1 p-md-2" src={twitterIcon} alt="whatsapp-icon" />
                       </div>
                       <div  style={{backgroundColor: "#00a2ed"}} className="rounded-circle p-2 card-hover" >
-                      <img width="50" className="h-auto p-2" src={linkedinIcon} alt="whatsapp-icon" />
+                      <img width="40" className="h-auto p-1 p-md-2" src={linkedinIcon} alt="whatsapp-icon" />
                       </div>
                      </div>
                     </div>
                     </div>
                     {/* for ads */}
-                    <div className="col-md-4 my-3">
-                      <div className="d-flex flex-column gap-4 bg-light rounded p-3">
+                    <div className="col-md-4 my-3 overflow-hidden">
+                    <div className={`d-flex flex-column gap-4 bg-light rounded fixed-size-column p-3 ${isFixed ? 'fixed-form' : ''}`}>
                       {/* Emquiry Form */}
                       <form className="background-color-primary rounded p-3 w-100 d-flex flex-column align-items-center gap-3">
                       <h1 className="fs-3 text-white text-center">Get in touch with us !</h1>

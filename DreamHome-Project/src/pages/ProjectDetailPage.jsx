@@ -23,7 +23,7 @@ function ProjectDetailPage(){
     } 
     useEffect(() => { window.scrollTo(0, 0);}, []);
     return(
-         <div className="overflow-hidden transparent-section mb-5">
+         <div className="overflow-hidden transparent-section">
          <ProjectHeroSection heroSection={currentProjectData.hero}></ProjectHeroSection>
          {/* Monthly Payment */}
           <div className="background-color-primary">

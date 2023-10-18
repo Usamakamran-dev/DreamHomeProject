@@ -147,11 +147,15 @@ body {
     justify-content: center;
     animation: spinner 1.5s linear infinite;
   }
-
   .fs-heroSection{
-    font-size: 4rem;
-  }
-
+    font-size: 4rem;}
+    .fixed-form{
+     position: fixed;
+     top: -40.35%;
+    }
+    .fixed-size-column{
+      width: 22rem;
+    }
   /* ...................Media query */
 @media (max-width: 768px) {
   .project-button-width {width: 9rem !important; }
@@ -174,6 +178,12 @@ body {
     }
     .fs-heroSection{
       font-size: 3rem;
+    }
+    .fixed-form{
+      position: sticky;
+     }
+     .fixed-size-column{
+      width: 100%;
     }
   }
 

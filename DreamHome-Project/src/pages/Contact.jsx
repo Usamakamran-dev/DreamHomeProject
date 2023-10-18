@@ -3,9 +3,17 @@ import contactImage from './../assets/Images/contact.png';
 import flagIcon from './../assets/Icons/Pakistan.svg';
 import dropdown from './../assets/Icons/Dropdown black.svg';
 import { CountryDataContext } from '../context/CountryDataProvider';
+import EnquiryTop from '../components/EnquiryTop';
+import EnquiryForm from "../forms/EnquiryForm";
+import Footer from "../components/Footer";
+import useShowFooter from "../context/useShowFooter";
 
 function Contact(){
   const [dropdownOpen, setDropDownOpen] = useState(false);
+  const showFooter=useShowFooter();
+  const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+  const enquiryFormHandler = () => { setShowEnquiryForm(true) }
+  const cancelEnquiryForm = () => { setShowEnquiryForm(false) }
   const toggleDropdown = () => {setDropDownOpen(!dropdownOpen)};
   const countryData=useContext(CountryDataContext);
   if(!countryData) return 
@@ -73,6 +81,9 @@ function Contact(){
                 <img src={contactImage} alt="Contact-Us-Image" className="w-100 h-100 py-5 image-fluid rounded"/>
                </div>  
               </div>
+              {showFooter && <Footer show={showFooter} />}
+              {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
+              <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
               </div>
               )}
     export default Contact;

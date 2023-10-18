@@ -125,7 +125,6 @@ function MainPage() {
                  className="moving-button bg-white fs-6 bg-light border-0 fw-medium font-color-light">See more</button>
                  </div>
              </div>
-           
               {showFooter && <Footer show={showFooter} />}
               {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
              <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
