@@ -5,7 +5,7 @@ import BlogCard from "../components/BlogCard";
 import Footer from "../components/Footer";
 import useShowFooter from "../context/useShowFooter";
 import { useNavigate } from "react-router-dom";
-import EnquiryIcon from '../components/EnquiryIcon';
+import EnquiryTop from '../components/EnquiryTop';
 import EnquiryForm from "../forms/EnquiryForm";
 
 function BlogPage(){
@@ -41,7 +41,7 @@ function BlogPage(){
         </div>
         {showFooter && <Footer show={showFooter} />}
         {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
-        <EnquiryIcon onClick={enquiryFormHandler}></EnquiryIcon>
+        <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
         </div>
     )
 }

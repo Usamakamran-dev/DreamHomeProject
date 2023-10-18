@@ -7,7 +7,7 @@ import facebookIcon from './../assets/social media/facebook.png';
 import whatsappIcon from './../assets/social media/whatsapp.png';
 import linkedinIcon from './../assets/social media/linkedin.png';
 import twitterIcon from './../assets/social media/twitter.png';
-import EnquiryIcon from '../components/EnquiryIcon';
+import EnquiryTop from '../components/EnquiryTop';
 import EnquiryForm from "../forms/EnquiryForm";
 
 function BlogDetailPage(){
@@ -55,10 +55,18 @@ function BlogDetailPage(){
                     <div className="d-flex flex-column align-items-center gap-3 py-5">
                      <label className="fs-4 fw-semibold font-color-primary m-0">Share Now</label>
                      <div className="d-flex flex-row align-items-center gap-3">
-                       <img style={{backgroundColor: "#3b5998"}} width="125" className="px-5  py-2 h-auto" src={facebookIcon} alt="facebook-icon" />
-                       <img style={{backgroundColor: "#25D366"}} width="125" className="px-5  py-2 h-auto" src={whatsappIcon} alt="whatsapp-icon" />
-                       <img style={{backgroundColor: "#0A66C2"}} width="125" className="px-5  py-2 h-auto" src={linkedinIcon} alt="linkedin-icon" />
-                       <img style={{backgroundColor: "#00a2ed"}} width="125" className="px-5  py-2 h-auto" src={twitterIcon} alt="twitter-icon" />
+                      <div  style={{backgroundColor: "#3b5998"}} className="rounded-circle p-2 card-hover" >
+                      <img width="50" className="h-auto p-2" src={facebookIcon} alt="facebook-icon" />
+                      </div>
+                      <div style={{backgroundColor: "#25D366"}} className="rounded-circle p-2 card-hover" >
+                      <img width="50" className="h-auto p-2" src={whatsappIcon} alt="facebook-icon" />
+                      </div>
+                      <div  style={{backgroundColor: "#0A66C2"}} className="rounded-circle p-2 card-hover" >
+                      <img width="50" className="h-auto p-2" src={twitterIcon} alt="facebook-icon" />
+                      </div>
+                      <div  style={{backgroundColor: "#00a2ed"}} className="rounded-circle p-2 card-hover" >
+                      <img width="50" className="h-auto p-2" src={linkedinIcon} alt="facebook-icon" />
+                      </div>
                      </div>
                     </div>
                     </div>
@@ -67,6 +75,6 @@ function BlogDetailPage(){
                   </div>
                   { showFooter && <Footer show={showFooter} />}
                   {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
-                  <EnquiryIcon onClick={enquiryFormHandler}></EnquiryIcon>
+                  <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
                 </div> )}
                 export default BlogDetailPage;

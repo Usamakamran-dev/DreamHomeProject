@@ -10,7 +10,7 @@ import Feature from "../components/Feature";
 import AmenitiesCard from "../components/AmenitiesCard";
 import EnquiryForm from "../forms/EnquiryForm";
 import LoadingSpinner from "../components/LoadingSpinner";
-import EnquiryIcon from '../components/EnquiryIcon';
+import EnquiryTop from '../components/EnquiryTop';
 
 function ProjectDetailPage(){
     const showFooter=useShowFooter();
@@ -41,7 +41,7 @@ function ProjectDetailPage(){
               </label>
               </div>
            </div>
-           <EnquiryIcon onClick={enquiryFormHandler}></EnquiryIcon>
+           <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
         </div>
         {/* About Us */}
         <div className='bg-white'>

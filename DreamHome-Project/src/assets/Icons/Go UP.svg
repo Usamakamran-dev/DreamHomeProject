@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #FFFFFF;
+        stroke-linecap: round;
+        stroke-width: 12px;
+      }
+
+      .cls-2 {
+        fill: #17234C;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="Group_13" data-name="Group 13">
+      <g id="Group_28" data-name="Group 28">
+        <circle id="Ellipse_2" data-name="Ellipse 2" class="cls-2" cx="75" cy="75" r="75"/>
+        <g id="Right_Arrow" data-name="Right Arrow">
+          <g id="Group_5" data-name="Group 5">
+            <line id="Line_1" data-name="Line 1" class="cls-1" x1="75" y1="103" x2="75" y2="47"/>
+            <line id="Line_2" data-name="Line 2" class="cls-1" x1="56" y1="66" x2="75" y2="47"/>
+            <line id="Line_3" data-name="Line 3" class="cls-1" x1="75" y1="47" x2="94" y2="66"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

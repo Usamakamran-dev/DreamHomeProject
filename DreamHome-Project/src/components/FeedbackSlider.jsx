@@ -66,8 +66,8 @@ const FeedbackSlider = () => {
   }
 
   return (
-    <div className="feedback-slider container py-5">
-      <button onClick={handlePrev}>&#8592;</button>
+    <div className="feedback-slider container">
+      <button onClick={handlePrev} className='card-hover'>&#8592;</button>
       {visibleCards.map((card, index) => (
         <FeedbackCard
           key={index}
@@ -80,7 +80,7 @@ const FeedbackSlider = () => {
           extraDescription={index === 1 ? card.extraDescription : ''}
         />
       ))}
-      <button onClick={handleNext}>&#8594;</button>
+      <button onClick={handleNext} className='card-hover'>&#8594;</button>
       <style>
         {`
           .feedback-slider {

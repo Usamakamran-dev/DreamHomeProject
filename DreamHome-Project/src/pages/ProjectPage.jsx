@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import useShowFooter from "../context/useShowFooter";
 import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "../components/LoadingSpinner";
-import EnquiryIcon from '../components/EnquiryIcon';
+import EnquiryTop from '../components/EnquiryTop';
 import EnquiryForm from "../forms/EnquiryForm";
 
 function ProjectPage(){
@@ -49,7 +49,7 @@ function ProjectPage(){
                   </div>
                   {showFooter && <Footer show={showFooter} />}
                   {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
-                  <EnquiryIcon onClick={enquiryFormHandler}></EnquiryIcon>
+                  <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
                </div>
                  )}
            export default ProjectPage;

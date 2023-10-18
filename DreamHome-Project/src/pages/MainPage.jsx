@@ -17,7 +17,7 @@ import partnerLogo5 from "./../assets/PartnerLogos/Rotana.svg";
 import partnerLogo6 from "./../assets/PartnerLogos/zuhairmurad.svg";
 import partnerLogo7 from "./../assets/PartnerLogos/Trump.svg";
 import aboutUsImage from './../assets/Images/Project Image.jpg';
-import EnquiryIcon from '../components/EnquiryIcon';
+import EnquiryTop from '../components/EnquiryTop';
 import FeedbackSlider from '../components/FeedbackSlider';
 import EnquiryForm from '../forms/EnquiryForm';
 
@@ -56,14 +56,12 @@ function MainPage() {
                     <div className='d-flex flex-row gap-4'>
                     <button  onClick={enquiryFormHandler} style={{width: '12rem'}} 
                     className='background-color-primary button-hover-primary py-3 rounded fs-para fw-semibold text-white'>ENQUIRE NOW</button>
-                    <button style={{width: '12rem'}} className='background-color-secondary button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>DOWNLOAD BROCHURE</button>
+                    <button style={{width: '12rem'}} className='background-color-secondary button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>COMPANY PROFILE</button>
                     </div>
                  </div>
                  <div className="col-md-6 p-0 py-5 px-md-5 m-0 rounded">
                  <img src={aboutUsImage} alt="AboutUs-Image"className="h-100 w-100 img-fluid p-0 m-0 rounded"/>
                  </div>
-                 {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
-                 <EnquiryIcon onClick={enquiryFormHandler}></EnquiryIcon>
                </div>
               </div>             
                <div className="bg-light container-fluid d-flex flex-column align-items-center gap-4 p-2 p-md-5">
@@ -86,6 +84,13 @@ function MainPage() {
                </div>
               {/*Transparent Section*/}
               <div style={{width: '100%',height: "30rem"}}></div>
+                {/*Testimonial Section*/}
+             <div className='bg-white'>
+               <div className='w-100 d-flex flex-column align-items-center gap-3 py-5'>
+               <h1 className="font-color-primary fw-bold fs-1">WHAT OUR <span className='font-color-secondary'>CLIENT SAYS</span></h1>
+               <FeedbackSlider></FeedbackSlider>
+               </div>
+             </div>
               {/* Partner Section*/}
               <div className='bg-white py-5'>
                 <div className="contact-page-width mx-auto d-flex flex-column align-items-center py-2 py-md-5 gap-5">
@@ -120,12 +125,10 @@ function MainPage() {
                  className="moving-button bg-white fs-6 bg-light border-0 fw-medium font-color-light">See more</button>
                  </div>
              </div>
-             {/*Testimonial Section*/}
-             <div className='bg-white'>
-               <div className='w-100 d-flex flex-column align-items-center gap-3 py-5'>
-               <h1 className="font-color-primary fw-bold fs-1">WHAT OUR <span className='font-color-secondary'>CLIENT SAYS</span></h1>
-               <FeedbackSlider></FeedbackSlider>
-               </div>
-             </div>
-              {showFooter && <Footer show={showFooter} />}</div>)}
+           
+              {showFooter && <Footer show={showFooter} />}
+              {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
+             <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
+              </div>)}
+            
               export default MainPage;
