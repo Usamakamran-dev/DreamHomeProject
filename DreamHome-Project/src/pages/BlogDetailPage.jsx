@@ -23,7 +23,7 @@ function BlogDetailPage(){
         <div className="container mb-5">
          <div className="row">
           {/*Main Blog Data  */}
-          <div className="col-8 shadow-sm mt-3 px-4 py-4 d-flex flex-column gap-4">
+          <div className="col-md-8 shadow-sm mt-3 px-4 py-4 d-flex flex-column gap-4">
             <div className='d-flex flex-column align-items-start gap-3'>
             <h1 className="fs-2 fw-bold font-color-primary m-0">{currentBlogData.BlogHeading}</h1>
             <p className="font-color-secondary fw-medium m-0">Published on 8 MARCH 2023</p>
@@ -53,25 +53,61 @@ function BlogDetailPage(){
                     dictum vitae erat. Quisque feugiat ante tortor, ac sodales arcu vestibulum a. Pellentesque
                         suscipit molestie ipsum ut malesuada.</p>
                     <div className="d-flex flex-column align-items-center gap-3 py-5">
-                     <label className="fs-4 fw-semibold font-color-primary m-0">Share Now</label>
+                     <label className="fs-5 fw-semibold font-color-primary m-0">Share Now</label>
                      <div className="d-flex flex-row align-items-center gap-3">
                       <div  style={{backgroundColor: "#3b5998"}} className="rounded-circle p-2 card-hover" >
                       <img width="50" className="h-auto p-2" src={facebookIcon} alt="facebook-icon" />
                       </div>
                       <div style={{backgroundColor: "#25D366"}} className="rounded-circle p-2 card-hover" >
-                      <img width="50" className="h-auto p-2" src={whatsappIcon} alt="facebook-icon" />
+                      <img width="50" className="h-auto p-2" src={whatsappIcon} alt="whatsapp-icon" />
                       </div>
                       <div  style={{backgroundColor: "#0A66C2"}} className="rounded-circle p-2 card-hover" >
-                      <img width="50" className="h-auto p-2" src={twitterIcon} alt="facebook-icon" />
+                      <img width="50" className="h-auto p-2" src={twitterIcon} alt="whatsapp-icon" />
                       </div>
                       <div  style={{backgroundColor: "#00a2ed"}} className="rounded-circle p-2 card-hover" >
-                      <img width="50" className="h-auto p-2" src={linkedinIcon} alt="facebook-icon" />
+                      <img width="50" className="h-auto p-2" src={linkedinIcon} alt="whatsapp-icon" />
                       </div>
                      </div>
                     </div>
                     </div>
                     {/* for ads */}
-                    <div className="col-3"></div>
+                    <div className="col-md-4 my-3">
+                      <div className="d-flex flex-column gap-4 bg-light rounded p-3">
+                      {/* Emquiry Form */}
+                      <form className="background-color-primary rounded p-3 w-100 d-flex flex-column align-items-center gap-3">
+                      <h1 className="fs-3 text-white text-center">Get in touch with us !</h1>
+                      <input type="text" name="FirstName" placeholder='Enter First Name' 
+                       className='border-0 fw-medium rounded input-field-style p-3 w-100'/>
+                      <input type="text"  name="LastName" placeholder='Enter Last Name' 
+                       className='border-0 fw-medium rounded input-field-style p-3 w-100'/>
+                       <input type="email"  name="Email" placeholder='Enter Email' 
+                       className='border-0 fw-medium rounded input-field-style p-3 w-100'/>
+                       <div className="d-flex flex-column align-items-center gap-3 w-100">
+                       <button 
+                      className="button-hover-secondary py-3 w-100 fs-para fw-bold text-white background-color-secondary border-0 rounded">ENQUIRE NOW</button>
+                      <label className="fs-para fw-medium text-white">OR</label>
+                      <button style={{backgroundColor: "#25D366"}} 
+                      className="button-hover-light py-3 w-100 fs-para fw-bold text-white border-0 rounded">WHATSAPP NOW</button>
+                       </div>
+                       </form>
+                       {/* Newsletter Form */}
+                       <div style={{backgroundColor: "#25D366"}}
+                       className="rounded d-flex flex-column p-3 bg-warning" >
+                        <img src="" alt="" />
+                        <h1 className="fs-3 text-center fw-bold">NEWSLETTER</h1>
+                        <p className="fs-6  text-center fw-medium">Subscribe For Daily Blog Alert!</p>
+                        <form className="d-flex flex-column align-items-center gap-3 w-100">
+                        <input type="text" name="Name" placeholder='Enter Name' 
+                       className='border-0 fw-medium rounded input-field-style p-3 w-100'/>
+                       <input type="email"  name="Email" placeholder='Enter Email' 
+                       className='border-0 fw-medium rounded input-field-style p-3 w-100'/>
+                       <button
+                      className="button-hover-light py-3 w-100 text-white bg-dark fs-para fw-bold border-0 rounded">SUBSCRIBE NOW</button>
+                        </form>
+                       </div>
+                      </div>
+                    </div>
+                   
                   </div>
                   { showFooter && <Footer show={showFooter} />}
                   {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
