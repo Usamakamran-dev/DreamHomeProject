@@ -1,4 +1,4 @@
-import { useState , useContext } from 'react';
+import { useState , useContext , useEffect } from 'react';
 import contactImage from './../assets/Images/contact.png';
 import flagIcon from './../assets/Icons/Pakistan.svg';
 import dropdown from './../assets/Icons/Dropdown black.svg';
@@ -34,9 +34,9 @@ function Contact(){
       setSelectedCountry(arr);
       setDropDownOpen(!dropdownOpen)
     }
-
+    useEffect(() => { window.scrollTo(0, 0);}, []);
     return(
-        <div className='mb-5 contact-page-width mx-auto my-5'>
+        <div className='contact-page-width mx-auto my-5 py-5'>
              <div className="row row-cols-1 row-cols-md-2">
               {/* Contact Form */}
               <div className='d-flex flex-column align-items-center align-items-md-start gap-3 gap-md-5 order-2 order-md-1'>

@@ -7,6 +7,7 @@ import ProjectPage from "../pages/ProjectPage";
 import BlogPage from "../pages/BlogPage";
 import Login from "../pages/Login";
 import { createBrowserRouter } from "react-router-dom";
+import VideoGallery from "../pages/VideoGallery";
 
 export const router=createBrowserRouter([
     {path:"/login", element: <Login/>},
@@ -17,7 +18,9 @@ export const router=createBrowserRouter([
         {path:"/blogs",element: <BlogPage/>},
         {path:"/project/:projectId", element: <ProjectDetailPage/>},
         {path:"/blog/:blogId", element: <BlogDetailPage/>},
-        {path:"/contact", element: <Contact/>}
+        {path:"/contact", element: <Contact/>},
+        {path:"/videogallery", element: <VideoGallery/>}
+
      ]},
      {path:"*", element: <p className="fs-1 fw-bold text-center p-5 text-danger">THERE IS AN UNKNOWN ERROR</p>}
 ])

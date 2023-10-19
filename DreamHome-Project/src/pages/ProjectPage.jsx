@@ -28,7 +28,7 @@ function ProjectPage(){
 
 
     return(
-        <div className="px-2 px-md-5 py-5 d-flex flex-column align-items-center gap-5 mb-5">
+        <div className="px-2 px-md-5 py-5 d-flex flex-column align-items-center gap-5">
           <div className="d-flex flex-column align-items-center">
           <h1 className="font-color-primary fw-bold fs-1">OUR <span className="font-color-secondary">PROJECTS</span></h1>
           <p className="font-color-light fw-medium px-5 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nisi quis urna imperdiet vehicula. 

@@ -1,5 +1,5 @@
 import './Custom.css';
-import { useContext , useState } from "react";
+import { useContext , useState , useEffect } from "react";
 import { ProjectCardContext } from "../context/ProjectCardProvider";
 import { BlogContext } from "../context/BlogProvider";
 import { CurrentDataContext } from "../context/CurrentDataProvider";
@@ -20,12 +20,18 @@ import aboutUsImage from './../assets/Images/Project Image.jpg';
 import EnquiryTop from '../components/EnquiryTop';
 import FeedbackSlider from '../components/FeedbackSlider';
 import EnquiryForm from '../forms/EnquiryForm';
+import CompanyProfile from '../forms/CompanyProfile';
 
 function MainPage() {
     const navigate=useNavigate();
     const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+    const [showCompanyForm, setShowCompanyForm] = useState(false);
     const enquiryFormHandler = () => { setShowEnquiryForm(true) }
-    const cancelEnquiryForm = () => { setShowEnquiryForm(false) }
+    const companyFormHandler = () => { setShowCompanyForm(true) }
+    const cancelEnquiryForm = () => { 
+      setShowEnquiryForm(false);
+      setShowCompanyForm(false);
+     }
     const ProjectCardDetails = useContext(ProjectCardContext);
     const { setCurrentProjectData, setCurrentBlogData } = useContext(CurrentDataContext);
     const BlogDetails = useContext(BlogContext);
@@ -39,9 +45,9 @@ function MainPage() {
     function currentBlogHandler(currentBlogData,id){
       setCurrentBlogData(currentBlogData);
       navigate(`/blog/:blog${id}`);}
-
+    useEffect(() => { window.scrollTo(0, 0);}, []);
         return(
-          <div className="overflow-hidden mb-5 transparent-section">
+          <div className="overflow-hidden transparent-section">
               <HeroSection></HeroSection>
               <div className='bg-white'>
                 <div className="row py-5 container mx-auto">
@@ -56,7 +62,8 @@ function MainPage() {
                     <div className='d-flex flex-row gap-4'>
                     <button  onClick={enquiryFormHandler} style={{width: '12rem'}} 
                     className='background-color-primary button-hover-primary py-3 rounded fs-para fw-semibold text-white'>ENQUIRE NOW</button>
-                    <button style={{width: '12rem'}} className='background-color-secondary button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>COMPANY PROFILE</button>
+                    <button onClick={companyFormHandler}
+                    style={{width: '12rem'}} className='background-color-secondary button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>COMPANY PROFILE</button>
                     </div>
                  </div>
                  <div className="col-md-6 p-0 py-5 px-md-5 m-0 rounded">
@@ -66,7 +73,7 @@ function MainPage() {
               </div>             
                <div className="bg-light container-fluid d-flex flex-column align-items-center gap-4 p-2 p-md-5">
                  <h1 className="font-color-primary fw-bold fs-1">OUR <span 
-                 className="font-color-secondary fw-bold fs-1">PROJECTS</span></h1>
+                 className="font-color-secondary">PROJECTS</span></h1>
                  <div className="row row-cols-1 row-cols-md-3 gy-5 px-2 px-md-5">
                       {ProjectCardDetails.slice(0, 3).map((array, index) => (
                       <div className="col" key={index}>
@@ -126,6 +133,7 @@ function MainPage() {
                  </div>
              </div>
               {showFooter && <Footer show={showFooter} />}
+              {showCompanyForm && <CompanyProfile  onCancel={cancelEnquiryForm}/>}
               {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
              <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
               </div>)}

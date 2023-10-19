@@ -5,6 +5,7 @@ import whatsapp from './../assets/Icons/whatsapp.svg';
 import EnquiryForm from '../forms/EnquiryForm';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Footer({show}) {
   const navigate=useNavigate();
@@ -24,13 +25,13 @@ function Footer({show}) {
             <img src={phone} alt="Footer-Icon" className='w-auto call-icon'/>
             <label className="fw-semibold font-color-primary fs-para">CALL</label>
           </div>
-          <a href="https://web.whatsapp.com" className="text-decoration-none">
+            <Link to="https://web.whatsapp.com" target="_blank" className='text-decoration-none'>
             <div className="d-flex flex-column align-items-center gap-2">
               <img src={whatsapp} alt="Footer-Icon" className='w-auto whatsapp-icon'/>
               <label className="fw-semibold font-color-primary fs-para">WHATSAPP</label>
             </div>
-          </a>
-          <div onClick={()=> navigate("/contact")} className="d-flex flex-column align-items-center gap-2">
+            </Link>
+            <div onClick={()=> navigate("/contact")} className="d-flex flex-column align-items-center gap-2">
             <img src={contact} alt="Footer-Icon" className='w-auto contact-icon'/>
             <label className="fw-semibold font-color-primary fs-para">CONTACT</label>
           </div>

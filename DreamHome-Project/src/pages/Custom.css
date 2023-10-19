@@ -156,6 +156,12 @@ body {
     .fixed-size-column{
       width: 22rem;
     }
+
+    .youtube-video-container {
+      position: relative;
+      overflow: hidden;
+    }
+    
   /* ...................Media query */
 @media (max-width: 768px) {
   .project-button-width {width: 9rem !important; }

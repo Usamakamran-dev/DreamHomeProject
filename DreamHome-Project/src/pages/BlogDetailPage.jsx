@@ -38,7 +38,7 @@ function BlogDetailPage(){
   const cancelEnquiryForm = () => { setShowEnquiryForm(false) }
   
     return(
-        <div className="container mb-5">
+        <div className="container">
          <div className="row">
           {/*Main Blog Data  */}
           <div className="col-md-8 shadow-sm mt-3 px-4 py-4 d-flex flex-column gap-4">
