@@ -34,7 +34,7 @@ const FeedbackCard = ({ title,image,isActive, isLowOpacity, isBigger, isSmaller,
          <div className='p-0 m-0'>
           <img src={image} alt="profile-Image" className="img-fluid p-0 m-0 circle-image"/>
           </div>
-          <h1 className='m-0 fs-2 fw-bold font-color-primary'>{title}</h1>
+          <h1 className='m-0 fs-2 fw-bold text-center font-color-primary'>{title}</h1>
           <div className='d-flex flex-row align-items-center m-0'>
             <img src={starIcon} alt="review-Icon" width="22" height='auto' />
             <img src={starIcon} alt="review-Icon" width="22" height='auto' />
@@ -117,6 +117,16 @@ const FeedbackSlider = () => {
             border: none;
             font-size: 3rem;
             cursor: pointer;
+          }
+
+          @media (max-width: 767px) {
+            .feedback-card {
+              display: none;
+            }
+
+            .feedback-card.active {
+              display: block;
+            }
           }
         `}
       </style>

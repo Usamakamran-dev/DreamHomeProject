@@ -1,9 +1,8 @@
-import React, { useState, useEffect, createContext , useContext} from "react";
-import { PhoneLengthContext } from "./PhoneLengthProvider";
+import React, { useState, useEffect, createContext } from "react";
+import phoneData from "../data/phoneData";
 export const CountryDataContext=createContext();
 
 function CountryDataProvider(props){
-  const phoneLengthData=useContext(PhoneLengthContext);
   const [countryData,setCountryData]=useState();
   useEffect(() => {
     const fetchCountriesData = async () => {
@@ -15,7 +14,7 @@ function CountryDataProvider(props){
            const data = await response.json();
            // Update each country data with the phone length
            const updatedCountryData = data.map(country => {
-           const phoneLengthInfo = phoneLengthData.find(item => item.code === country.cca2);
+           const phoneLengthInfo = phoneData.find(item => item.code === country.cca2);
            const phoneLength = phoneLengthInfo ? phoneLengthInfo.phoneLength : null;
            // Add the phoneLength field to the country data
            return { ...country, phoneLength };
@@ -25,13 +24,11 @@ function CountryDataProvider(props){
            console.error("Error fetching data:", error);
            }};
             fetchCountriesData();
-           }, [phoneLengthData]);
+           }, [phoneData]);
 
         return (
         <CountryDataContext.Provider value={countryData}>
             {props.children}
         </CountryDataContext.Provider>
-    )
-}
-
-export default CountryDataProvider;
+    )}
+    export default CountryDataProvider;

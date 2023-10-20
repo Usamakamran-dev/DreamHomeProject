@@ -40,7 +40,7 @@ function Contact(){
              <div className="row row-cols-1 row-cols-md-2">
               {/* Contact Form */}
               <div className='d-flex flex-column align-items-center align-items-md-start gap-3 gap-md-5 order-2 order-md-1'>
-                <div className='d-flex flex-column align-items-center align-items-md-start gap-2'>
+                <div className='d-flex flex-column align-items-center align-items-md-start'>
                 <h1 className='fs-1 fw-bold font-color-primary m-0'>CONTACT US</h1>
                  <p className='fw-medium font-color-secondary m-0'>All fields are required*</p>
                 </div>
@@ -74,11 +74,11 @@ function Contact(){
                </div>
                  )}
                 </div>
-                <button className="py-3 mt-4 button-hover-primary project-button-width fs-para fw-bold text-white background-color-primary border-0 rounded">ENQUIRE NOW</button>
+                <button className="py-3 mt-4 w-100 button-hover-primary fs-para fw-bold text-white background-color-primary border-0 rounded">ENQUIRE NOW</button>
                 </form>
                </div>
                <div className="m-0 rounded order-1 order-md-2">
-                <img src={contactImage} alt="Contact-Us-Image" className="w-100 h-100 py-5 image-fluid rounded"/>
+                <img src={contactImage} alt="Contact-Us-Image" className="w-100 h-100 py-3 py-md-5 image-fluid rounded"/>
                </div>  
               </div>
               {showFooter && <Footer show={showFooter} />}

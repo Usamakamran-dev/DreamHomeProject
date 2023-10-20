@@ -1,4 +1,3 @@
-
 import React,{ useState } from "react";
 export const CurrentDataContext=React.createContext();
 
@@ -15,7 +14,5 @@ function CurrentDataProvider(props){
         <CurrentDataContext.Provider value={value}>
         {props.children}
         </CurrentDataContext.Provider>
-        )
-        }
-
+        )}
       export default CurrentDataProvider; 

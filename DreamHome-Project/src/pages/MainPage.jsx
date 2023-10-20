@@ -51,19 +51,18 @@ function MainPage() {
               <HeroSection></HeroSection>
               <div className='bg-white'>
                 <div className="row py-5 container mx-auto">
-                 <div className="col-md-6 py-5 d-flex flex-column gap-4 align-items-center justify-content-center align-items-md-start">
-                    <h2 className="fs-1 fw-bold mb-4 font-color-primary text-start text-md-start">
+                 <div className="col-md-6 py-2 py-md-5 d-flex flex-column gap-4 align-items-center justify-content-center align-items-md-start">
+                    <h2 className="fs-1 fw-bold mb-0 mb-md-4 font-color-primary text-start text-md-start">
                     ABOUT <span className='font-color-secondary'>US</span></h2>
-                    <p className="font-color-light text-start fw-medium">
+                    <p className="font-color-light text-center text-md-start fw-regular">
                     SAMANA Manhattan - an exceptional residential development that sets a new standard for contemporary living.
                     This innovative project by SAMANA Developers, located in Jumeirah Village Circle (JVC), is designed to provide residents with an unparalleled lifestyle; blended with luxurious amenities, stunning designs, and a prime location.  SAMANA Manhattan - an exceptional residential development that sets a new standard for contemporary living.
                     This innovative project by SAMANA Developers
                     </p> 
-                    <div className='d-flex flex-row gap-4'>
+                    <div className='d-flex flex-column gap-2 gap-md-4 flex-md-row'>
                     <button  onClick={enquiryFormHandler} style={{width: '12rem'}} 
-                    className='background-color-primary button-hover-primary py-3 rounded fs-para fw-semibold text-white'>ENQUIRE NOW</button>
-                    <button onClick={companyFormHandler}
-                    style={{width: '12rem'}} className='background-color-secondary button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>COMPANY PROFILE</button>
+                    className='background-color-primary border-0 button-hover-primary py-3 rounded fs-para fw-semibold text-white'>ENQUIRE NOW</button>
+                    <button onClick={companyFormHandler} style={{width: '12rem'}} className='background-color-secondary border-0 button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>COMPANY PROFILE</button>
                     </div>
                  </div>
                  <div className="col-md-6 p-0 py-5 px-md-5 m-0 rounded">
@@ -71,7 +70,7 @@ function MainPage() {
                  </div>
                </div>
               </div>             
-               <div className="bg-light container-fluid d-flex flex-column align-items-center gap-4 p-2 p-md-5">
+               <div className="bg-light container-fluid d-flex flex-column align-items-center gap-4 py-5 py-md-3 px-2 px-md-5">
                  <h1 className="font-color-primary fw-bold fs-1">OUR <span 
                  className="font-color-secondary">PROJECTS</span></h1>
                  <div className="row row-cols-1 row-cols-md-3 gy-5 px-2 px-md-5">
@@ -87,14 +86,14 @@ function MainPage() {
                       </div>))}
                  </div>
                  <button onClick={()=> navigate("/projects")}
-                 className="moving-button bg-light fs-6 bg-light border-0 fw-medium font-color-light">See more</button>
+                 className="moving-button bg-light fs-6 bg-light border-0 fw-regular font-color-light">See more</button>
                </div>
               {/*Transparent Section*/}
               <div style={{width: '100%',height: "30rem"}}></div>
                 {/*Testimonial Section*/}
              <div className='bg-white'>
                <div className='w-100 d-flex flex-column align-items-center gap-3 py-5'>
-               <h1 className="font-color-primary fw-bold fs-1">WHAT OUR <span className='font-color-secondary'>CLIENT SAYS</span></h1>
+               <h1 className="font-color-primary text-center fw-bold fs-1">WHAT OUR <span className='font-color-secondary'>CLIENT SAYS</span></h1>
                <FeedbackSlider></FeedbackSlider>
                </div>
              </div>
@@ -102,12 +101,12 @@ function MainPage() {
               <div className='bg-white py-5'>
                 <div className="contact-page-width mx-auto d-flex flex-column align-items-center py-2 py-md-5 gap-5">
                    <div className='d-flex flex-column align-items-center'>
-                    <h1 className="font-color-primary fw-bold fs-1">OUR <span className="font-color-secondary fw-bold fs-1">TRUSTED PARTNERS</span></h1>
-                    <p  className="font-color-light fw-medium px-5 text-center">We collaborate with a diverse network of 
+                    <h1 className="font-color-primary text-center fw-bold fs-1">OUR <span className="font-color-secondary fw-bold fs-1">TRUSTED PARTNERS</span></h1>
+                    <p  className="font-color-light fw-regular px-0 px-md-5 text-center">We collaborate with a diverse network of 
                     industry leaders and innovators to bring you the best solutions 
                     and services,ensuring your success every step of the way.</p>
                    </div>
-                   <div className="row row-cols-2 row-cols-md-4 g-5 justify-content-center px-2 py-2 py-md-4 px-md-5">
+                   <div className="row row-cols-2 row-cols-md-4 g-4 justify-content-center px-0 py-0 py-md-4 px-md-5">
                      {partnerImages.map((arr, index) => (
                       <div className="col" key={index}>
                       <img src={arr} alt="partner-logo" 
@@ -129,7 +128,7 @@ function MainPage() {
                     </div>))}
                  </div>
                  <button onClick={()=> navigate("/blogs") }
-                 className="moving-button bg-white fs-6 bg-light border-0 fw-medium font-color-light">See more</button>
+                 className="moving-button bg-white fs-6 bg-light border-0 fw-regular font-color-light">See more</button>
                  </div>
              </div>
               {showFooter && <Footer show={showFooter} />}

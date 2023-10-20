@@ -11,7 +11,7 @@ function CompanyProfile(props){
 
     return(
         <div style={{zIndex: '1000000'}} className="light-black-bg fixed-top start-0 bottom-0 end-0 position-fixed d-flex align-items-center justify-content-center w-100 h-100">
-            <div className="bg-white p-5 rounded d-flex flex-column gap-3">
+            <div className="bg-white p-3 p-md-5 rounded d-flex flex-column gap-3">
                 <div className="d-flex flex-row align-items-start justify-content-between gap-5">
                   <div className="d-flex flex-column align-items-start gap-2">
                 <h1 className="fs-2 fw-bold font-color-primary m-0">Get in <span className="font-color-secondary">touch with us</span></h1>

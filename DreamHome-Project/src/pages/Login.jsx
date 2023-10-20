@@ -3,7 +3,7 @@ import loginImage from "./../assets/Images/login.jpg"
 
 function Login(){
     return(
-         <div className="row overflow-hidden m-0 py-4 px-0 gap-5">
+         <div className="row overflow-hidden m-0 px-0 gap-5">
             <div className="col-12 col-md-4 d-flex flex-column justify-content-center gap-5 px-3 px-md-5">
                <div className='d-flex flex-column align-items-center align-items-md-start gap-2'>
                 <img src={logo} alt="realtor9-logo" width='120' height='auto' />
@@ -21,7 +21,7 @@ function Login(){
              <button className="button-hover-light py-3 fs-para w-100 fw-bold font-color-light border-0 rounded">SIGN UP</button>
              </div>            
              </div>
-             <div className="col-12 col-md-7 m-0 p-3">             
+             <div className="col-12 col-md-7 m-0 p-5">             
              <img src={loginImage} alt="login-image"  
              className="image-fluid h-100 w-100 m-0 p-0 rounded d-none d-md-block" />
             </div>

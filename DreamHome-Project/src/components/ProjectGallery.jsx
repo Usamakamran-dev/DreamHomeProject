@@ -43,13 +43,13 @@ function ProjectGallery(props) {
         src={backArrow}
         alt="Back"
         onClick={handlePreviousBtn}
-        className="shadow position-absolute bg-light rounded-circle p-4 top-50  translate-middle-y cursor-pointer h-auto"
+        className="shadow position-absolute bg-light rounded-circle p-4 p-md-4 top-50  translate-middle-y cursor-pointer h-auto"
       />
       <img style={{width: '4rem' , right : '-1rem' }}
         src={nextArrow}
         alt="Next"
         onClick={handleNextBtn}
-        className="shadow position-absolute bg-light rounded-circle p-4 top-50 translate-middle-y cursor-pointer  h-auto"
+        className="shadow position-absolute bg-light rounded-circle p-4 p-md-4 top-50 translate-middle-y cursor-pointer  h-auto"
       />
     </div>
     );}

@@ -2,10 +2,10 @@
 function PaymentPlan(props){
     const paymentPlan=props.paymentPlan;
     return(
-        <div className='d-flex align-items-center justify-content-center bg-white-transparent py-5'>
+        <div className='d-flex align-items-center justify-content-center bg-white-transparent p-3 p-md-5'>
             <div className="py-5 py-md-5 d-flex flex-column gap-4 gap-md-5 align-items-center">
                  <div className="d-flex flex-row align-items-center gap-2">
-                 <h1 className="fs-1 fs-md-1 fw-bold font-color-primary m-0">{paymentPlan.heading}</h1>
+                 <h1 className="fs-1 fs-md-1 fw-bold text-center font-color-primary m-0">{paymentPlan.heading}</h1>
                  </div>
               <div className="d-flex bg-white-transparent flex-column align-items-center w-100 ">
                 <h2 className="text-white background-color-primary fs-3 fs-md-3 w-100 m-0 text-center py-3 px-2 px-md-5">STARTING FROM AED 689,000*</h2>

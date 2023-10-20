@@ -49,7 +49,7 @@ function ProjectDetailPage(){
                  <div className="col-md-6 py-5 d-flex flex-column align-items-center gap-2 gap-md-5 justify-content-center align-items-md-start">
                     <h2 className="fs-1 m-0 fw-bold font-color-primary text-start text-md-start">
                     ABOUT <span className='font-color-secondary'>US</span></h2>
-                    <p className="font-color-light text-center text-md-start fw-medium">{currentProjectData.aboutUs.paragraph}</p>
+                    <p className="font-color-light text-center text-md-start fw-regular">{currentProjectData.aboutUs.paragraph}</p>
                     <div className='d-flex flex-column gap-2 gap-md-4 flex-md-row'>
                     <button  onClick={enquiryFormHandler} style={{width: '12rem'}} 
                     className='background-color-primary border-0 button-hover-primary py-3 rounded fs-para fw-semibold text-white'>ENQUIRE NOW</button>
@@ -82,7 +82,7 @@ function ProjectDetailPage(){
         <div className="bg-white">
           <div className="d-flex flex-column align-items-center gap-2 container mx-auto py-5">
             <h1 className="fs-1 m-0 fw-bold font-color-primary ">AMENITIES</h1>
-            <p className="text-center font-color-light fw-medium m-0">
+            <p className="text-center font-color-light fw-regular m-0">
             {currentProjectData.amenities.paragraph}
             </p>
             <div className="row row-cols-2 row-cols-md-4 py-2 py-md-5">

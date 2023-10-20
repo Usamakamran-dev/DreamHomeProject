@@ -5,12 +5,10 @@ import BlogProvider from './context/BlogProvider';
 import { RouterProvider } from 'react-router-dom';
 import CurrentDataProvider from './context/CurrentDataProvider';
 import CountryDataProvider from './context/CountryDataProvider';
-import PhoneLengthProvider from './context/PhoneLengthProvider';
 import router from './routes/AppRoutes';
 
 function App() {
   return (
-    <PhoneLengthProvider>
        <CountryDataProvider>
          <CurrentDataProvider>
             <BlogProvider>
@@ -20,8 +18,5 @@ function App() {
             </BlogProvider>
          </CurrentDataProvider>
         </CountryDataProvider>
-    </PhoneLengthProvider>
-  )
-}
-
-export default App;
+     )}
+     export default App;
