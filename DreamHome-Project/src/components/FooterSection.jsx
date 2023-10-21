@@ -2,7 +2,6 @@ import { useState } from "react";
 import realtorLogo from "./../assets/Icons/Realtor9-white.png";
 import { Link } from "react-router-dom";
 import EnquiryForm from "../forms/EnquiryForm";
-import CompanyProfile from "../forms/CompanyProfile";
 
 function FooterSection(){
   const [showEnquiryForm, setShowEnquiryForm] = useState(false);
@@ -16,12 +15,16 @@ function FooterSection(){
     return(
         <div className="background-color-primary py-2 py-md-5 w-100 mt-3 overflow-hidden mb-5">
           <div className="row p-3 p-md-5 g-5">
-             <div className="col d-flex flex-column align-items-start gap-4 ">
+             <div className="col d-flex flex-column align-items-start gap-3 ">
                <div className="w-100 py-0 py-md-2">
                 <img src={realtorLogo} width='130' alt="realtor9-Logo h-auto img-fluid" />
                </div>
-               <label className="fs-para fw-regular text-white m-0">231 Main Blvd, Sector J DHA Phase 6 Lahore, Punjab 54792</label>
-               <label className="fs-para fw-semibold text-white m-0">(+92) 326 0333111</label>
+               <label className="fs-para fw-regular text-white m-0">402 West Wing, Latifa Towers,Sheikh Zayed Road, Dubai</label>
+               <label className="fs-para fw-semibold text-white m-0">(+971) 56 834 3200</label>
+               <Link to="info@reator9.com" 
+               target="_blank"
+               className="fs-para fw-regular text-white">info@reator9.com 
+               </Link>
              </div>
              <div className="col d-flex flex-column align-items-start gap-2 ">
                <h1 className="fs-4 fw-bold text-white m-0 py-2">REALTOR 9</h1>
@@ -44,7 +47,7 @@ function FooterSection(){
              </div>
           </div>
           <p className="fs-para text-white mx-auto text-center fw-regular py-2 px-5">lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ratione doloribus ducimus . Lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-          {showCompanyForm && <CompanyProfile  onCancel={cancelEnquiryForm}/>}
+          {showCompanyForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
           {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
         </div>
         )}

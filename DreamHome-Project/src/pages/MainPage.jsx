@@ -20,38 +20,47 @@ import aboutUsImage from './../assets/Images/Project Image.jpg';
 import EnquiryTop from '../components/EnquiryTop';
 import FeedbackSlider from '../components/FeedbackSlider';
 import EnquiryForm from '../forms/EnquiryForm';
-import CompanyProfile from '../forms/CompanyProfile';
+import SuccessForm from '../forms/SuccessForm';
 
 function MainPage() {
     const navigate=useNavigate();
     const [showEnquiryForm, setShowEnquiryForm] = useState(false);
     const [showCompanyForm, setShowCompanyForm] = useState(false);
+    const [showSuccessForm, setShowSuccessForm] = useState(false);
     const enquiryFormHandler = () => { setShowEnquiryForm(true) }
     const companyFormHandler = () => { setShowCompanyForm(true) }
     const cancelEnquiryForm = () => { 
       setShowEnquiryForm(false);
       setShowCompanyForm(false);
+      setShowSuccessForm(false)
      }
     const ProjectCardDetails = useContext(ProjectCardContext);
-    const { setCurrentProjectData, setCurrentBlogData } = useContext(CurrentDataContext);
+    const { setCurrentProjectData, setCurrentBlogData , setCardIdentifier , cardIdentifier} = useContext(CurrentDataContext);
     const BlogDetails = useContext(BlogContext);
     const showFooter=useShowFooter();
     const partnerImages=[partnerLogo,partnerLogo2,partnerLogo3,partnerLogo4,partnerLogo5,partnerLogo6,partnerLogo7];
     // Setting the currently clicked project card
     function currentProjectHandler(currentProjectData,id){
       setCurrentProjectData(currentProjectData);
+      setCardIdentifier(currentProjectData.ProjectHeading);
       navigate(`/project/:project${id}`);}
     // Setting the currently clicked blog card
     function currentBlogHandler(currentBlogData,id){
       setCurrentBlogData(currentBlogData);
       navigate(`/blog/:blog${id}`);}
     useEffect(() => { window.scrollTo(0, 0);}, []);
+
+    function toggleFormVisibility(isVisible){
+      setShowEnquiryForm(isVisible);
+      setShowSuccessForm(true);
+    };
+
         return(
           <div className="overflow-hidden transparent-section">
               <HeroSection></HeroSection>
               <div className='bg-white'>
                 <div className="row py-5 container mx-auto">
-                 <div className="col-md-6 py-2 py-md-5 d-flex flex-column gap-4 align-items-center justify-content-center align-items-md-start">
+                 <div className="col-md-6 py-2 py-md-5 px-0 px-md-5 d-flex flex-column gap-4 align-items-center justify-content-center align-items-md-start">
                     <h2 className="fs-1 fw-bold mb-0 mb-md-4 font-color-primary text-start text-md-start">
                     ABOUT <span className='font-color-secondary'>US</span></h2>
                     <p className="font-color-light text-center text-md-start fw-regular">
@@ -65,8 +74,9 @@ function MainPage() {
                     <button onClick={companyFormHandler} style={{width: '12rem'}} className='background-color-secondary border-0 button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>COMPANY PROFILE</button>
                     </div>
                  </div>
-                 <div className="col-md-6 p-0 py-5 px-md-5 m-0 rounded">
-                 <img src={aboutUsImage} alt="AboutUs-Image"className="h-100 w-100 img-fluid p-0 m-0 rounded"/>
+                 <div className="col-md-6 py-4 m-0 rounded">
+                 <img 
+                 src={aboutUsImage} alt="AboutUs-Image"className="about-Img p-0 m-0 rounded"/>
                  </div>
                </div>
               </div>             
@@ -132,8 +142,14 @@ function MainPage() {
                  </div>
              </div>
               {showFooter && <Footer show={showFooter} />}
-              {showCompanyForm && <CompanyProfile  onCancel={cancelEnquiryForm}/>}
-              {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
+              {showCompanyForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}
+               onCancel={cancelEnquiryForm}></EnquiryForm>}
+              {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}
+               onCancel={cancelEnquiryForm}/>}
+               {showSuccessForm && (
+            <SuccessForm
+            onClick={cancelEnquiryForm}/>
+          )}
              <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
               </div>)}
             

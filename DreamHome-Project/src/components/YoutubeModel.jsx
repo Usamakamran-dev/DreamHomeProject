@@ -1,4 +1,3 @@
-import { useState } from "react";
 import cancelIcon from './../assets/Icons/cancel.svg';
 import YouTube from 'react-youtube';
 

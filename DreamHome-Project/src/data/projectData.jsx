@@ -4,13 +4,30 @@ import aboutUs from './../assets/Images/Project Image.jpg';
 import image1 from './../assets/Images/Studio_6.jpg';
 import image2 from './../assets/Images/Studio_7.jpg';
 import mail from "./../assets/Icons/enquire.svg";
+import damacImg from "./../assets/Projects/damac/damac.jpg";
+import damacAbout from "./../assets/Projects/damac/damacAbout.jpg";
+import damacHero from "./../assets/Projects/damac/damacHero.jpg";
+import samanaImg from "./../assets/Projects/samana/samana.jpg";
+import samanaAbout from "./../assets/Projects/samana/samanaAbout.jpg";
+import samanaHero from "./../assets/Projects/samana/samanaHero.jpg";
+import elitzImg from "./../assets/Projects/elitz/elitz.png";
+import elitzAbout from "./../assets/Projects/elitz/elitzAbout.png";
+import elitzHero from "./../assets/Projects/elitz/elitzHero.png";
+import oceanzImg from "./../assets/Projects/oceanz/oceanzImg.png";
+import oceanzAbout from "./../assets/Projects/oceanz/oceanzAbout.png";
+import oceanzHero from "./../assets/Projects/oceanz/oceanzHero.png";
+import fairmontImg from "./../assets/Projects/fairmont/fairmontImg.png";
+import fairmontAbout from "./../assets/Projects/fairmont/fairmontAbout.png";
+import fairmontHero from "./../assets/Projects/fairmont/fairmontHero.png";
+
 
 const projectData=[
     {
     ProjectHeading: 'SAMANA - Manhattan',
+    ProjectBg: samanaHero,
     ProjectSubHeading: "Dubailand, Dubai, United Arab Emirates",
     ProjectParagraph: 'An established and prestigious international golf Project in Dubailand comprising luxury villas, apartments and a hotel',
-    ProjectImage: dummyImage,
+    ProjectImage: samanaImg,
        hero: {
          heading: "LUXURY APARTMENTS WITH PRIVATE CLUBS AND POOLS",
          logo: Logo,
@@ -24,7 +41,7 @@ const projectData=[
        aboutUs: 
        {
          paragraph: " SAMANA Manhattan - an exceptional residential development that set a new standard for contemporary living. This innovative project by SAMANA Developers, located in Jumeirah Village Circle (JVC), is designed to provide residents with an unparalleled lifestyle ; blended with luxurious amenities, stunning designs, and a prime location.  Make SAMANA Manhattan your new home andunlock the gateway to a truly extraordinary lifestyle. Immerse yourself in the epitome of modern living and indulge in the unrivalled amenities, prime location, and exquisite design that this exceptional project has to offer.",
-         image: aboutUs,
+         image: samanaAbout,
        },
        unitTypes: {
          cards: [
@@ -90,9 +107,10 @@ const projectData=[
    },
    {
      ProjectHeading: 'DAMAC - Lagoons',
+     ProjectBg: damacHero,
      ProjectSubHeading: "Dubailand, Dubai, United Arab Emirates",
      ProjectParagraph: 'An established and prestigious international golf Project in Dubailand comprising luxury villas, apartments and a hotel',
-     ProjectImage: dummyImage,
+     ProjectImage: damacImg,
         hero: {
           heading: "LUXURY APARTMENTS WITH PRIVATE CLUBS AND POOLS",
           logo: Logo,
@@ -106,7 +124,7 @@ const projectData=[
         aboutUs: 
         {
           paragraph: " SAMANA Manhattan - an exceptional residential development that set a new standard for contemporary living. This innovative project by SAMANA Developers, located in Jumeirah Village Circle (JVC), is designed to provide residents with an unparalleled lifestyle ; blended with luxurious amenities, stunning designs, and a prime location.  Make SAMANA Manhattan your new home andunlock the gateway to a truly extraordinary lifestyle. Immerse yourself in the epitome of modern living and indulge in the unrivalled amenities, prime location, and exquisite design that this exceptional project has to offer.",
-          image: aboutUs,
+          image: damacAbout,
         },
         unitTypes: {
           cards: [
@@ -252,9 +270,10 @@ const projectData=[
     },
     {
      ProjectHeading: 'Danube - Elitz 3',
+     ProjectBg: elitzHero,
      ProjectSubHeading: "Dubailand, Dubai, United Arab Emirates",
      ProjectParagraph: 'An established and prestigious international golf Project in Dubailand comprising luxury villas, apartments and a hotel',
-     ProjectImage: dummyImage,
+     ProjectImage: elitzImg,
         hero: {
           heading: "LUXURY APARTMENTS WITH PRIVATE CLUBS AND POOLS",
           logo: Logo,
@@ -268,7 +287,7 @@ const projectData=[
         aboutUs: 
         {
           paragraph: " SAMANA Manhattan - an exceptional residential development that set a new standard for contemporary living. This innovative project by SAMANA Developers, located in Jumeirah Village Circle (JVC), is designed to provide residents with an unparalleled lifestyle ; blended with luxurious amenities, stunning designs, and a prime location.  Make SAMANA Manhattan your new home andunlock the gateway to a truly extraordinary lifestyle. Immerse yourself in the epitome of modern living and indulge in the unrivalled amenities, prime location, and exquisite design that this exceptional project has to offer.",
-          image: aboutUs,
+          image: elitzAbout,
         },
         unitTypes: {
           cards: [
@@ -333,9 +352,10 @@ const projectData=[
     },
     {
      ProjectHeading: 'Danube - Oceanz',
+     ProjectBg: oceanzHero,
      ProjectSubHeading: "Dubailand, Dubai, United Arab Emirates",
      ProjectParagraph: 'An established and prestigious international golf Project in Dubailand comprising luxury villas, apartments and a hotel',
-     ProjectImage: dummyImage,
+     ProjectImage: oceanzImg,
         hero: {
           heading: "LUXURY APARTMENTS WITH PRIVATE CLUBS AND POOLS",
           logo: Logo,
@@ -349,7 +369,7 @@ const projectData=[
         aboutUs: 
         {
           paragraph: " SAMANA Manhattan - an exceptional residential development that set a new standard for contemporary living. This innovative project by SAMANA Developers, located in Jumeirah Village Circle (JVC), is designed to provide residents with an unparalleled lifestyle ; blended with luxurious amenities, stunning designs, and a prime location.  Make SAMANA Manhattan your new home andunlock the gateway to a truly extraordinary lifestyle. Immerse yourself in the epitome of modern living and indulge in the unrivalled amenities, prime location, and exquisite design that this exceptional project has to offer.",
-          image: aboutUs,
+          image: oceanzAbout,
         },
         unitTypes: {
           cards: [
@@ -414,9 +434,10 @@ const projectData=[
     },
     {
      ProjectHeading: 'Fairmont',
+     ProjectBg: fairmontHero,
      ProjectSubHeading: "Dubailand, Dubai, United Arab Emirates",
      ProjectParagraph: 'An established and prestigious international golf Project in Dubailand comprising luxury villas, apartments and a hotel',
-     ProjectImage: dummyImage,
+     ProjectImage: fairmontImg,
         hero: {
           heading: "LUXURY APARTMENTS WITH PRIVATE CLUBS AND POOLS",
           logo: Logo,
@@ -430,7 +451,7 @@ const projectData=[
         aboutUs: 
         {
           paragraph: " SAMANA Manhattan - an exceptional residential development that set a new standard for contemporary living. This innovative project by SAMANA Developers, located in Jumeirah Village Circle (JVC), is designed to provide residents with an unparalleled lifestyle ; blended with luxurious amenities, stunning designs, and a prime location.  Make SAMANA Manhattan your new home andunlock the gateway to a truly extraordinary lifestyle. Immerse yourself in the epitome of modern living and indulge in the unrivalled amenities, prime location, and exquisite design that this exceptional project has to offer.",
-          image: aboutUs,
+          image: fairmontAbout,
         },
         unitTypes: {
           cards: [

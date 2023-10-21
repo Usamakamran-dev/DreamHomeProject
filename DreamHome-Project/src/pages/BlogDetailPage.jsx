@@ -10,10 +10,14 @@ import linkedinIcon from './../assets/social media/linkedin.png';
 import twitterIcon from './../assets/social media/twitter.png';
 import dubaiImage from './../assets/Images/dubaiImage.jpg';
 import eyeIcon from './../assets/Icons/eye.png';
+import NewsLetter from "../forms/NewLetter";
+import GetInTouchWithUs from "../forms/GetInTouchWithUs";
+import SuccessForm from "../forms/SuccessForm";
 
 function BlogDetailPage(){
   const { currentBlogData } = useContext(CurrentDataContext);
   const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+  const [showSuccessForm, setShowSuccessForm] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
   const showFooter=useShowFooter();
   if(!currentBlogData) return   
@@ -35,8 +39,13 @@ function BlogDetailPage(){
     };
   }, []);
   const enquiryFormHandler = () => { setShowEnquiryForm(true) }
-  const cancelEnquiryForm = () => { setShowEnquiryForm(false) }
-  
+  const cancelEnquiryForm = () => { 
+    setShowSuccessForm(false)
+    setShowEnquiryForm(false) }
+  function toggleFormVisibility(isVisible){
+    setShowEnquiryForm(isVisible);
+    setShowSuccessForm(true);
+  };
     return(
         <div className="container">
          <div className="row">
@@ -86,10 +95,10 @@ function BlogDetailPage(){
                       <img width="40" className="h-auto p-1 p-md-2" src={whatsappIcon} alt="whatsapp-icon" />
                       </div>
                       <div  style={{backgroundColor: "#0A66C2"}} className="rounded-circle p-2 card-hover" >
-                      <img width="40" className="h-auto p-1 p-md-2" src={twitterIcon} alt="whatsapp-icon" />
+                      <img width="40" className="h-auto p-1 p-md-2" src={twitterIcon} alt="twitter-icon" />
                       </div>
                       <div  style={{backgroundColor: "#00a2ed"}} className="rounded-circle p-2 card-hover" >
-                      <img width="40" className="h-auto p-1 p-md-2" src={linkedinIcon} alt="whatsapp-icon" />
+                      <img width="40" className="h-auto p-1 p-md-2" src={linkedinIcon} alt="linkedin-icon" />
                       </div>
                      </div>
                     </div>
@@ -98,43 +107,20 @@ function BlogDetailPage(){
                     <div className="col-md-4 my-3 overflow-hidden">
                     <div className={`d-flex flex-column gap-4 bg-light rounded fixed-size-column p-3 ${isFixed ? 'fixed-form' : ''}`}>
                       {/* Emquiry Form */}
-                      <form className="background-color-primary rounded p-3 w-100 d-flex flex-column align-items-center gap-3">
-                      <h1 className="fs-3 text-white text-center">Get in touch with us !</h1>
-                      <input type="text" name="FirstName" placeholder='Enter First Name' 
-                       className='border-0 fw-medium rounded input-field-style p-3 w-100'/>
-                      <input type="text"  name="LastName" placeholder='Enter Last Name' 
-                       className='border-0 fw-medium rounded input-field-style p-3 w-100'/>
-                       <input type="email"  name="Email" placeholder='Enter Email' 
-                       className='border-0 fw-medium rounded input-field-style p-3 w-100'/>
-                       <div className="d-flex flex-column align-items-center gap-3 w-100">
-                       <button 
-                      className="button-hover-secondary py-3 w-100 fs-para fw-bold text-white background-color-secondary border-0 rounded">ENQUIRE NOW</button>
-                      <label className="fs-para fw-medium text-white">OR</label>
-                      <button style={{backgroundColor: "#25D366"}} 
-                      className="button-hover-light py-3 w-100 fs-para fw-bold text-white border-0 rounded">WHATSAPP NOW</button>
-                       </div>
-                       </form>
+                      <GetInTouchWithUs></GetInTouchWithUs>
                        {/* Newsletter Form */}
-                       <div style={{backgroundColor: "#25D366"}}
-                       className="rounded d-flex flex-column p-3 bg-warning" >
-                        <img src="" alt="" />
-                        <h1 className="fs-3 text-center fw-bold">NEWSLETTER</h1>
-                        <p className="fs-6  text-center fw-medium">Subscribe For Daily Blog Alert!</p>
-                        <form className="d-flex flex-column align-items-center gap-3 w-100">
-                        <input type="text" name="Name" placeholder='Enter Name' 
-                       className='border-0 fw-medium rounded input-field-style p-3 w-100'/>
-                       <input type="email"  name="Email" placeholder='Enter Email' 
-                       className='border-0 fw-medium rounded input-field-style p-3 w-100'/>
-                       <button
-                      className="button-hover-light py-3 w-100 text-white bg-dark fs-para fw-bold border-0 rounded">SUBSCRIBE NOW</button>
-                        </form>
-                       </div>
+                       <NewsLetter></NewsLetter>
                       </div>
                     </div>
                    
                   </div>
                   { showFooter && <Footer show={showFooter} />}
-                  {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
+                  {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}
+                   onCancel={cancelEnquiryForm}/>}
+                     {showSuccessForm && (
+                     <SuccessForm
+                      onClick={cancelEnquiryForm}/>
+                     )}
                   <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
                 </div> )}
                 export default BlogDetailPage;

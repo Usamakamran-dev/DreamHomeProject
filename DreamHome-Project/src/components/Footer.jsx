@@ -6,12 +6,21 @@ import EnquiryForm from '../forms/EnquiryForm';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import SuccessForm from '../forms/SuccessForm';
 
 function Footer({show}) {
   const navigate=useNavigate();
   const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+  const [showSuccessForm, setShowSuccessForm] = useState(false);
   const enquiryFormHandler = () => { setShowEnquiryForm(true) }
-  const cancelEnquiryForm = () => { setShowEnquiryForm(false) }
+  const cancelEnquiryForm = () => { 
+    setShowEnquiryForm(false)
+    setShowSuccessForm(false)
+  }
+  function toggleFormVisibility(isVisible){
+    setShowEnquiryForm(isVisible);
+    setShowSuccessForm(true);
+  };
   return (
     <>
     <nav className={`container-fluid bg-white shadow-lg fixed-bottom mt-5 ${show ? 'visible' : 'hidden'}`}>
@@ -37,7 +46,11 @@ function Footer({show}) {
           </div>
         </div>
       </nav>
-      {showEnquiryForm && <EnquiryForm onCancel={cancelEnquiryForm}/>}
+      {showEnquiryForm && <EnquiryForm  toggleFormVisibility={toggleFormVisibility} onCancel={cancelEnquiryForm}/>}
+      {showSuccessForm && (
+                     <SuccessForm
+                      onClick={cancelEnquiryForm}/>
+                     )}
       </>
       )}
       export default Footer;

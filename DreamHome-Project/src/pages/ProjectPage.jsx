@@ -8,25 +8,34 @@ import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "../components/LoadingSpinner";
 import EnquiryTop from '../components/EnquiryTop';
 import EnquiryForm from "../forms/EnquiryForm";
+import SuccessForm from "../forms/SuccessForm";
 
 function ProjectPage(){
     const navigate=useNavigate();
     const showFooter=useShowFooter();
     const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+    const [showSuccessForm, setShowSuccessForm] = useState(false);
     const enquiryFormHandler = () => { setShowEnquiryForm(true) }
-    const cancelEnquiryForm = () => { setShowEnquiryForm(false) }
+    const cancelEnquiryForm = () => { 
+      setShowEnquiryForm(false) 
+      setShowSuccessForm(false)
+    }
     const ProjectCardDetails=useContext(ProjectCardContext);
     if(!ProjectCardDetails){
      return <LoadingSpinner></LoadingSpinner>
     }
-    const { setCurrentProjectData} = useContext(CurrentDataContext);
+    const { setCurrentProjectData , cardIdentifier , setCardIdentifier} = useContext(CurrentDataContext);
     function currentProjectHandler(currentProjectData,id){
         setCurrentProjectData(currentProjectData);
+        setCardIdentifier(currentProjectData.ProjectHeading);
         navigate(`/project/:project${id}`);
       }
     useEffect(() => { window.scrollTo(0, 0);}, []);
 
-
+    function toggleFormVisibility(isVisible){
+      setShowEnquiryForm(isVisible);
+      setShowSuccessForm(true);
+    };
     return(
         <div className="px-2 px-md-5 py-5 d-flex flex-column align-items-center gap-5">
           <div className="d-flex flex-column align-items-center">
@@ -48,7 +57,13 @@ function ProjectPage(){
                     ))}
                   </div>
                   {showFooter && <Footer show={showFooter} />}
-                  {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
+                  {showEnquiryForm && <EnquiryForm  
+                  toggleFormVisibility={toggleFormVisibility}
+                  onCancel={cancelEnquiryForm}/>}
+                   {showSuccessForm && (
+                   <SuccessForm
+                   onClick={cancelEnquiryForm}/>
+                   )}
                   <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
                </div>
                  )}

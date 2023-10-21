@@ -11,19 +11,36 @@ import AmenitiesCard from "../components/AmenitiesCard";
 import EnquiryForm from "../forms/EnquiryForm";
 import LoadingSpinner from "../components/LoadingSpinner";
 import EnquiryTop from '../components/EnquiryTop';
+import SuccessForm from "../forms/SuccessForm";
 
 function ProjectDetailPage(){
     const showFooter=useShowFooter();
     const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+    const [showSuccessForm, setShowSuccessForm] = useState(false);
     const enquiryFormHandler = () => { setShowEnquiryForm(true) }
-    const cancelEnquiryForm = () => { setShowEnquiryForm(false) }
+    const cancelEnquiryForm = () => { 
+      setShowEnquiryForm(false)
+      setShowSuccessForm(false)
+    }
     const { currentProjectData } = useContext(CurrentDataContext);
     if(!currentProjectData){
       return <LoadingSpinner></LoadingSpinner>
     } 
     useEffect(() => { window.scrollTo(0, 0);}, []);
+    function toggleFormVisibility(isVisible){
+      setShowEnquiryForm(isVisible);
+      setShowSuccessForm(true);
+    };
     return(
-         <div className="overflow-hidden transparent-section">
+         <div style={{
+          backgroundImage: `url(${currentProjectData.ProjectBg})`,
+          zIndex: '121121',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+          className="overflow-hidden transparent-section">
          <ProjectHeroSection heroSection={currentProjectData.hero}></ProjectHeroSection>
          {/* Monthly Payment */}
           <div className="background-color-primary">
@@ -46,7 +63,7 @@ function ProjectDetailPage(){
         {/* About Us */}
         <div className='bg-white'>
                 <div className="row py-2 py-md-5 container mx-auto">
-                 <div className="col-md-6 py-5 d-flex flex-column align-items-center gap-2 gap-md-5 justify-content-center align-items-md-start">
+                 <div className="col-md-6 py-5 px-0 px-md-5 d-flex flex-column align-items-center gap-2 gap-md-5 justify-content-center align-items-md-start">
                     <h2 className="fs-1 m-0 fw-bold font-color-primary text-start text-md-start">
                     ABOUT <span className='font-color-secondary'>US</span></h2>
                     <p className="font-color-light text-center text-md-start fw-regular">{currentProjectData.aboutUs.paragraph}</p>
@@ -56,10 +73,11 @@ function ProjectDetailPage(){
                     <button style={{width: '12rem'}} className='background-color-secondary border-0 button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>DOWNLOAD BROCHURE</button>
                     </div>
                  </div>
-                 <div className="col-md-6  px-0 py-5 px-md-5 m-0 rounded">
-                 <img src={currentProjectData.aboutUs.image} alt="AboutUs-Image"className="h-100 w-100 img-fluid p-0 m-0 rounded"/>
+                 <div className="col-md-6 py-4 m-0 rounded">
+                 <img src={currentProjectData.aboutUs.image} alt="AboutUs-Image"className="about-Img p-0 m-0 rounded"/>
                  </div>
-                 {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
+                 {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}
+                  onCancel={cancelEnquiryForm}/>}
                </div>
           </div>
         {/* Unit Section */}
@@ -73,6 +91,8 @@ function ProjectDetailPage(){
              </div>
          </div>
         </div>
+        {/*Transparent Section*/}
+        <div style={{width: '100%',height: "30rem"}}></div>
         {/* Gallery Section */}
         <div className="background-color-primary py-5 d-flex flex-column align-items-center gap-4">
         <h1 className="fs-1 fw-bold text-white"> PROJECT GALLERY</h1>
@@ -97,6 +117,10 @@ function ProjectDetailPage(){
         {/* Payment Plan */}
         <PaymentPlan paymentPlan={currentProjectData.paymentPlan}></PaymentPlan>
         { showFooter && <Footer show={showFooter} />}
+        {showSuccessForm && (
+            <SuccessForm
+            onClick={cancelEnquiryForm}/>
+          )}
         </div>
         )}
         export default ProjectDetailPage;

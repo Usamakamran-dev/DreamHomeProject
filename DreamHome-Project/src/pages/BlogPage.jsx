@@ -7,13 +7,18 @@ import useShowFooter from "../context/useShowFooter";
 import { useNavigate } from "react-router-dom";
 import EnquiryTop from '../components/EnquiryTop';
 import EnquiryForm from "../forms/EnquiryForm";
+import SuccessForm from "../forms/SuccessForm";
 
 function BlogPage(){
     const navigate=useNavigate();
     const showFooter=useShowFooter();
     const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+    const [showSuccessForm, setShowSuccessForm] = useState(false);
     const enquiryFormHandler = () => { setShowEnquiryForm(true) }
-    const cancelEnquiryForm = () => { setShowEnquiryForm(false) }
+    const cancelEnquiryForm = () => { 
+      setShowEnquiryForm(false) 
+      setShowSuccessForm(false)
+    }
     const BlogDetails = useContext(BlogContext);
     const { setCurrentBlogData } = useContext(CurrentDataContext);
      // Setting the currently clicked blog card
@@ -22,7 +27,10 @@ function BlogPage(){
         navigate(`/blog/:blog${id}`);
       }
     useEffect(() => { window.scrollTo(0, 0);}, []);
-
+    function toggleFormVisibility(isVisible){
+      setShowEnquiryForm(isVisible);
+      setShowSuccessForm(true);
+    };
     return(
         <div className="px-2 px-md-5 py-5 d-flex flex-column align-items-center gap-5 overflow-hidden">
           <div className="d-flex flex-column align-items-center">           
@@ -40,7 +48,11 @@ function BlogPage(){
         ))}
         </div>
         {showFooter && <Footer show={showFooter} />}
-        {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
+        {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility} onCancel={cancelEnquiryForm}/>}
+        {showSuccessForm && (
+            <SuccessForm
+            onClick={cancelEnquiryForm}/>
+          )}
         <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
         </div>
     )
