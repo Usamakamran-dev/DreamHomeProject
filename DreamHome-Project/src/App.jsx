@@ -6,9 +6,11 @@ import { RouterProvider } from 'react-router-dom';
 import CurrentDataProvider from './context/CurrentDataProvider';
 import CountryDataProvider from './context/CountryDataProvider';
 import router from './routes/AppRoutes';
+import CurrentProjectBlogProvider from './context/currentProjectBlog';
 
 function App() {
   return (
+     <CurrentProjectBlogProvider>
        <CountryDataProvider>
          <CurrentDataProvider>
             <BlogProvider>
@@ -18,5 +20,6 @@ function App() {
             </BlogProvider>
          </CurrentDataProvider>
         </CountryDataProvider>
+        </CurrentProjectBlogProvider>
      )}
      export default App;

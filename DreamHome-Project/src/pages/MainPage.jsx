@@ -3,6 +3,7 @@ import { useContext , useState , useEffect } from "react";
 import { ProjectCardContext } from "../context/ProjectCardProvider";
 import { BlogContext } from "../context/BlogProvider";
 import { CurrentDataContext } from "../context/CurrentDataProvider";
+import { CurrentProjectBlogContext } from '../context/currentProjectBlog';
 import { useNavigate } from "react-router-dom";
 import useShowFooter from "../context/useShowFooter";
 import HeroSection from "../components/HeroSection";
@@ -22,23 +23,15 @@ import FeedbackSlider from '../components/FeedbackSlider';
 import EnquiryForm from '../forms/EnquiryForm';
 import SuccessForm from '../forms/SuccessForm';
 
+
 function MainPage() {
     const navigate=useNavigate();
-    const [showEnquiryForm, setShowEnquiryForm] = useState(false);
-    const [showCompanyForm, setShowCompanyForm] = useState(false);
-    const [showSuccessForm, setShowSuccessForm] = useState(false);
-    const enquiryFormHandler = () => { setShowEnquiryForm(true) }
-    const companyFormHandler = () => { setShowCompanyForm(true) }
-    const cancelEnquiryForm = () => { 
-      setShowEnquiryForm(false);
-      setShowCompanyForm(false);
-      setShowSuccessForm(false)
-     }
-    const ProjectCardDetails = useContext(ProjectCardContext);
-    const { setCurrentProjectData, setCurrentBlogData , setCardIdentifier , cardIdentifier} = useContext(CurrentDataContext);
-    const BlogDetails = useContext(BlogContext);
     const showFooter=useShowFooter();
-    const partnerImages=[partnerLogo,partnerLogo2,partnerLogo3,partnerLogo4,partnerLogo5,partnerLogo6,partnerLogo7];
+    const ProjectCardDetails = useContext(ProjectCardContext);
+    const { setCurrentProjectData, setCurrentBlogData }= useContext(CurrentProjectBlogContext);
+    const {setCardIdentifier,setShowCompanyForm,setShowEnquiryForm , setShowSuccessForm , showCompanyForm ,
+    showEnquiryForm,showSuccessForm } = useContext(CurrentDataContext);
+    const BlogDetails = useContext(BlogContext);
     // Setting the currently clicked project card
     function currentProjectHandler(currentProjectData,id){
       setCurrentProjectData(currentProjectData);
@@ -48,14 +41,13 @@ function MainPage() {
     function currentBlogHandler(currentBlogData,id){
       setCurrentBlogData(currentBlogData);
       navigate(`/blog/:blog${id}`);}
-    useEffect(() => { window.scrollTo(0, 0);}, []);
 
     function toggleFormVisibility(isVisible){
       setShowEnquiryForm(isVisible);
       setShowSuccessForm(true);
     };
-
-        return(
+    const partnerImages=[partnerLogo,partnerLogo2,partnerLogo3,partnerLogo4,partnerLogo5,partnerLogo6,partnerLogo7];
+    return(
           <div className="overflow-hidden transparent-section">
               <HeroSection></HeroSection>
               <div className='bg-white'>
@@ -64,18 +56,23 @@ function MainPage() {
                     <h2 className="fs-1 fw-bold mb-0 mb-md-4 font-color-primary text-start text-md-start">
                     ABOUT <span className='font-color-secondary'>US</span></h2>
                     <p className="font-color-light text-center text-md-start fw-regular">
-                    SAMANA Manhattan - an exceptional residential development that sets a new standard for contemporary living.
-                    This innovative project by SAMANA Developers, located in Jumeirah Village Circle (JVC), is designed to provide residents with an unparalleled lifestyle; blended with luxurious amenities, stunning designs, and a prime location.  SAMANA Manhattan - an exceptional residential development that sets a new standard for contemporary living.
-                    This innovative project by SAMANA Developers
+                    Realtor Nine is a Dubai-based, real estate marketing company bringing you the most 
+                    sough-after commercial, residential and high-rise projects in Dubai. With vanguard 
+                    clients from Dubai's burgeoning real estate market, we are widely trusted not to 
+                    compromise on the quality of our marketing services. Our creative team is not just
+                     innovative but resourcefully adept at adding an X factor to your projects. Our 
+                     dedicated, professional sales team is thoroughly well-versed in the real estate 
+                     landscape of Dubai, which is why our assistance to you exceeds mere facilitation 
+                     in purchasing and selling property.
                     </p> 
                     <div className='d-flex flex-column gap-2 gap-md-4 flex-md-row'>
-                    <button  onClick={enquiryFormHandler} style={{width: '12rem'}} 
+                    <button onClick={()=>setShowEnquiryForm(true)} style={{width: '12rem'}} 
                     className='background-color-primary border-0 button-hover-primary py-3 rounded fs-para fw-semibold text-white'>ENQUIRE NOW</button>
-                    <button onClick={companyFormHandler} style={{width: '12rem'}} className='background-color-secondary border-0 button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>COMPANY PROFILE</button>
+                    <button onClick={()=>setShowCompanyForm(true)} style={{width: '12rem'}} className='background-color-secondary border-0 button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>COMPANY PROFILE</button>
                     </div>
                  </div>
                  <div className="col-md-6 py-4 m-0 rounded">
-                 <img 
+                 <img loading='lazy'
                  src={aboutUsImage} alt="AboutUs-Image"className="about-Img p-0 m-0 rounded"/>
                  </div>
                </div>
@@ -85,12 +82,13 @@ function MainPage() {
                  className="font-color-secondary">PROJECTS</span></h1>
                  <div className="row row-cols-1 row-cols-md-3 gy-5 px-2 px-md-5">
                       {ProjectCardDetails.slice(0, 3).map((array, index) => (
+                      
                       <div className="col" key={index}>
                         <ProjectCard
                           onClick={() => currentProjectHandler(array, array.ProjectHeading)}
                           heading={array.ProjectHeading}
                           subHeading={array.ProjectSubHeading}
-                          paragraph={array.ProjectParagraph}
+                          paragraph={array.aboutUs.paragraph}
                           image={array.ProjectImage}
                         />
                       </div>))}
@@ -112,9 +110,9 @@ function MainPage() {
                 <div className="contact-page-width mx-auto d-flex flex-column align-items-center py-2 py-md-5 gap-5">
                    <div className='d-flex flex-column align-items-center'>
                     <h1 className="font-color-primary text-center fw-bold fs-1">OUR <span className="font-color-secondary fw-bold fs-1">TRUSTED PARTNERS</span></h1>
-                    <p  className="font-color-light fw-regular px-0 px-md-5 text-center">We collaborate with a diverse network of 
-                    industry leaders and innovators to bring you the best solutions 
-                    and services,ensuring your success every step of the way.</p>
+                    <p  className="font-color-light fw-regular px-0 px-md-5 text-center">We collaborate with a diverse 
+                    network of industry leaders and innovators to bring you the best projects and services 
+                    on Dubai's real estate's landscape</p>
                    </div>
                    <div className="row row-cols-2 row-cols-md-4 g-4 justify-content-center px-0 py-0 py-md-4 px-md-5">
                      {partnerImages.map((arr, index) => (
@@ -143,14 +141,12 @@ function MainPage() {
              </div>
               {showFooter && <Footer show={showFooter} />}
               {showCompanyForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}
-               onCancel={cancelEnquiryForm}></EnquiryForm>}
+               onCancel={()=>setShowEnquiryForm(false)}></EnquiryForm>}
               {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}
-               onCancel={cancelEnquiryForm}/>}
+               onCancel={()=>setShowEnquiryForm(false)}/>}
                {showSuccessForm && (
-            <SuccessForm
-            onClick={cancelEnquiryForm}/>
-          )}
-             <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
+            <SuccessForm onClick={()=> setShowSuccessForm(false)}/>)}
+             <EnquiryTop onClick={()=> setShowEnquiryForm(true)}/>
               </div>)}
             
               export default MainPage;

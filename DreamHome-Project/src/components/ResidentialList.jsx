@@ -3,6 +3,7 @@ import locationMarker from './../assets/Icons/locationMarker.png';
 import callIcon from './../assets/Icons/callWhite.png';
 import enquiryIcon from './../assets/Icons/mailFill.png';
 import whatsappIcon from './../assets/Icons/whatsappFill.png';
+import { Link } from 'react-router-dom';
 
 function ResidentialList(){
     return(
@@ -18,29 +19,29 @@ function ResidentialList(){
                 Magnificent View, 8.33% Net Roi, Payment plan available</p>
                 <div className='d-flex flex-row align-items-center gap-2'>
                 <img src={locationMarker} alt="location-marker"  width='auto' height='20'/>
-                <p className='fs-6 font-color-light fw-medium m-0'>
-                Cote D' Azur Hotel, The Heart of Europe, The World Islands, Dubai, UAE</p>
+                <Link><p className='fs-6 font-color-light fw-medium m-0'>
+                Cote D' Azur Hotel, The Heart of Europe, The World Islands, Dubai, UAE</p></Link>
                 </div>
                 <div className='w-100 d-flex flex-row align-items-center gap-2 py-2'>
-                <div style={{width: '12rem'}}
+                <div style={{width: '10rem'}}
                 className='d-flex flex-row align-items-center justify-content-center background-color-secondary rounded gap-3 py-3 '>
                      <img src={enquiryIcon} alt="enquiry-icon" width='auto' height='23'/>
-                     <label className='fs-para fw-bold text-white '>ENQUIRE NOW</label>
+                     <label className='fs-para fw-bold text-white '>ENQUIRE </label>
                 </div>
-                <div style={{backgroundColor: "#25D366",width: '12rem'}}
+                <div style={{backgroundColor: "#25D366",width: '10rem'}}
                 className='d-flex flex-row align-items-center justify-content-center rounded gap-2 py-3'>
                      <img src={whatsappIcon} alt="enquiry-icon" width='auto' height='23'/>
-                     <label className='fs-para fw-bold text-white'>WHATSAPP NOW</label>
+                     <label className='fs-para fw-bold text-white'>WHATSAPP </label>
                 </div>
-                <div style={{width: '12rem'}}
+                <div style={{width: '10rem'}}
                 className='d-flex flex-row align-items-center justify-content-center background-color-primary rounded gap-2 py-3'>
                      <img src={callIcon} alt="enquiry-icon" width='auto' height='23'/>
-                     <label className='fs-para fw-bold text-white'>CALL NOW</label>
+                     <label className='fs-para fw-bold text-white'>CALL </label>
                 </div>
-                <div style={{width: '12rem'}}
+                <div style={{width: '10rem'}}
                 className='d-flex flex-row align-items-center justify-content-center background-color-primary rounded gap-2 py-3'>
-                     <img src={callIcon} alt="enquiry-icon" width='auto' height='23'/>
-                     <label className='fs-para fw-bold text-white'>EMAIL NOW</label>
+                     <img src={enquiryIcon} alt="enquiry-icon" width='auto' height='23'/>
+                     <label className='fs-para fw-bold text-white'>EMAIL </label>
                 </div>
 
                 </div>

@@ -1,5 +1,6 @@
 import { useContext,useEffect,useState } from "react";
 import { CurrentDataContext } from "../context/CurrentDataProvider";
+import { CurrentProjectBlogContext } from "../context/currentProjectBlog";
 import useShowFooter from "../context/useShowFooter";
 import Footer from '../components/Footer';
 import EnquiryTop from '../components/EnquiryTop';
@@ -13,14 +14,15 @@ import eyeIcon from './../assets/Icons/eye.png';
 import NewsLetter from "../forms/NewLetter";
 import GetInTouchWithUs from "../forms/GetInTouchWithUs";
 import SuccessForm from "../forms/SuccessForm";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 function BlogDetailPage(){
-  const { currentBlogData } = useContext(CurrentDataContext);
-  const [showEnquiryForm, setShowEnquiryForm] = useState(false);
-  const [showSuccessForm, setShowSuccessForm] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
   const showFooter=useShowFooter();
-  if(!currentBlogData) return   
+  const { currentBlogData }=useContext(CurrentProjectBlogContext);
+  if(!currentBlogData) return <LoadingSpinner></LoadingSpinner>
+  const {setShowEnquiryForm,setShowSuccessForm,showEnquiryForm,
+    showSuccessForm } = useContext(CurrentDataContext);     
   useEffect(() => {
     const handleScroll = () => {
       const scrollPoint = window.scrollY;
@@ -34,18 +36,15 @@ function BlogDetailPage(){
       }};
     window.addEventListener('scroll', handleScroll);
     return () => {
-      window.scrollTo(0, 0);
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  const enquiryFormHandler = () => { setShowEnquiryForm(true) }
-  const cancelEnquiryForm = () => { 
-    setShowSuccessForm(false)
-    setShowEnquiryForm(false) }
   function toggleFormVisibility(isVisible){
     setShowEnquiryForm(isVisible);
     setShowSuccessForm(true);
-  };
+  }
+  useEffect(() => { window.scrollTo(0, 0);}, []);
+
     return(
         <div className="container">
          <div className="row">
@@ -106,21 +105,15 @@ function BlogDetailPage(){
                     {/* for ads */}
                     <div className="col-md-4 my-3 overflow-hidden">
                     <div className={`d-flex flex-column gap-4 bg-light rounded fixed-size-column p-3 ${isFixed ? 'fixed-form' : ''}`}>
-                      {/* Emquiry Form */}
                       <GetInTouchWithUs></GetInTouchWithUs>
-                       {/* Newsletter Form */}
-                       <NewsLetter></NewsLetter>
+                      <NewsLetter></NewsLetter>
                       </div>
                     </div>
-                   
                   </div>
-                  { showFooter && <Footer show={showFooter} />}
+                  {showFooter && <Footer show={showFooter} />}
                   {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}
-                   onCancel={cancelEnquiryForm}/>}
-                     {showSuccessForm && (
-                     <SuccessForm
-                      onClick={cancelEnquiryForm}/>
-                     )}
-                  <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
-                </div> )}
+                   onCancel={()=>setShowEnquiryForm(false)}/>}
+                  {showSuccessForm && <SuccessForm onClick={()=>setShowSuccessForm(true)}/>}
+                  <EnquiryTop onClick={()=>setShowEnquiryForm(true)}></EnquiryTop>
+                  </div> )}
                 export default BlogDetailPage;

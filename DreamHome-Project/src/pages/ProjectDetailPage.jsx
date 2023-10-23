@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import './Custom.css';
 import ProjectGallery from '../components/ProjectGallery';
 import { CurrentDataContext } from "../context/CurrentDataProvider";
+import { CurrentProjectBlogContext } from "../context/currentProjectBlog";
 import ProjectHeroSection from "../components/ProjectHeroSection";
 import PaymentPlan from "../components/PaymentPlan";
 import Feature from "../components/Feature";
@@ -14,33 +15,27 @@ import EnquiryTop from '../components/EnquiryTop';
 import SuccessForm from "../forms/SuccessForm";
 
 function ProjectDetailPage(){
-    const showFooter=useShowFooter();
-    const [showEnquiryForm, setShowEnquiryForm] = useState(false);
-    const [showSuccessForm, setShowSuccessForm] = useState(false);
-    const enquiryFormHandler = () => { setShowEnquiryForm(true) }
-    const cancelEnquiryForm = () => { 
-      setShowEnquiryForm(false)
-      setShowSuccessForm(false)
+  const showFooter=useShowFooter();
+  const {currentProjectData}=useContext(CurrentProjectBlogContext);
+  if(!currentProjectData) return <LoadingSpinner></LoadingSpinner>
+  const {setShowEnquiryForm,setShowSuccessForm,showEnquiryForm,showSuccessForm } = useContext(CurrentDataContext);
+  function toggleFormVisibility(isVisible){
+    setShowEnquiryForm(isVisible);
+    setShowSuccessForm(true);
     }
-    const { currentProjectData } = useContext(CurrentDataContext);
-    if(!currentProjectData){
-      return <LoadingSpinner></LoadingSpinner>
-    } 
     useEffect(() => { window.scrollTo(0, 0);}, []);
-    function toggleFormVisibility(isVisible){
-      setShowEnquiryForm(isVisible);
-      setShowSuccessForm(true);
-    };
-    return(
-         <div style={{
-          backgroundImage: `url(${currentProjectData.ProjectBg})`,
-          zIndex: '121121',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-          className="overflow-hidden transparent-section">
+
+    const bgClass = (() => {
+      if (currentProjectData.ProjectHeading === 'SAMANA - Manhattan') return 'samanaBg';
+      if (currentProjectData.ProjectHeading === 'Damac Lagoons') return 'damacBg';
+      if (currentProjectData.ProjectHeading === 'Olivia Residences') return 'oliviaBg';
+      if (currentProjectData.ProjectHeading === 'Danube - Oceanz') return 'oceanzBg';
+      if (currentProjectData.ProjectHeading === 'VYB Dubai') return 'vybBg';
+      return '';
+    })();
+
+  return(
+    <div className={`overflow-hidden ${bgClass}`}>
          <ProjectHeroSection heroSection={currentProjectData.hero}></ProjectHeroSection>
          {/* Monthly Payment */}
           <div className="background-color-primary">
@@ -58,7 +53,6 @@ function ProjectDetailPage(){
               </label>
               </div>
            </div>
-           <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
         </div>
         {/* About Us */}
         <div className='bg-white'>
@@ -68,7 +62,7 @@ function ProjectDetailPage(){
                     ABOUT <span className='font-color-secondary'>US</span></h2>
                     <p className="font-color-light text-center text-md-start fw-regular">{currentProjectData.aboutUs.paragraph}</p>
                     <div className='d-flex flex-column gap-2 gap-md-4 flex-md-row'>
-                    <button  onClick={enquiryFormHandler} style={{width: '12rem'}} 
+                    <button  onClick={()=> setShowEnquiryForm(true)} style={{width: '12rem'}} 
                     className='background-color-primary border-0 button-hover-primary py-3 rounded fs-para fw-semibold text-white'>ENQUIRE NOW</button>
                     <button style={{width: '12rem'}} className='background-color-secondary border-0 button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>DOWNLOAD BROCHURE</button>
                     </div>
@@ -76,8 +70,6 @@ function ProjectDetailPage(){
                  <div className="col-md-6 py-4 m-0 rounded">
                  <img src={currentProjectData.aboutUs.image} alt="AboutUs-Image"className="about-Img p-0 m-0 rounded"/>
                  </div>
-                 {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}
-                  onCancel={cancelEnquiryForm}/>}
                </div>
           </div>
         {/* Unit Section */}
@@ -100,7 +92,7 @@ function ProjectDetailPage(){
         </div>
         {/* Amenities */}
         <div className="bg-white">
-          <div className="d-flex flex-column align-items-center gap-2 container mx-auto py-5">
+          <div className="d-flex flex-column align-items-center gap-2 mx-auto py-5">
             <h1 className="fs-1 m-0 fw-bold font-color-primary ">AMENITIES</h1>
             <p className="text-center font-color-light fw-regular m-0">
             {currentProjectData.amenities.paragraph}
@@ -117,10 +109,10 @@ function ProjectDetailPage(){
         {/* Payment Plan */}
         <PaymentPlan paymentPlan={currentProjectData.paymentPlan}></PaymentPlan>
         { showFooter && <Footer show={showFooter} />}
-        {showSuccessForm && (
-            <SuccessForm
-            onClick={cancelEnquiryForm}/>
-          )}
+        {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}
+         onCancel={()=> setShowEnquiryForm(false)}/>}
+        {showSuccessForm && ( <SuccessForm onClick={()=> setShowSuccessForm(false)}/>)}
+        <EnquiryTop onClick={()=> setShowEnquiryForm(true)}></EnquiryTop>
         </div>
         )}
         export default ProjectDetailPage;

@@ -1,6 +1,5 @@
 function ProjectHeroSection(props) {
   const heroSection=props.heroSection;
-  const logo=heroSection.logo;
   const heading=heroSection.heading;
   return (     
         <div style={{height:'90vh'}} className='bg-black-transparent'>

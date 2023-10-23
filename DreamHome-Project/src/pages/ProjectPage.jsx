@@ -1,6 +1,7 @@
-import { useContext , useEffect , useState } from "react";
+import { useContext , useEffect } from "react";
 import { ProjectCardContext } from "../context/ProjectCardProvider";
 import { CurrentDataContext } from "../context/CurrentDataProvider";
+import { CurrentProjectBlogContext } from "../context/currentProjectBlog";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
 import useShowFooter from "../context/useShowFooter";
@@ -11,31 +12,23 @@ import EnquiryForm from "../forms/EnquiryForm";
 import SuccessForm from "../forms/SuccessForm";
 
 function ProjectPage(){
-    const navigate=useNavigate();
-    const showFooter=useShowFooter();
-    const [showEnquiryForm, setShowEnquiryForm] = useState(false);
-    const [showSuccessForm, setShowSuccessForm] = useState(false);
-    const enquiryFormHandler = () => { setShowEnquiryForm(true) }
-    const cancelEnquiryForm = () => { 
-      setShowEnquiryForm(false) 
-      setShowSuccessForm(false)
-    }
+  const navigate=useNavigate();
+  const showFooter=useShowFooter();
     const ProjectCardDetails=useContext(ProjectCardContext);
-    if(!ProjectCardDetails){
-     return <LoadingSpinner></LoadingSpinner>
-    }
-    const { setCurrentProjectData , cardIdentifier , setCardIdentifier} = useContext(CurrentDataContext);
+    if(!ProjectCardDetails) return <LoadingSpinner></LoadingSpinner>
+    const {setCurrentProjectData}=useContext(CurrentProjectBlogContext);
+    const { setCardIdentifier,setShowEnquiryForm,setShowSuccessForm,
+      showEnquiryForm,showSuccessForm } = useContext(CurrentDataContext);
     function currentProjectHandler(currentProjectData,id){
         setCurrentProjectData(currentProjectData);
         setCardIdentifier(currentProjectData.ProjectHeading);
-        navigate(`/project/:project${id}`);
-      }
-    useEffect(() => { window.scrollTo(0, 0);}, []);
-
+        navigate(`/project/:project${id}`)}
     function toggleFormVisibility(isVisible){
       setShowEnquiryForm(isVisible);
       setShowSuccessForm(true);
-    };
+    }
+    useEffect(() => { window.scrollTo(0, 0);}, []);
+
     return(
         <div className="px-2 px-md-5 py-5 d-flex flex-column align-items-center gap-5">
           <div className="d-flex flex-column align-items-center">
@@ -50,21 +43,17 @@ function ProjectPage(){
                           onClick={() => currentProjectHandler(array, array.ProjectHeading)}
                           heading={array.ProjectHeading}
                           subHeading={array.ProjectSubHeading}
-                          paragraph={array.ProjectParagraph}
+                          paragraph={array.aboutUs.paragraph}
                           image={array.ProjectImage}
                         />
                       </div>
                     ))}
                   </div>
-                  {showFooter && <Footer show={showFooter} />}
-                  {showEnquiryForm && <EnquiryForm  
-                  toggleFormVisibility={toggleFormVisibility}
-                  onCancel={cancelEnquiryForm}/>}
-                   {showSuccessForm && (
-                   <SuccessForm
-                   onClick={cancelEnquiryForm}/>
-                   )}
-                  <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
+                  {showFooter && <Footer show={showFooter}/>}
+                  {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}
+                  onCancel={()=> setShowEnquiryForm(false)}/>}
+                  {showSuccessForm && ( <SuccessForm onClick={()=>setShowSuccessForm(true)}/>)}
+                  <EnquiryTop onClick={()=>setShowEnquiryForm(true)}></EnquiryTop>
                </div>
                  )}
-           export default ProjectPage;
+               export default ProjectPage;

@@ -13,7 +13,7 @@ function FooterSection(){
     setShowCompanyForm(false);
    }
     return(
-        <div className="background-color-primary py-2 py-md-5 w-100 mt-3 overflow-hidden mb-5">
+        <div className="background-color-primary py-2 py-md-5 w-100 overflow-hidden mb-5">
           <div className="row p-3 p-md-5 g-5">
              <div className="col d-flex flex-column align-items-start gap-3 ">
                <div className="w-100 py-0 py-md-2">

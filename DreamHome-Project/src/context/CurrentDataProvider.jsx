@@ -2,16 +2,19 @@ import React,{ useState } from "react";
 export const CurrentDataContext=React.createContext();
 
 function CurrentDataProvider(props){
-    const [currentProjectData,setCurrentProjectData] = useState();
-    const [currentBlogData,setCurrentBlogData] = useState();
     const [cardIdentifier,setCardIdentifier]=useState();
+    const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+    const [showCompanyForm, setShowCompanyForm] = useState(false);
+    const [showSuccessForm, setShowSuccessForm] = useState(false);
     const value = {
-        currentProjectData,
-        setCurrentProjectData,
-        currentBlogData,
-        setCurrentBlogData,
         cardIdentifier,
-        setCardIdentifier
+        setCardIdentifier,
+        showEnquiryForm,
+        setShowEnquiryForm,
+        showCompanyForm,
+        setShowCompanyForm,
+        showSuccessForm,
+        setShowSuccessForm
       }; 
       return(
         <CurrentDataContext.Provider value={value}>

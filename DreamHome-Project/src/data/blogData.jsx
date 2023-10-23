@@ -1,36 +1,21 @@
 import dummyImage from './../assets/Images/dubaiImage.jpg';
 
 const blogData=[
-    {BlogHeading: '1 Dubai ranked as the world’s fourth most active luxury residential market',
+    {BlogHeading: 'How does the cost of living in NewYork compare to the cost of living in Dubai?',
     BlogSource: "The National",
      BlogDate: '8 MARCH 2023',
      BlogImage: dummyImage,
-     BlogId: '1'},
-     {BlogHeading: '2 Dubai ranked as the world’s fourth most active luxury residential market',
+     },
+     {BlogHeading: 'If you are a new homebuyer in Dubai, this is what you need to know!',
     BlogSource: "The National",
      BlogDate: '8 MARCH 2023',
      BlogImage: dummyImage,
-     BlogId: '1'},
-     {BlogHeading: '3 Dubai ranked as the world’s fourth most active luxury residential market',
+     },
+     {BlogHeading: ' Top 5 benefits of living in JVC Dubai . Explore the JVC now!',
     BlogSource: "The National",
      BlogDate: '8 MARCH 2023',
      BlogImage: dummyImage,
-     BlogId: '1'},
-     {BlogHeading: '4 Dubai ranked as the world’s fourth most active luxury residential market',
-    BlogSource: "The National",
-     BlogDate: '8 MARCH 2023',
-     BlogImage: dummyImage,
-     BlogId: '1'},
-     {BlogHeading: '5 Dubai ranked as the world’s fourth most active luxury residential market',
-    BlogSource: "The National",
-     BlogDate: '8 MARCH 2023',
-     BlogImage: dummyImage,
-     BlogId: '1'},
-     {BlogHeading: '6 Dubai ranked as the world’s fourth most active luxury residential market',
-     BlogSource: "The National",
-     BlogDate: '8 MARCH 2023',
-     BlogImage: dummyImage,
-     BlogId: '1'}
+     },
     ];
 
     export default blogData;

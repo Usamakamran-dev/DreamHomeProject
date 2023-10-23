@@ -1,6 +1,7 @@
-import { useContext, useEffect , useState} from "react";
+import { useContext, useState , useEffect } from "react";
 import { BlogContext } from "../context/BlogProvider";
 import { CurrentDataContext } from "../context/CurrentDataProvider";
+import { CurrentProjectBlogContext } from "../context/currentProjectBlog";
 import BlogCard from "../components/BlogCard";
 import Footer from "../components/Footer";
 import useShowFooter from "../context/useShowFooter";
@@ -10,27 +11,22 @@ import EnquiryForm from "../forms/EnquiryForm";
 import SuccessForm from "../forms/SuccessForm";
 
 function BlogPage(){
-    const navigate=useNavigate();
-    const showFooter=useShowFooter();
-    const [showEnquiryForm, setShowEnquiryForm] = useState(false);
-    const [showSuccessForm, setShowSuccessForm] = useState(false);
-    const enquiryFormHandler = () => { setShowEnquiryForm(true) }
-    const cancelEnquiryForm = () => { 
-      setShowEnquiryForm(false) 
-      setShowSuccessForm(false)
+  const navigate=useNavigate();
+  const showFooter=useShowFooter();
+  const BlogDetails = useContext(BlogContext);
+  const { setCurrentBlogData } =useContext(CurrentProjectBlogContext);
+  const { setShowEnquiryForm,setShowSuccessForm,showEnquiryForm,
+  showSuccessForm } = useContext(CurrentDataContext);  
+    function currentBlogHandler(currentBlogData,id){
+    setCurrentBlogData(currentBlogData);
+    navigate(`/blog/:blog${id}`);
     }
-    const BlogDetails = useContext(BlogContext);
-    const { setCurrentBlogData } = useContext(CurrentDataContext);
-     // Setting the currently clicked blog card
-     function currentBlogHandler(currentBlogData,id){
-        setCurrentBlogData(currentBlogData);
-        navigate(`/blog/:blog${id}`);
-      }
+  function toggleFormVisibility(isVisible){
+    setShowEnquiryForm(isVisible);
+    setShowSuccessForm(true);
+    }
     useEffect(() => { window.scrollTo(0, 0);}, []);
-    function toggleFormVisibility(isVisible){
-      setShowEnquiryForm(isVisible);
-      setShowSuccessForm(true);
-    };
+
     return(
         <div className="px-2 px-md-5 py-5 d-flex flex-column align-items-center gap-5 overflow-hidden">
           <div className="d-flex flex-column align-items-center">           
@@ -48,14 +44,11 @@ function BlogPage(){
         ))}
         </div>
         {showFooter && <Footer show={showFooter} />}
-        {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility} onCancel={cancelEnquiryForm}/>}
-        {showSuccessForm && (
-            <SuccessForm
-            onClick={cancelEnquiryForm}/>
-          )}
-        <EnquiryTop onClick={enquiryFormHandler}></EnquiryTop>
+        {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility} 
+        onCancel={()=> setShowEnquiryForm(false)}/>}
+        {showSuccessForm && ( <SuccessForm onClick={()=> setShowSuccessForm(true)}/> )}
+        <EnquiryTop onClick={(setShowEnquiryForm)}></EnquiryTop>
         </div>
-    )
-}
+        )}
 
-export default BlogPage;
+       export default BlogPage;
