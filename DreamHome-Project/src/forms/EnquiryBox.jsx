@@ -1,7 +1,5 @@
 import flag from './../assets/Icons/Pakistan.svg';
 import dropDown from './../assets/Icons/Dropdown black.svg';
-// import cancelIcon from './../assets/Icons/cancel.svg';
-// import CountryDataContext from './../context/CountryDataProvider';
 import { CountryDataContext } from '../context/CountryDataProvider';
 import { useContext , useState, useRef} from 'react';
 import axios from 'axios';
@@ -168,15 +166,15 @@ function handleSelectedCountry(arr){
   return (
       <form
         onSubmit={formSubmitHandler}
-        className="rounded text-center d-flex flex-column align-items-start gap-4 py-2">
+        className="rounded text-center d-flex flex-column align-items-start gap-4">
           <div className="d-flex flex-column align-items-start gap-3">
             {/* form fields */}
             <div className="d-flex flex-column align-items-start gap-2">
-              <label className="text-black  fw-semibold h-blue">First Name</label>
+              <label className="text-black fw-semibold fs-mobile">First Name</label>
               <input ref={FirstNameRef}
                 type="text" 
                 className={`${firstError? 'border-red' : 'border-black'} 
-                rounded  bg-light px-3 py-2 input-width`}
+                rounded  bg-light px-3 py-2 fs-mobile input-width`}
                 onChange={(e) => firstNameChange(e)}
                 onKeyPress={(e) => {
                   if (!/^[A-Za-z]$/.test(e.key)) {
@@ -186,11 +184,11 @@ function handleSelectedCountry(arr){
               />
             </div>
             <div className="d-flex flex-column align-items-start gap-2">
-              <label className="text-black  fw-semibold h-blue">Last Name</label>
+              <label className="text-black  fw-semibold fs-mobile">Last Name</label>
               <input ref={LastNameRef}
                 type="text"
                 className={`${lastError? 'border-red' : 'border-black'} 
-                rounded  bg-light px-3 py-2 text-black input-width`}
+                rounded  bg-light px-3 py-2 fs-mobile text-black input-width`}
                 onChange={(e) => lastNameChange(e)}  
                 onKeyPress={(e) => {
                   if (!/^[A-Za-z]$/.test(e.key)) {
@@ -200,44 +198,44 @@ function handleSelectedCountry(arr){
               />
             </div>
             <div className="d-flex flex-column align-items-start gap-2">
-              <label className="text-black  fw-semibold h-blue">Email</label>
+              <label className="text-black  fw-semibold fs-mobile">Email</label>
               <input ref={EmailRef}
                 type="email" 
                 className={`${emailError? 'border-red' : 'border-black'} 
-                rounded  bg-light px-3 py-2 text-black input-width`}
+                rounded  bg-light px-3 py-2 text-black fs-mobile input-width`}
                 onChange={(e) => emailChange(e)} />
             </div>
             <div className="d-flex flex-column align-items-start gap-2">
-              <label className="fw-semibold">Phone</label>
+              <label className="fw-semibold fs-mobile">Phone</label>
               <div className="d-flex flex-column gap-2 position-relative align-items-start">
     <div className="d-flex flex-row gap-2 align-items-center"> 
     <div className="d-flex flex-row rounded gap-2 border-black px-2 py-2 align-items-center" onClick={toggleDropdown}>
       <img src={selectedCountry.flags.svg} alt="Flag-Icon" className='width-1halfrem h-auto' />
-      <span className='text-black fw-semibold  phone-code-width'>{`${selectedCountry.idd.root}${selectedCountry.idd.suffixes}`}</span>
+      <span className='text-black fw-semibold fs-mobile phone-code-width'>{`${selectedCountry.idd.root}${selectedCountry.idd.suffixes}`}</span>
       <img src={dropDown} alt="Drop-Down" className='width-halfrem h-auto' />
     </div>
     <input ref={PhoneRef}
     type="text" 
     className={`${phoneError? 'border-red' : 'border-black'} 
-    rounded bg-light px-3 py-2 phone-input-width`}    
+    rounded bg-light px-3 py-2 fs-mobile phone-input-width`}    
     onChange={(e) => phoneChange(e)} 
     onKeyPress={(e) => { if (!/^[0-9]$/.test(e.key))
     {
       e.preventDefault();
     }}}
     />
-    { sideError ? <p className='p-2 side-error bg-danger text-white h-blue position-absolute rounded'> {selectedCountry.phoneLength} digits required *</p> : ''}
+    { sideError ? <p className='p-2 side-error bg-danger text-white h-blue fs-mobile position-absolute rounded'> {selectedCountry.phoneLength} digits required *</p> : ''}
     </div>
   
     {/* Dropdown container */}
     {dropdownOpen && (
-    <div className='position-absolute bg-light custom-style rounded w-custom w-md-custom p-2 d-flex flex-column gap-2'>
+    <div className='position-absolute bg-light custom-dropdown-style rounded p-2 d-flex flex-column gap-2'>
       {countryData.sort((a, b) => a.name.common.localeCompare(b.name.common))
       .map((arr, index) => (
         <div className='d-flex flex-row align-items-center gap-3' onClick={() => handleSelectedCountry(arr)}>
           <img src={arr.flags.svg} alt='Flag' className='flag-style' />
-          <label className='text-black width-4rem text-start'>{`${arr.idd.root}${arr.idd.suffixes}`.substring(0, 4)}</label>
-          <label className='text-black text-start'>{arr.name.common.substring(0, 20)}</label>
+          <label className='text-black phone-code-width fs-mobile text-start'>{`${arr.idd.root}${arr.idd.suffixes}`.substring(0, 4)}</label>
+          <label className='text-black text-start fs-mobile'>{arr.name.common.substring(0, 20)}</label>
         </div>
          ))}
         </div>
@@ -245,7 +243,7 @@ function handleSelectedCountry(arr){
         </div>
           </div>
           </div>
-          <button className="px-5 py-3 rounded w-50 text-white fw-bold fs-para background-color-primary border-0">ENQUIRE NOW</button>
+          <button className="px-5 py-3 rounded w-100 text-white fw-bold fs-para background-color-primary border-0">ENQUIRE NOW</button>
       </form>
   );
 }

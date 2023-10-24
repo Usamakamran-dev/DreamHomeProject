@@ -17,8 +17,8 @@ export const router=createBrowserRouter([
         {index:true , element: <MainPage/>},
         {path:"/projects",element: <ProjectPage/>},
         {path:"/blogs",element: <BlogPage/>},
-        {path:"/project/:projectId", element: <ProjectDetailPage/>},
-        {path:"/blog/:blogId", element: <BlogDetailPage/>},
+        {path:"/project/:Id", element: <ProjectDetailPage/>},
+        {path:"/blog/:Id", element: <BlogDetailPage/>},
         {path:"/contact", element: <Contact/>},
         {path:"/videogallery", element: <VideoGallery/>},
         {path:"/residential", element: <Residential/>}

@@ -12,7 +12,7 @@ function PaymentPlan(props){
                 <div className="row row-cols-1 row-cols-md-2 w-100">
                     {/* Local */}
                     <div className="px-4 px-md-5 py-3 py-md-3 d-flex flex-column align-items-center align-items-md-start">
-                      <label className="fs-3 font-color-primary fw-bold">LOCAL</label>
+                      {/* <label className="fs-3 font-color-primary fw-bold">LOCAL</label> */}
                       <div className="d-flex flex-column align-items-start gap-1">
                         <div className="d-flex flex-row align-items-center">
                         <label className="fs-5 font-color-primary fw-regular" style={{width:'10rem',textWrap: 'noWrap'}}>{paymentPlan.localHeading[0]}</label>
@@ -43,7 +43,7 @@ function PaymentPlan(props){
                     </div>
                      {/* International */}
                      <div className="px-4 px-md-5 py-3 py-md-3 d-flex flex-column align-items-center align-items-md-start">
-                     <label  className="fs-3 font-color-primary fw-bold">INTERNATIONAL</label>
+                     {/* <label  className="fs-3 font-color-primary fw-bold">INTERNATIONAL</label> */}
                      <div className="d-flex flex-column align-items-start gap-1"> 
                      <div className="d-flex flex-row align-items-center">
                         <label className="fs-5 font-color-primary fw-regular" style={{width:'10rem',textWrap: 'noWrap'}}>{paymentPlan.internationalHeading[0]}</label>

@@ -19,16 +19,11 @@ function Contact(){
     useEffect(() => { window.scrollTo(0, 0);}, []);
     console.log('Contact Page Rendered');
     return(
-        <div className='contact-page-width mx-auto my-5 py-5'>
-             <div className="row row-cols-1 row-cols-md-2">
+        <div className='d-flex align-items-center justify-content-center my-5 p-5'>
               {/* Contact Form */}
-              <div className='d-flex flex-column align-items-start'>
+              <div className='d-flex flex-column align-items-center w-100'>
                 <h1 className='fs-1 fw-bold font-color-primary'>Contact <span className='font-color-secondary'>Us</span></h1>
                 <EnquiryBox toggleFormVisibility={toggleFormVisibility} ></EnquiryBox>
-              </div>
-               <div className="m-0 rounded order-1 order-md-2">
-                <img src={contactImage} alt="Contact-Us-Image" className="w-100 h-100 py-3 py-md-5 image-fluid rounded"/>
-               </div>  
               </div>
               {showFooter && <Footer show={showFooter} />}
               {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}

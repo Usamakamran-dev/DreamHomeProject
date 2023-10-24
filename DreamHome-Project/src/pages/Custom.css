@@ -39,7 +39,7 @@ body {
 .slider-image:hover{ transform: scale(1.1) }
 .about-Img{
   height: 30rem;
-  width:100%;
+  width:30rem;
   object-fit: cover;
 }
 .card-image{
@@ -75,8 +75,7 @@ body {
     transform: translateY(5px); 
   }}
   .custom-dropdown-style {
-    max-height: 10rem;
-    height: 10rem;
+    height: 7rem;
     overflow-x: hidden; 
     overflow-y: auto;
     z-index: 999;
@@ -101,7 +100,7 @@ body {
     transform: scale(1.1);
   }
   .transparent-section{
-    background-image: url("./../assets/Images/Main Image.jpg");
+    background-image: url("./../assets/Projects/samana/samanaHero.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -211,7 +210,7 @@ body {
   }
 
   .oliviaBg{
-    background-image: url("./../assets/Images/dummyImage.jpg");
+    background-image: url("./../assets/Projects/olivia/oliviaHero.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -219,7 +218,7 @@ body {
   }
 
   .oceanzBg{
-    background-image: url("./../assets/Projects/oceanz/oceanzHero.png");
+    background-image: url("./../assets/Projects/oceanz/oceanzImg.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -227,19 +226,46 @@ body {
   }
 
   .vybBg{
-    background-image: url("./../assets/Images/dubaiImage.jpg");
+    background-image: url("./../assets/Projects/vyb/vybHero.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
   }
+
+  .h-mobile{
+    font-size: 2rem;
+  }
+  
+  .flag-style{
+    height: 1.2rem;
+    width: 1.6rem ;
+}
+.phone-code-width{
+  width: 2.5rem;
+}
+.input-width{
+  max-width: 100%;
+  width: 28rem;
+}
+.phone-input-width{
+max-width: 100%;
+width: 21rem;
+}
+.width-1halfrem{
+  width: 1.5rem
+}
+.width-halfrem{
+  width: 0.5rem
+}
+
   /* ...................Media query */
 @media (max-width: 768px) {
   .project-button-width {width: 9rem !important; }
   .fs-para{ font-size: 0.7rem ;}
   .slider-image{
-    width: 22rem;
-    height: 17rem;
+    width: 25rem;
+    height: 20rem;
     object-fit: cover;}
     .enquiry-icon{height: 1rem;}
     .call-icon{height: 1.2rem;}
@@ -266,6 +292,33 @@ body {
       width: 500px;
       height: 450px;
      }
+    .input-width{
+      max-width: 100%;
+      width: 20rem;
+    }
+    .phone-input-width{
+      max-width: 100%;
+      width: 13rem;
+      }
+      .fs-mobile{
+        font-size: 0.8rem;
+      }
+      .h-mobile{
+        font-size: 1.3rem;
+      }
+      .about-Img{
+        height: 15rem;
+        width:15rem;
+        object-fit: cover;
+      }
+  }
+  .custom-style {
+    top: 100%;
+    max-height: 10rem;
+    height: 8rem;
+    overflow-x: hidden; 
+    overflow-y: auto;
+    z-index: 999;
   }
 
   @media (max-width: 550px) {
@@ -293,24 +346,3 @@ body {
   }
 
 
-  .flag-style{
-    height: 1.2rem;
-    width: 1.6rem ;
-}
-.phone-code-width{
-  width: 2.5rem;
-}
-.input-width{
-  max-width: 100%;
-  width: 28rem;
-}
-.phone-input-width{
-max-width: 100%;
-width: 21rem;
-}
-.width-1halfrem{
-  width: 1.5rem
-}
-.width-halfrem{
-  width: 0.5rem
-}

@@ -10,12 +10,13 @@ const blogData=[
     BlogSource: "The National",
      BlogDate: '8 MARCH 2023',
      BlogImage: dummyImage,
-     },
-     {BlogHeading: ' Top 5 benefits of living in JVC Dubai . Explore the JVC now!',
+     }
+     ,
+     {BlogHeading: 'If you are a new homebuyer in Dubai, this is what you need to know!',
     BlogSource: "The National",
      BlogDate: '8 MARCH 2023',
      BlogImage: dummyImage,
-     },
+     }
     ];
 
     export default blogData;

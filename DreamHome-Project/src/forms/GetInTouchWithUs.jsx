@@ -133,7 +133,7 @@ function GetInTouchWithUs(){
          <button 
         className="button-hover-secondary py-3 w-100 fs-para fw-bold text-white background-color-secondary border-0 rounded">ENQUIRE NOW</button>
         <label className="fs-para fw-medium text-white">OR</label>
-        <button style={{backgroundColor: "#25D366"}} 
+        <button onClick={() => window.open("https://web.whatsapp.com", "_blank")} style={{backgroundColor: "#25D366"}} 
         className="button-hover-light py-3 w-100 fs-para fw-bold text-white border-0 rounded">WHATSAPP NOW</button>
          </div>
          {showSuccessForm && (

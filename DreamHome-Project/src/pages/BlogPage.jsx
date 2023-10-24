@@ -14,12 +14,12 @@ function BlogPage(){
   const navigate=useNavigate();
   const showFooter=useShowFooter();
   const BlogDetails = useContext(BlogContext);
-  const { setCurrentBlogData } =useContext(CurrentProjectBlogContext);
+  const { updateCurrentBlogData } =useContext(CurrentProjectBlogContext);
   const { setShowEnquiryForm,setShowSuccessForm,showEnquiryForm,
   showSuccessForm } = useContext(CurrentDataContext);  
     function currentBlogHandler(currentBlogData,id){
-    setCurrentBlogData(currentBlogData);
-    navigate(`/blog/:blog${id}`);
+      updateCurrentBlogData(currentBlogData);
+    navigate(`/blog/${id.split(' ').join('-')}`);
     }
   function toggleFormVisibility(isVisible){
     setShowEnquiryForm(isVisible);
@@ -28,15 +28,15 @@ function BlogPage(){
     useEffect(() => { window.scrollTo(0, 0);}, []);
 
     return(
-        <div className="px-2 px-md-5 py-5 d-flex flex-column align-items-center gap-5 overflow-hidden">
+        <div className="px-2 px-md-5 py-5 d-flex flex-column align-items-center gap-2 gap-md-5 overflow-hidden">
           <div className="d-flex flex-column align-items-center">           
-           <h1 className="font-color-primary fw-bold fs-1">OUR <span className="font-color-secondary">BLOGS</span></h1>
-           <p className="font-color-light fw-regular px-5 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nisi quis urna imperdiet vehicula. 
+           <h1 className="font-color-primary fw-bold h-mobile">OUR <span className="font-color-secondary">BLOGS</span></h1>
+           <p className="font-color-light fw-regular px-2 px-md-5 text-center fs-mobile">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nisi quis urna imperdiet vehicula. 
             Ut interdum dignissim dui. Suspendisse nunc nunc, ornare in dignissim in, efficitur vitae nisl</p>
           </div>
-        <div className="row row-cols-1 row-cols-md-3 gy-5">
+        <div className="row row-cols-1 row-cols-md-3">
         {BlogDetails.map((array, index) => (
-        <div className="col" key={index}>
+        <div className="col p-3" key={index}>
         <BlogCard onClick={()=>currentBlogHandler(array,array.BlogHeading) }
          heading={array.BlogHeading} source={array.BlogSource}
         date={array.BlogDate} image={array.BlogImage} />

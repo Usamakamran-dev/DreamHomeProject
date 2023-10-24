@@ -30,20 +30,22 @@ function Footer({show}) {
             <img src={enquire} alt="Footer-Icon" className='w-auto enquiry-icon'/>
             <label className="fw-semibold font-color-primary fs-para">ENQUIRE</label>
           </div>
+          <Link to="tel:+971568343200" className='text-decoration-none'>
           <div className="d-flex flex-column align-items-center gap-2">
             <img src={phone} alt="Footer-Icon" className='w-auto call-icon'/>
             <label className="fw-semibold font-color-primary fs-para">CALL</label>
           </div>
+          </Link>
             <Link to="https://web.whatsapp.com" target="_blank" className='text-decoration-none'>
             <div className="d-flex flex-column align-items-center gap-2">
               <img src={whatsapp} alt="Footer-Icon" className='w-auto whatsapp-icon'/>
               <label className="fw-semibold font-color-primary fs-para">WHATSAPP</label>
             </div>
             </Link>
-            <div onClick={()=> navigate("/contact")} className="d-flex flex-column align-items-center gap-2">
+            {/* <div onClick={()=> navigate("/contact")} className="d-flex flex-column align-items-center gap-2">
             <img src={contact} alt="Footer-Icon" className='w-auto contact-icon'/>
             <label className="fw-semibold font-color-primary fs-para">CONTACT</label>
-          </div>
+          </div> */}
         </div>
       </nav>
       {showEnquiryForm && <EnquiryForm  toggleFormVisibility={toggleFormVisibility} onCancel={cancelEnquiryForm}/>}

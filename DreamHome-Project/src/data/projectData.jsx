@@ -1,6 +1,4 @@
-import dummyImage from './../assets/Images/dummyImage.jpg';
 import Logo from './../assets/Icons/Realtor9.svg';
-import aboutUs from './../assets/Images/Project Image.jpg';
 import image1 from './../assets/Images/sliderImage1.jpg';
 import image2 from './../assets/Images/sliderImage2.jpg';
 import mail from "./../assets/Icons/enquire.svg";
@@ -10,6 +8,11 @@ import samanaImg from "./../assets/Projects/samana/samana.jpg";
 import samanaAbout from "./../assets/Projects/samana/samanaAbout.jpg";
 import oceanzImg from "./../assets/Projects/oceanz/oceanzImg.png";
 import oceanzAbout from "./../assets/Projects/oceanz/oceanzAbout.png";
+import oliviaImg from './../assets/Projects/olivia/olivia.jpeg';
+import oliviaAbout from './../assets/Projects/olivia/oliviaAbout.jpeg';
+import vybImg from './../assets/Projects/vyb/vybImg.jpeg';
+import vybAbout from './../assets/Projects/vyb/vybAbout.jpeg';
+
 // Amenities import
 import jacuzzi from './../assets/Amenities/jacuzzi.svg';
 import kidPool from './../assets/Amenities/kid-pool.svg';
@@ -25,11 +28,52 @@ import swimmingPool3 from './../assets/Amenities/swimming-pool3.svg';
 import table from './../assets/Amenities/table.svg';
 import treadmill from './../assets/Amenities/treadmill.svg';
 import waterfall from './../assets/Amenities/waterfall.svg';
+// Samana Gallery
+import samanaGallery1 from './../assets/Projects/samana/samanaGallery1.jpg';
+import samanaGallery2 from './../assets/Projects/samana/samanaGallery2.jpg';
+import samanaGallery3 from './../assets/Projects/samana/samanaGallery3.jpg';
+import samanaGallery4 from './../assets/Projects/samana/samanaGallery4.jpg';
+import samanaGallery5 from './../assets/Projects/samana/samanaGallery5.jpg';
+import samanaGallery6 from './../assets/Projects/samana/samanaGallery6.jpg';
+import samanaGallery7 from './../assets/Projects/samana/samanaGallery7.jpg';
+import samanaGallery8 from './../assets/Projects/samana/samanaGallery8.jpg';
+import samanaGallery9 from './../assets/Projects/samana/samanaGallery9.jpg';
+import samanaGallery10 from './../assets/Projects/samana/samanaGallery10.jpg';
+// Olivia Gallery
+import oliviaGallery1 from './../assets/Projects/olivia/oliviaGallery1.jpeg';
+import oliviaGallery2 from './../assets/Projects/olivia/oliviaGallery2.jpeg';
+import oliviaGallery3 from './../assets/Projects/olivia/oliviaGallery3.jpeg';
+import oliviaGallery4 from './../assets/Projects/olivia/oliviaGallery4.jpeg';
+import oliviaGallery5 from './../assets/Projects/olivia/oliviaGallery5.jpeg';
+import oliviaGallery6 from './../assets/Projects/olivia/oliviaGallery6.jpeg';
+import oliviaGallery7 from './../assets/Projects/olivia/oliviaGallery7.jpeg';
+import oliviaGallery8 from './../assets/Projects/olivia/oliviaGallery8.jpeg';
+import oliviaGallery9 from './../assets/Projects/olivia/oliviaGallery9.jpeg';
+// Oceanz Gallery
+import oceanzGallery1 from './../assets/Projects/oceanz/oceanzGallery1.webp';
+import oceanzGallery2 from './../assets/Projects/oceanz/oceanzGallery2.webp';
+import oceanzGallery3 from './../assets/Projects/oceanz/oceanzGallery3.webp';
+import oceanzGallery4 from './../assets/Projects/oceanz/oceanzGallery4.webp';
+import oceanzGallery5 from './../assets/Projects/oceanz/oceanzGallery5.png';
+// vyb Gallery
+import vybGallery1 from './../assets/Projects/vyb/vybGallery1.jpeg';
+import vybGallery2 from './../assets/Projects/vyb/vybGallery2.jpeg';
+import vybGallery3 from './../assets/Projects/vyb/vybGallery3.jpeg';
+import vybGallery4 from './../assets/Projects/vyb/vybGallery4.jpeg';
+import vybGallery5 from './../assets/Projects/vyb/vybGallery5.jpeg';
+// damac Gallery
+import damacGallery1 from './../assets/Projects/damac/damacGallery1.jpg';
+import damacGallery2 from './../assets/Projects/damac/damacGallery2.jpg';
+import damacGallery3 from './../assets/Projects/damac/damacGallery3.jpg';
+import damacGallery4 from './../assets/Projects/damac/damacGallery4.jpg';
+import damacGallery5 from './../assets/Projects/damac/damacGallery5.jpg';
+import damacGallery6 from './../assets/Projects/damac/damacGallery6.jpg';
+import damacGallery7 from './../assets/Projects/damac/damacGallery7.jpg';
 
 
 const projectData=[
     {
-    ProjectHeading: 'SAMANA - Manhattan',
+    ProjectHeading: 'SAMANA Manhattan',
     ProjectSubHeading: "By Samana Skyros",
     ProjectImage: samanaImg,
        hero: {
@@ -68,17 +112,16 @@ const projectData=[
          ],
        },
        gallery:{
-          images: [image1, image2, image1,image2]
+          images: [samanaGallery1,samanaGallery2,samanaGallery3,samanaGallery4,samanaGallery5,samanaGallery6,samanaGallery7,samanaGallery8,samanaGallery9,samanaGallery10]
        },
        paymentPlan:{
-           heading: "PAYMENT PLAN HEADING",
-           startingPrice: "290,000",
-           localHeading: ["onBooking","onBooking","onBooking","onBooking","onBooking","onBooking"],
-           localPercentage:['10%','10%','10%','10%','10%','10%'],
-           internationalHeading: ["onBooking","onBooking","onBooking","onBooking","onBooking","onBooking"],
-           internationalPercentage:['10%','10%','10%','10%','10%','10%']
-       }
-       ,
+           heading: "PAYMENT PLAN",
+           startingPrice: "689,000",
+           localHeading: ["On Booking","x35 Months","on 6th Months","on 12th Months","on 18th Months","x60 Months"],
+           localPercentage:['15%','1%','10%','5%','5%','0.5%'],
+           internationalHeading: ["Down Payment","x30 Months","on 6th Months","on 12th Months","on 18 Months","x50 Months"],
+           internationalPercentage:['20%','1%','10%','5%','5%','0.5%']
+       },
         amenities:{
          paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing el',
          items:[
@@ -165,7 +208,7 @@ const projectData=[
           ],
         },
         gallery:{
-           images: [image1, image2, image1,image2]
+           images: [damacGallery1,damacGallery2,damacGallery3,damacGallery4,damacGallery5,damacGallery6,damacGallery7]
         },
         paymentPlan:{
             heading: "PAYMENT PLAN HEADING",
@@ -239,7 +282,7 @@ const projectData=[
     {
      ProjectHeading: 'Olivia Residences',
      ProjectSubHeading: "By Karma Developers",
-     ProjectImage: dummyImage,
+     ProjectImage: oliviaImg,
         hero: {
           heading: "LUXURY APARTMENTS WITH PRIVATE CLUBS AND POOLS",
           logo: Logo,
@@ -253,7 +296,7 @@ const projectData=[
         aboutUs: 
         {
           paragraph:"Discover luxurious living at Olivia Residences in Dubai Investment Park (DIP), a project by Karma Developers that features 1, 2 and 3 bedroom apartments. This exceptional residential project redefines the art of modern living, offering residents an unmatched experience of convenience lifestyle in the G+6 structure offers a modern and efficient layout. The development is strategically located in Dubai Investment Park, a thriving hub of growth and innovation in Dubai. Dubai Investment Park is known for its integrated community with essential amenities, making it an attractive destination for both residents and businesses.",
-          image: aboutUs,
+          image: oliviaAbout,
         },
         unitTypes: {
           cards: [
@@ -276,7 +319,7 @@ const projectData=[
           ],
         },
         gallery:{
-           images: [image1, image2, image1,image2]
+           images: [oliviaGallery1,oliviaGallery2,oliviaGallery3,oliviaGallery4,oliviaGallery5,oliviaGallery6,oliviaGallery7,oliviaGallery8,oliviaGallery9]
         },
         paymentPlan:{
             heading: "PAYMENT PLAN HEADING",
@@ -317,7 +360,7 @@ const projectData=[
        }
     },
     {
-     ProjectHeading: 'Danube - Oceanz',
+     ProjectHeading: 'Danube Oceanz',
      ProjectSubHeading: "By Danube Properties",
      ProjectImage: oceanzImg,
         hero: {
@@ -356,7 +399,7 @@ const projectData=[
           ],
         },
         gallery:{
-           images: [image1, image2, image1,image2]
+           images: [oceanzGallery1, oceanzGallery2, oceanzGallery3,oceanzGallery4,oceanzGallery5]
         },
         paymentPlan:{
             heading: "PAYMENT PLAN HEADING",
@@ -424,7 +467,7 @@ const projectData=[
     {
       ProjectHeading: 'VYB Dubai',
       ProjectSubHeading: "By Ginco Properties",
-      ProjectImage: oceanzImg,
+      ProjectImage: vybImg,
          hero: {
            heading: "LUXURY APARTMENTS WITH PRIVATE CLUBS AND POOLS",
            logo: Logo,
@@ -438,7 +481,7 @@ const projectData=[
          aboutUs: 
          {
            paragraph: "VYB, a 21-storey residential building planned for Dubai's vibrant Business Bay district. Developed by Ginco Properties, this exceptional project aims to redefine urban living in one of the city's most sought-after locations. With sleek design and stylish interiors, each unit exudes modernity and welcomes an abundance of natural light. Residents will relish a host of world-class amenities, including a state-of-the-art gym, a swimming pool, and convenient dedicated parking spaces.",
-           image: oceanzAbout,
+           image: vybAbout,
          },
          unitTypes: {
            cards: [
@@ -461,7 +504,7 @@ const projectData=[
            ],
          },
          gallery:{
-            images: [image1, image2, image1,image2]
+            images: [vybGallery1,vybGallery2,vybGallery3,vybGallery4,vybGallery5]
          },
          paymentPlan:{
              heading: "PAYMENT PLAN HEADING",

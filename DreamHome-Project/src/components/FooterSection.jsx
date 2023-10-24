@@ -1,7 +1,10 @@
 import { useState } from "react";
-import realtorLogo from "./../assets/Icons/Realtor9-white.png";
 import { Link } from "react-router-dom";
+import realtorLogo from "./../assets/Icons/Realtor9-white.png";
 import EnquiryForm from "../forms/EnquiryForm";
+import locationIcon from './../assets/Icons/locationWhite.png';
+import mailIcon from './../assets/Icons/mailWhite.png';
+import phoneIcon from './../assets/Icons/phoneWhite.png';
 
 function FooterSection(){
   const [showEnquiryForm, setShowEnquiryForm] = useState(false);
@@ -19,12 +22,24 @@ function FooterSection(){
                <div className="w-100 py-0 py-md-2">
                 <img src={realtorLogo} width='130' alt="realtor9-Logo h-auto img-fluid" />
                </div>
-               <label className="fs-para fw-regular text-white m-0">402 West Wing, Latifa Towers,Sheikh Zayed Road, Dubai</label>
-               <label className="fs-para fw-semibold text-white m-0">(+971) 56 834 3200</label>
-               <Link to="info@reator9.com" 
+               <div className="d-flex flex-row align-items-center gap-3">
+                <img src={mailIcon} alt="mail-icon" width='18' height='auto'/>
+               <Link to="https://mail.google.com/mail/?view=cm&fs=1&to=info@reator9.com" 
                target="_blank"
                className="fs-para fw-regular text-white">info@reator9.com 
                </Link>
+               </div>
+               <div className="d-flex flex-row align-items-center gap-3">
+               <img src={phoneIcon} alt="call-icon" width='16' height='auto'/>
+               <Link to="tel:+971568343200"
+               className="fs-para fw-semibold text-white m-0">(+971) 56 834 3200</Link>
+               </div>
+               <div className="d-flex flex-row align-items-center gap-3">
+                <img src={locationIcon} alt="location-icon" width='18' height='auto'/>
+                <Link to="https://www.google.com/maps/place/Latifa+Towers/@25.2215512,55.2806555,19z/data=!4m15!1m7!2m6!1s402+West+Wing,Latifa+Towers,Sheikh+Zayed+Road,Dubai!3m4!2s25.221831,+55.281278!4m2!1d55.2812777!2d25.2218315!3m6!1s0x3e5f42ed87491cb9:0x7ac505bb9d87d1f5!8m2!3d25.22155!4d55.2812992!15sCjM0MDIgV2VzdCBXaW5nLExhdGlmYSBUb3dlcnMsU2hlaWtoIFpheWVkIFJvYWQsRHViYWmSAQ9idXNpbmVzc19jZW50ZXLgAQA!16s%2Fg%2F12vrnmzsd?entry=ttu" 
+                target="_blank" className="fs-para fw-regular text-white m-0">402 West Wing,Latifa Towers,Sheikh Zayed Road,Dubai
+                </Link>
+               </div>
              </div>
              <div className="col d-flex flex-column align-items-start gap-2 ">
                <h1 className="fs-4 fw-bold text-white m-0 py-2">REALTOR 9</h1>
@@ -38,7 +53,7 @@ function FooterSection(){
               <Link to="/contact"><label className="fs-para fw-regular text-white">Contact Us </label></Link> 
               <Link onClick={enquiryFormHandler}><label className="fs-para fw-regular text-white">Enquire Now </label></Link> 
               <Link onClick={companyFormHandler}><label className="fs-para fw-regular text-white">Company Profile </label></Link>
-              <Link><label className="fs-para fw-regular text-white">Call Now </label></Link>
+              <Link  to="tel:+971568343200"><label className="fs-para fw-regular text-white">Call Now </label></Link>
               <Link to="https://web.whatsapp.com" target="_blank"><label className="fs-para fw-regular text-white">WhatsApp Now </label></Link>
              </div>
              <div className="col d-flex flex-column align-items-start gap-2">

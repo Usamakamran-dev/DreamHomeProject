@@ -17,52 +17,31 @@ import SuccessForm from "../forms/SuccessForm";
 import LoadingSpinner from "../components/LoadingSpinner";
 
 function BlogDetailPage(){
-  const [isFixed, setIsFixed] = useState(false);
   const showFooter=useShowFooter();
   const { currentBlogData }=useContext(CurrentProjectBlogContext);
   if(!currentBlogData) return <LoadingSpinner></LoadingSpinner>
   const {setShowEnquiryForm,setShowSuccessForm,showEnquiryForm,
-    showSuccessForm } = useContext(CurrentDataContext);     
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPoint = window.scrollY;
-       if (scrollPoint >= 350) {
-        setIsFixed(true);
-      } else {
-        setIsFixed(false);
-      }
-      if(scrollPoint >= 1140){
-        setIsFixed(false);
-      }};
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-  function toggleFormVisibility(isVisible){
-    setShowEnquiryForm(isVisible);
-    setShowSuccessForm(true);
-  }
+  showSuccessForm } = useContext(CurrentDataContext);     
   useEffect(() => { window.scrollTo(0, 0);}, []);
 
-    return(
-        <div className="container">
+  return(
+        <div className="overflow-hidden w-100 my-4 px-2 px-md-5">
          <div className="row">
           {/*Main Blog Data  */}
-          <div className="col-md-8 shadow-sm mt-3 px-4 py-4 d-flex flex-column gap-4">
+          <div className="col-md-8 shadow-sm mt-5 px-3 px-md-4 py-4 d-flex flex-column gap-4">
             <div className='d-flex flex-column align-items-start gap-3'>
-            <h1 className="fs-2 fw-bold font-color-primary m-0">{currentBlogData.BlogHeading}</h1>
+            <h1 className="h-mobile fw-bold font-color-primary m-0">{currentBlogData.BlogHeading}</h1>
             <div className="w-100 d-flex flex-row align-items-center justify-content-between">
-            <p className="font-color-secondary fw-medium m-0">Published on 8 MARCH 2023</p>
+            <p className="font-color-secondary fw-medium m-0 fs-mobile">Published on 8 MARCH 2023</p>
              <div className="d-flex flex-row align-items-center gap-2">
               <img src={eyeIcon} alt="eye-icon" width='20' />
-              <label className="fs-6 fw-medium font-primary-light"> 2.09K</label>
+              <label className="fs-mobile fw-medium font-primary-light"> 2.09K</label>
              </div>
             </div>
             <div className=' m-0 p-0'><img src={dubaiImage} alt="dubai-Image" className='w-100 h-100  img-fluid'/></div>
             </div>
             {/* Dummy Blog Data */}
-                <p id='paragraph-section' className="font-color-light fw-medium">
+                <p id='paragraph-section' className="font-color-light fs-mobile fw-medium">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a egestas orci, 
                     congue euismod sapien. Mauris cursus volutpat mauris porttitor feugiat. Pellentesque varius 
                     ut lorem in pharetra. Suspendisse ut nibh id ex eleifend posuere.  <br /><br /> Donec ac odio vitae erat 
@@ -103,8 +82,8 @@ function BlogDetailPage(){
                     </div>
                     </div>
                     {/* for ads */}
-                    <div className="col-md-4 my-3 overflow-hidden">
-                    <div className={`d-flex flex-column gap-4 bg-light rounded fixed-size-column p-3 ${isFixed ? 'fixed-form' : ''}`}>
+                    <div className="col-md-4 mt-5 overflow-hidden">
+                    <div className='d-flex flex-column gap-4 bg-light rounded p-3'>
                       <GetInTouchWithUs></GetInTouchWithUs>
                       <NewsLetter></NewsLetter>
                       </div>
@@ -115,5 +94,6 @@ function BlogDetailPage(){
                    onCancel={()=>setShowEnquiryForm(false)}/>}
                   {showSuccessForm && <SuccessForm onClick={()=>setShowSuccessForm(true)}/>}
                   <EnquiryTop onClick={()=>setShowEnquiryForm(true)}></EnquiryTop>
-                  </div> )}
+                  </div> 
+                  )}
                 export default BlogDetailPage;
