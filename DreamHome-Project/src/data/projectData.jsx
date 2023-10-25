@@ -69,6 +69,12 @@ import damacGallery4 from './../assets/Projects/damac/damacGallery4.jpg';
 import damacGallery5 from './../assets/Projects/damac/damacGallery5.jpg';
 import damacGallery6 from './../assets/Projects/damac/damacGallery6.jpg';
 import damacGallery7 from './../assets/Projects/damac/damacGallery7.jpg';
+// Project Logos
+import samanaLogo from './../assets/PartnerLogos/samanaWhite.png';
+import damacLogo from './../assets/PartnerLogos/damacWhite.png';
+import oliviaLogo from './../assets/PartnerLogos/oliviaWhite.png';
+import oceanzLogo from './../assets/PartnerLogos/oceanzWhite.png';
+import vybLogo from './../assets/PartnerLogos/vybWhite.png';
 
 
 const projectData=[
@@ -77,14 +83,14 @@ const projectData=[
     ProjectSubHeading: "By Samana Skyros",
     ProjectImage: samanaImg,
        hero: {
-         heading: "LUXURY APARTMENTS WITH PRIVATE CLUBS AND POOLS",
-         logo: Logo,
+         heading: "1 & 2 BEDROOMS AND STUDIO WITH PRIVATE POOL",
+         logo: samanaLogo,
        },
        monthlyPayment: 
        {
          heading: "MONTHLY PAYMENTS",
-         paragraph: "Your monthly payment information here.",
-         label: "100,000",
+         paragraph: "1,2 Bedrooms and Studio with Pool",
+         label: "689K",
        },
        aboutUs: 
        {
@@ -94,20 +100,20 @@ const projectData=[
        unitTypes: {
          cards: [
            {
-             title: "Card 1 Title + Description",
-             price: "290,000",
+             title: "STUDIO WITHOUT POOL",
+             price: "689K",
            },
            {
-             title: "Card 1 Title + Description",
-             price: "290,000",
+             title: "STUDIO WITH POOL",
+             price: "689K",
            },
            {
-             title: "Card 1 Title + Description",
-             price: "290,000",
+             title: "1 BEDROOM WITH POOL",
+             price: "1.09M",
            },
            {
-             title: "Card 1 Title + Description",
-             price: "290,000",
+             title: "2 BEDROOM WITH POOL",
+             price: "1.7M",
            },
          ],
        },
@@ -116,14 +122,54 @@ const projectData=[
        },
        paymentPlan:{
            heading: "PAYMENT PLAN",
-           startingPrice: "689,000",
-           localHeading: ["On Booking","x35 Months","on 6th Months","on 12th Months","on 18th Months","x60 Months"],
-           localPercentage:['15%','1%','10%','5%','5%','0.5%'],
-           internationalHeading: ["Down Payment","x30 Months","on 6th Months","on 12th Months","on 18 Months","x50 Months"],
-           internationalPercentage:['20%','1%','10%','5%','5%','0.5%']
+           footerHeading: "SAMANA Manhattan - Studio, 1 & 2 Bedroom Apartments ",
+           startingPrice: "689K",
+           column1: [
+            {
+              heading: "On Booking",
+              percentage: '15%'
+            },
+            {
+              heading: "x35 Months",
+              percentage: '1%'
+            }, {
+              heading: "on 6th Months",
+              percentage: '10%'
+            }, {
+              heading: "on 12th Months",
+              percentage: '5%'
+            }, {
+              heading: "on 18th Months",
+              percentage: '0.5%'
+            }, {
+              heading: "x60 Months",
+              percentage: '0.5%'
+            },
+          ],
+          column2: [
+            {
+              heading: "Down Payment",
+              percentage: '20%'
+            },
+            {
+              heading: "x35 Months",
+              percentage:'1%'
+            }, {
+              heading: "on 6th Months",
+              percentage: '10%'
+            }, {
+              heading: "on 12th Months",
+              percentage: '5%'
+            }, {
+              heading: "on 18th Months",
+              percentage: '5%'
+            }, {
+              heading: "on 6th Months",
+              percentage: '0.5%'
+            },
+          ]
        },
         amenities:{
-         paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing el',
          items:[
          { image: treadmill,
            label: 'Indoor / Outdoor Gym'
@@ -135,7 +181,7 @@ const projectData=[
          label: 'Yoga'
          },
           { image: swimmingPool,
-         label: 'Private Swimming Pool Apartments '
+         label: 'Private Swimming Pool Apartments'
          },
           { image: mail,
          label: 'Valet Parking'
@@ -173,14 +219,14 @@ const projectData=[
      ProjectSubHeading: "Dubailand, Dubai, United Arab Emirates",
      ProjectImage: damacImg,
         hero: {
-          heading: "LUXURY APARTMENTS WITH PRIVATE CLUBS AND POOLS",
-          logo: Logo,
+          heading: "BEDROOMS WITH TOWNHOUSES AND PRIVATE VILLAS",
+          logo: damacLogo,
         },
         monthlyPayment: 
         {
           heading: "MONTHLY PAYMENTS",
-          paragraph: "Your monthly payment information here.",
-          label: "100,000",
+          paragraph: "4,5,6,7 Bedrooms with TownHouses and Villas",
+          label: "2.99M",
         },
         aboutUs: 
         {
@@ -190,36 +236,94 @@ const projectData=[
         unitTypes: {
           cards: [
             {
-              title: "Card 2 Title + Description",
-              price: "10,000",
+              title: "4 BEDROOM TOWNHOUSE",
+              price: "2.99M",
             },
             {
-              title: "Card 2 Title + Description",
-              price: "10,000",
+              title: "5 BEDROOM TOWNHOUSE",
+              price: "3.99M",
             },
             {
-              title: "Card 2 Title + Description",
-              price: "10,000",
+              title: "6 BEDROOM VILLA(55K)",
+              price: "16.2M",
             },
             {
-              title: "Card 2 Title + Description",
-              price: "10,000",
+              title: "6 BEDROOM VILLA(1000K)",
+              price: "32.69M",
             },
+            {
+              title: "7 BEDROOM VILLA",
+              price: "20.92M",
+            }
           ],
         },
         gallery:{
            images: [damacGallery1,damacGallery2,damacGallery3,damacGallery4,damacGallery5,damacGallery6,damacGallery7]
         },
         paymentPlan:{
-            heading: "PAYMENT PLAN HEADING",
-            startingPrice: "290,000",
-            localHeading: ["onBooking","onBooking","onBooking","onBooking","onBooking","onBooking"],
-            localPercentage:['10%','10%','10%','10%','10%','10%'],
-            internationalHeading: ["onBooking","onBooking","onBooking","onBooking","onBooking","onBooking"],
-            internationalPercentage:['10%','10%','10%','10%','10%','10%']
+            heading: "PAYMENT PLAN",
+            footerHeading:"DAMAC LAGOONS - Bedrooms with TownHouses and Villas ",
+            startingPrice: "2.99M",
+            column1: [
+              {
+                heading: "Deposit (intermediate)",
+                percentage: '20%'
+              },
+              {
+                heading: "1st Installment (within 3 months)",
+                percentage: '5%'
+              }, {
+                heading: "2nd Installment (within 6 months)",
+                percentage: '5%'
+              }, {
+                heading: "3rd Installment (within 9 months)",
+                percentage: '5%'
+              }, {
+                heading: "4th Installment (within 12 months)",
+                percentage: '5%'
+              }, {
+                heading: "5th Installment (within 15 months)",
+                percentage: '5%'
+              },
+              {
+                heading: "6th Installment (within 18 months)",
+                percentage: '5%'
+              }, {
+                heading: "7th Installment (within 21 months)",
+                percentage: '5%'
+              }
+            ],
+            column2: [
+              {
+                heading: "8th Installment (within 24 months)",
+                percentage: '5%'
+              },
+              {
+                heading: "9th Installment (within 27 months)",
+                percentage: '5%'
+              },
+              {
+                heading: "10th Installment (within 30 months)",
+                percentage:'5%'
+              }, {
+                heading: "11th Installment (within 33 months)",
+                percentage: '5%'
+              }, {
+                heading: "12th Installment (70% completion)",
+                percentage: '5%'
+              }, {
+                heading: "13th Installment (80% completion)",
+                percentage: '2%'
+              }, {
+                heading: "14th Installment (90% completion)",
+                percentage: '2%'
+              },
+              {
+                heading: "15th Installment (On completion)",
+                percentage: '1%'
+              }]
         },
         amenities:{
-         paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing el',
          items:[
          { image: mail,
            label: 'Private tents'
@@ -245,7 +349,6 @@ const projectData=[
            { image: mail,
              label: 'Orange clementine café'
              },
-
              { image: mail,
               label: 'Watermelon bar'
             },
@@ -265,33 +368,32 @@ const projectData=[
             label: 'Play area'
             },
             { image: mail,
-              label: 'Light maze and mountains'
-              },
-              { image: mail,
-                label: 'Botanical garden'
-                },
-                { image: mail,
-                  label: 'Observation deck'
-                  },
-                  { image: mail,
-                    label: 'Henna art lounge'
-                    }
-       ]
-       }
+            label: 'Light maze and mountains'
+            },
+            { image: mail,
+            label: 'Botanical garden'
+            },
+            { image: mail,
+            label: 'Observation deck'
+            },
+            { image: mail,
+            label: 'Henna art lounge'
+            }
+             ]}
     },
     {
      ProjectHeading: 'Olivia Residences',
      ProjectSubHeading: "By Karma Developers",
      ProjectImage: oliviaImg,
         hero: {
-          heading: "LUXURY APARTMENTS WITH PRIVATE CLUBS AND POOLS",
-          logo: Logo,
+          heading: "1 2 & 3 BEDROOMS WITH PARK AND SWIMMING POOL",
+          logo: oliviaLogo,
         },
         monthlyPayment: 
         {
           heading: "MONTHLY PAYMENTS",
-          paragraph: "Your monthly payment information here.",
-          label: "100,000",
+          paragraph: "1,2,3 Bedrooms with 96,115 and 18 Units respectively",
+          label: "700K",
         },
         aboutUs: 
         {
@@ -301,36 +403,47 @@ const projectData=[
         unitTypes: {
           cards: [
             {
-              title: "Card 2 Title + Description",
-              price: "10,000",
+              title: "01 BEDROOM WITH 96 UNITS",
+              price: "700K",
             },
             {
-              title: "Card 2 Title + Description",
-              price: "10,000",
+              title: "02 BEDROOMS WITH 115 UNITS",
+              price: "1.25M",
             },
             {
-              title: "Card 2 Title + Description",
-              price: "10,000",
-            },
-            {
-              title: "Card 2 Title + Description",
-              price: "10,000",
-            },
+              title: "03 BEDROOMS WITH 18 UNITS",
+              price: "1.34M",
+            }
           ],
         },
         gallery:{
            images: [oliviaGallery1,oliviaGallery2,oliviaGallery3,oliviaGallery4,oliviaGallery5,oliviaGallery6,oliviaGallery7,oliviaGallery8,oliviaGallery9]
         },
         paymentPlan:{
-            heading: "PAYMENT PLAN HEADING",
-            startingPrice: "290,000",
-            localHeading: ["onBooking","onBooking","onBooking","onBooking","onBooking","onBooking"],
-            localPercentage:['10%','10%','10%','10%','10%','10%'],
-            internationalHeading: ["onBooking","onBooking","onBooking","onBooking","onBooking","onBooking"],
-            internationalPercentage:['10%','10%','10%','10%','10%','10%']
+          heading: "PAYMENT PLAN",
+          footerHeading:"OLIVIA RESEDENCIES - Bedrooms with Luxury Pools ",
+            startingPrice: "700K",
+            column1:[
+              {
+                heading: "Down Payment",
+                percentage: '10%'
+              },
+              {
+                heading: "30 Months* 1% during construction",
+                percentage: '1%'
+              }
+            ],
+            column2:[
+              {
+                heading: "Handover April 2026",
+                percentage: '1%'
+              }, {
+                heading: "59 Months * 1% Post Handover Plan",
+                percentage: '1%'
+              }
+            ]
         },
         amenities:{
-         paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing el',
          items:[
          { image: treadmill,
            label: 'Gymnasium'
@@ -364,14 +477,14 @@ const projectData=[
      ProjectSubHeading: "By Danube Properties",
      ProjectImage: oceanzImg,
         hero: {
-          heading: "LUXURY APARTMENTS WITH PRIVATE CLUBS AND POOLS",
-          logo: Logo,
+          heading: "1 2 & 3 BEDROOMS AND STUDIO WITH LUXURY POOL",
+          logo: oceanzLogo,
         },
         monthlyPayment: 
         {
           heading: "MONTHLY PAYMENTS",
-          paragraph: "Your monthly payment information here.",
-          label: "100,000",
+          paragraph: "1,2,3 Bedrooms and Studio with Pool",
+          label: "1.25M",
         },
         aboutUs: 
         {
@@ -381,36 +494,72 @@ const projectData=[
         unitTypes: {
           cards: [
             {
-              title: "Card 2 Title + Description",
-              price: "10,000",
+              title: "STUDIO AND POOL",
+              price: "1.25M",
             },
             {
-              title: "Card 2 Title + Description",
-              price: "10,000",
+              title: "SINGLE BEDROOM",
+              price: "1.9M",
             },
             {
-              title: "Card 2 Title + Description",
-              price: "10,000",
+              title: "1 BEDROOM AND POOL",
+              price: "1.99M",
             },
             {
-              title: "Card 2 Title + Description",
-              price: "10,000",
+              title: "2 BEDROOM AND POOL",
+              price: "2.6M",
             },
+            {
+              title: "3 BEDROOM AND POOL",
+              price: "3.8M",
+            }
           ],
         },
         gallery:{
            images: [oceanzGallery1, oceanzGallery2, oceanzGallery3,oceanzGallery4,oceanzGallery5]
         },
         paymentPlan:{
-            heading: "PAYMENT PLAN HEADING",
-            startingPrice: "290,000",
-            localHeading: ["onBooking","onBooking","onBooking","onBooking","onBooking","onBooking"],
-            localPercentage:['10%','10%','10%','10%','10%','10%'],
-            internationalHeading: ["onBooking","onBooking","onBooking","onBooking","onBooking","onBooking"],
-            internationalPercentage:['10%','10%','10%','10%','10%','10%']
+            heading: "PAYMENT PLAN",
+            footerHeading:"DANUBE OCEANZ - Bedrooms and Studio with Pool ",
+            startingPrice: "1.25M",
+            column1: [
+              {
+                heading: "Down Payment (booking date)",
+                percentage: '10%'
+              },
+              {
+                heading: "1st Installment (within 2 months)",
+                percentage: '10%'
+              }, {
+                heading: "2nd to 12th Installment (1% monthly)",
+                percentage: '11%'
+              }, {
+                heading: "13th Installment (within 14 months)",
+                percentage: '4%'
+              }, {
+                heading: "14th to 24th Installment (1% monthly)",
+                percentage: '11%'
+              }
+            ],
+            column2: [
+              {
+                heading: "25th Installment (within 26 months)",
+                percentage: '5%'
+              },
+              {
+                heading: "26th to 28th Installment (1% monthly)",
+                percentage: '13%'
+              },
+              {
+                heading: "39th Installment (on handover)",
+                percentage:'1%'
+              }, {
+                heading: "Easy Installments (within 35 months)",
+                percentage: '35%'
+              }]
         },
         amenities:{
-         paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing el',
+         
          items:[
          { image: treadmill,
            label: 'Aquatic Gym'
@@ -469,14 +618,14 @@ const projectData=[
       ProjectSubHeading: "By Ginco Properties",
       ProjectImage: vybImg,
          hero: {
-           heading: "LUXURY APARTMENTS WITH PRIVATE CLUBS AND POOLS",
-           logo: Logo,
+           heading: "1 & 2 BEDROOMS WITH PRIVATE SWIMMING POOL",
+           logo: vybLogo,
          },
          monthlyPayment: 
          {
            heading: "MONTHLY PAYMENTS",
-           paragraph: "Your monthly payment information here.",
-           label: "100,000",
+           paragraph: "1,2 Bedrooms with Luxury Pools",
+           label: "1.23M",
          },
          aboutUs: 
          {
@@ -486,36 +635,48 @@ const projectData=[
          unitTypes: {
            cards: [
              {
-               title: "Card 2 Title + Description",
-               price: "10,000",
+               title: "01 BEDROOM",
+               price: "1.23M",
              },
              {
-               title: "Card 2 Title + Description",
-               price: "10,000",
-             },
-             {
-               title: "Card 2 Title + Description",
-               price: "10,000",
-             },
-             {
-               title: "Card 2 Title + Description",
-               price: "10,000",
-             },
+               title: "02 BEDROOM",
+               price: "1.67M",
+             }
            ],
          },
          gallery:{
             images: [vybGallery1,vybGallery2,vybGallery3,vybGallery4,vybGallery5]
          },
          paymentPlan:{
-             heading: "PAYMENT PLAN HEADING",
-             startingPrice: "290,000",
-             localHeading: ["onBooking","onBooking","onBooking","onBooking","onBooking","onBooking"],
-             localPercentage:['10%','10%','10%','10%','10%','10%'],
-             internationalHeading: ["onBooking","onBooking","onBooking","onBooking","onBooking","onBooking"],
-             internationalPercentage:['10%','10%','10%','10%','10%','10%']
+             heading: "PAYMENT PLAN",
+             footerHeading:"VYB DUBAI - Bedrooms with Luxury Pools ",
+             startingPrice: "1.23M",
+             column1: [
+              {
+                heading: "30 days from booking",
+                percentage: '10%'
+              },
+              {
+                heading: "15th December , 2023",
+                percentage: '5%'
+              }, {
+                heading: "15th April , 2024",
+                percentage: '5%'
+              }
+            ],
+            column2: [
+              {
+                heading: "15th August , 2024",
+                percentage: '5%'
+              }, {
+                heading: "15th December , 2024",
+                percentage: '5%'
+              }, {
+                heading: "on Handover",
+                percentage: '60%'
+              }]
          },
          amenities:{
-          paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing el',
           items:[
           { image: treadmill,
             label: 'Gym'

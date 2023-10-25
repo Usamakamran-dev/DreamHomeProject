@@ -1,5 +1,4 @@
 import { useContext , useEffect } from 'react';
-import contactImage from './../assets/Images/contact.png';
 import EnquiryTop from '../components/EnquiryTop';
 import EnquiryForm from "../forms/EnquiryForm";
 import Footer from "../components/Footer";

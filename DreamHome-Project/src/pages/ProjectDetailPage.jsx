@@ -73,9 +73,9 @@ function ProjectDetailPage(){
           </div>
         {/* Unit Section */}
         <div className="bg-white">
-          <div className="px-2 px-md-5 py-3 py-md-5 d-flex flex-column align-items-center gap-2 gap-md-5 m-0">
+          <div className="px-2 px-md-5 py-3 py-md-5 d-flex flex-column align-items-center  gap-2 gap-md-5 m-0">
             <h3 className="h-mobile fw-bold font-color-primary text-center">UNIT <span className="font-color-secondary">TYPES</span></h3>
-             <div className="d-flex flex-row align-items-center gap-3 w-100 overflow-auto py-2 px-0 px-md-5">
+             <div className="d-flex flex-row align-items-center justify-content-md-center gap-3 mx-auto w-100 overflow-auto py-2 px-0 px-md-2">
              {currentProjectData.unitTypes?.cards?.map((arr,index)=> (
               <Feature key={index} label={arr.title} price={arr.price}></Feature>
              ))}
@@ -91,11 +91,8 @@ function ProjectDetailPage(){
         </div>
         {/* Amenities */}
         <div className="bg-white">
-          <div className="d-flex flex-column align-items-center gap-2 mx-auto py-5">
+          <div className="d-flex flex-column align-items-center mx-auto py-5">
             <h1 className="h-mobile m-0 fw-bold font-color-primary ">AMENITIES</h1>
-            <p className="text-center font-color-light fw-regular m-0">
-            {currentProjectData.amenities.paragraph}
-            </p>
             <div className="row row-cols-2 row-cols-md-4 py-2 py-md-5">
             {currentProjectData.amenities?.items?.map((arr, index) => (
               <div className="col" key={index}>

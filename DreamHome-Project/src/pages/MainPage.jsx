@@ -10,13 +10,11 @@ import HeroSection from "../components/HeroSection";
 import ProjectCard from "../components/ProjectCard";
 import BlogCard from "../components/BlogCard";
 import Footer from "../components/Footer";
-import partnerLogo  from "./../assets/PartnerLogos/paramount-hotel.svg";
-import partnerLogo2 from "./../assets/PartnerLogos/cavalli.svg";
-import partnerLogo3 from "./../assets/PartnerLogos/deGRISOGONO.svg";
-import partnerLogo4 from "./../assets/PartnerLogos/Radisson.svg";
-import partnerLogo5 from "./../assets/PartnerLogos/Rotana.svg";
-import partnerLogo6 from "./../assets/PartnerLogos/zuhairmurad.svg";
-import partnerLogo7 from "./../assets/PartnerLogos/Trump.svg";
+import partnerLogo  from "./../assets/PartnerLogos/Damac.png";
+import partnerLogo2 from "./../assets/PartnerLogos/Oceanz.png";
+import partnerLogo3 from "./../assets/PartnerLogos/vyb.png";
+import partnerLogo4 from "./../assets/PartnerLogos/Olivia.png";
+import partnerLogo5 from "./../assets/PartnerLogos/samana.png";
 import aboutUsImage from './../assets/Projects/samana/samana.jpg';
 import EnquiryTop from '../components/EnquiryTop';
 import FeedbackSlider from '../components/FeedbackSlider';
@@ -44,9 +42,10 @@ function MainPage() {
 
     function toggleFormVisibility(isVisible){
       setShowEnquiryForm(isVisible);
+      setShowCompanyForm(isVisible);
       setShowSuccessForm(true);
     };
-    const partnerImages=[partnerLogo,partnerLogo2,partnerLogo3,partnerLogo4,partnerLogo5,partnerLogo6,partnerLogo7];
+    const partnerImages=[partnerLogo,partnerLogo2,partnerLogo3,partnerLogo4,partnerLogo5];
     useEffect(() => { window.scrollTo(0, 0);}, []);
     
     return(
@@ -120,7 +119,7 @@ function MainPage() {
                      {partnerImages.map((arr, index) => (
                       <div className="col" key={index}>
                       <img src={arr} alt="partner-logo" 
-                      className="image-fluid w-100 h-100 p-3 p-md-5" />
+                      className="image-fluid w-100 h-100 p-2 p-md-4" />
                      </div> ))}
                   </div>
                 </div>     
@@ -145,7 +144,7 @@ function MainPage() {
              </div>
               {showFooter && <Footer show={showFooter} />}
               {showCompanyForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}
-               onCancel={()=>setShowEnquiryForm(false)}></EnquiryForm>}
+               onCancel={()=>setShowCompanyForm(false)}></EnquiryForm>}
               {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}
                onCancel={()=>setShowEnquiryForm(false)}/>}
                {showSuccessForm && (

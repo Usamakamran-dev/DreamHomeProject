@@ -108,7 +108,7 @@ body {
   }
   .bg-white-transparent{ background-color: rgba(255, 255, 255, 0.781);}
   .bg-black-transparent{
-    background-color: rgba(0, 0, 0, 0.564);
+    background-color: rgba(0, 0, 0, 0.7);
   }
   .circle-image {
     border-radius: 100rem;
@@ -259,6 +259,15 @@ width: 21rem;
   width: 0.5rem
 }
 
+.payment-heading-width {
+  width: 18rem;
+  white-space: nowrap;
+}
+
+.project-logo{
+  width: 22rem;
+  height: auto !important;
+}
   /* ...................Media query */
 @media (max-width: 768px) {
   .project-button-width {width: 9rem !important; }
@@ -311,6 +320,14 @@ width: 21rem;
         width:15rem;
         object-fit: cover;
       }
+      .payment-heading-width {
+        width: 17rem;
+        white-space: nowrap;
+      }
+      .project-logo{
+        width: 15rem;
+        height: auto !important;
+      }
   }
   .custom-style {
     top: 100%;
@@ -329,6 +346,10 @@ width: 21rem;
       width: 400px;
       height: 450px;
      }
+     .project-logo{
+      width: 10rem;
+      height: auto !important;
+    }
   }
 
 

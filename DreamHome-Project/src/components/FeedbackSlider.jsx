@@ -1,39 +1,40 @@
 import React, { useState } from 'react';
-import profileImage from "./../assets/Images/ProfileImage.jpg";
-import profileImage2 from "./../assets/Images/ProfileImage2.jpg";
-import profileImage3 from "./../assets/Images/ProfileImage3.jpg";
-import profileImage4 from "./../assets/Images/ProfileImage4.jpg";
+import sarahImage from "./../assets/Images/sarah.png";
+import lisaImage from "./../assets/Images/lisa.png";
+import jamesImage from "./../assets/Images/james.png";
+import emilyImage from "./../assets/Images/emily.png";
+import cameronImage from "./../assets/Images/cameron.png";
 import starIcon from "./../assets/Icons/starIcon.png";
 
 const feedbackData = [
   {
     title: 'Sarah Taylor',
-    image: profileImage,
+    image: sarahImage,
     extraDescription: 'As a first-time homebuyer, I was both excited and overwhelmed by the process of finding the perfect property.Their knowledgeable team guided me through every step!',
   },
   {
     title: 'John Martin',
-    image: profileImage2,
+    image: cameronImage,
     extraDescription: 'Working with Realtor Nine was such a pleasure! Their agents are professional, approachable, and have a deep understanding of the local market.',
   },
   {
     title: 'Lisa Roberts',
-    image: profileImage3,
+    image: lisaImage,
     extraDescription: 'R9 conducted a thorough market analysis to determine the ideal asking price, marketed my property extensively, and skillfully negotiated with potential buyers.I would trust Realtor 9 with any future real estate transactions without hesitation',
   },
   {
     title: 'James Peter',
-    image: profileImage4,
+    image: jamesImage,
     extraDescription: 'Realtor Nine exceeded my expectations when it came to selling my home.Their team of experienced agents worked tirelessly to showcase the unique features of my home and attract potential buyers.',
   },
   {
     title: 'Emily H.',
-    image: profileImage3,
+    image: emilyImage,
     extraDescription: 'I had the pleasure of working with Realtor Nine for both buying and selling properties, and they consistently delivered exceptional service. Their team went above and beyond to understand my needs.',
   },
   {
     title: 'Cameron Ford',
-    image: profileImage4,
+    image: cameronImage,
     extraDescription: 'Realtor Nine extensive knowledge of the market, combined with their network of industry connections, allowed me to find lucrative investment opportunities.',
   }
 ];
@@ -52,7 +53,7 @@ const FeedbackCard = ({ title,image,isActive, isLowOpacity, isBigger, isSmaller,
             <img src={starIcon} alt="review-Icon" width="22" height='auto' />
             <img src={starIcon} alt="review-Icon" width="22" height='auto' />
           </div>
-          {extraDescription && <p style={{height: '1rem'}} className='fw-medium fs-para font-color-light text-center m-0 py-3'>{extraDescription}</p>}
+          {extraDescription && <p style={{height: '1rem'}} className='fw-medium fs-para font-color-light text-center m-0'>{extraDescription}</p>}
      </div>
      </div>
 );
