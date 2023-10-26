@@ -23,24 +23,24 @@ function ResidentialList(){
                 Cote D' Azur Hotel, The Heart of Europe, The World Islands, Dubai, UAE</p></Link>
                 </div>
                 <div className='w-100 d-flex flex-row align-items-center gap-2 py-2'>
-                <div style={{width: '10rem'}}
+                <div style={{width: '8rem'}}
                 className='d-flex flex-row align-items-center justify-content-center background-color-secondary rounded gap-3 py-3 '>
-                     <img src={enquiryIcon} alt="enquiry-icon" width='auto' height='23'/>
+                     <img src={enquiryIcon} alt="enquiry-icon" width='auto' height='20'/>
                      <label className='fs-para fw-bold text-white '>ENQUIRE </label>
                 </div>
-                <div style={{backgroundColor: "#25D366",width: '10rem'}}
+                <div style={{backgroundColor: "#25D366",width: '8rem'}}
                 className='d-flex flex-row align-items-center justify-content-center rounded gap-2 py-3'>
-                     <img src={whatsappIcon} alt="enquiry-icon" width='auto' height='23'/>
+                     <img src={whatsappIcon} alt="enquiry-icon" width='auto' height='20'/>
                      <label className='fs-para fw-bold text-white'>WHATSAPP </label>
                 </div>
-                <div style={{width: '10rem'}}
+                <div style={{width: '8rem'}}
                 className='d-flex flex-row align-items-center justify-content-center background-color-primary rounded gap-2 py-3'>
-                     <img src={callIcon} alt="enquiry-icon" width='auto' height='23'/>
+                     <img src={callIcon} alt="enquiry-icon" width='auto' height='20'/>
                      <label className='fs-para fw-bold text-white'>CALL </label>
                 </div>
-                <div style={{width: '10rem'}}
-                className='d-flex flex-row align-items-center justify-content-center background-color-primary rounded gap-2 py-3'>
-                     <img src={enquiryIcon} alt="enquiry-icon" width='auto' height='23'/>
+                <div style={{width: '8rem'}}
+                className='d-flex flex-row align-items-center justify-content-center background-color-primary rounded gap-3 py-3'>
+                     <img src={enquiryIcon} alt="enquiry-icon" width='auto' height='20'/>
                      <label className='fs-para fw-bold text-white'>EMAIL </label>
                 </div>
 

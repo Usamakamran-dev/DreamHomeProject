@@ -20,8 +20,8 @@ export const router=createBrowserRouter([
         {path:"/project/:Id", element: <ProjectDetailPage/>},
         {path:"/blog/:Id", element: <BlogDetailPage/>},
         {path:"/contact", element: <Contact/>},
-        {path:"/videogallery", element: <VideoGallery/>},
-        {path:"/residential", element: <Residential/>}
+        {path:"/videogallery", element: <VideoGallery/>}
+      //   {path:"/residential", element: <Residential/>}
      ]},
      {path:"*", element: <p className="fs-1 fw-bold text-center p-5 text-danger">THERE IS AN UNKNOWN ERROR</p>}
 ])

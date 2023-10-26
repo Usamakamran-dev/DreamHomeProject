@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState , useContext } from "react";
 import { Link } from "react-router-dom";
 import realtorLogo from "./../assets/Icons/Realtor9-white.png";
 import EnquiryForm from "../forms/EnquiryForm";
 import locationIcon from './../assets/Icons/locationWhite.png';
 import mailIcon from './../assets/Icons/mailWhite.png';
 import phoneIcon from './../assets/Icons/phoneWhite.png';
+import { MultiFormContext } from "../context/MultiFormProvider";
+import MultiStepForm from "../forms/MultiStepForm";
+
 
 function FooterSection(){
+  const value=useContext(MultiFormContext);
   const [showEnquiryForm, setShowEnquiryForm] = useState(false);
   const [showCompanyForm, setShowCompanyForm] = useState(false);
   const enquiryFormHandler = () => { setShowEnquiryForm(true) }
@@ -58,12 +62,14 @@ function FooterSection(){
              </div>
              <div className="col d-flex flex-column align-items-start gap-2">
                <h1 className="fs-4 fw-bold text-white m-0 py-2">GALLERY</h1>
-               <Link to="/videogallery" ><label className="fs-para fw-regular text-white">Video Gallery </label></Link>
+               <Link to="/videogallery" ><label className="fs-para fw-regular text-white">Video Gallery</label></Link>
+               <label onClick={()=> value.setFormVisible(true)} className="fs-para fw-regular text-white">Project Form</label>
              </div>
           </div>
           <p className="fs-para text-white mx-auto text-center fw-regular py-2 px-5">lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ratione doloribus ducimus . Lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
           {showCompanyForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
           {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
+          {value.formVisible && <MultiStepForm/>}
         </div>
         )}
 

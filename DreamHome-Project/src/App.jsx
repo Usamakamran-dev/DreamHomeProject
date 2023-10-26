@@ -7,9 +7,11 @@ import CurrentDataProvider from './context/CurrentDataProvider';
 import CountryDataProvider from './context/CountryDataProvider';
 import router from './routes/AppRoutes';
 import CurrentProjectBlogProvider from './context/currentProjectBlog';
+import MultiFormProvider from './context/MultiFormProvider';
 
 function App() {
   return (
+   <MultiFormProvider>
      <CurrentProjectBlogProvider>
        <CountryDataProvider>
          <CurrentDataProvider>
@@ -21,5 +23,6 @@ function App() {
          </CurrentDataProvider>
         </CountryDataProvider>
         </CurrentProjectBlogProvider>
+        </MultiFormProvider>
      )}
      export default App;

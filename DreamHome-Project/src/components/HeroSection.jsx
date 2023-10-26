@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-import sliderImage1 from './../assets/Images/sliderImage1.jpg';
-import sliderImage2 from './../assets/Images/sliderImage2.jpg';
-import sliderImage3 from './../assets/Images/sliderImage3.jpg';
+import sliderImage1 from './../assets/Projects/damac/damacHero.jpg';
+import sliderImage2 from './../assets/Projects/oceanz/oceanzImg.png';
+import sliderImage3 from './../assets/Projects/olivia/oliviaHero.jpeg';
+import sliderImage4 from './../assets/Projects/samana/samanaHero.jpg';
+import sliderImage5 from './../assets/Projects/vyb/vybHero.jpeg';
 
 function HeroSection() {
     const [index, setIndex] = useState(0);
@@ -24,6 +26,18 @@ function HeroSection() {
         <Carousel.Item> 
         <div className="position-relative">
         <img loading='lazy' className="d-block w-100 slider-image-style" src={sliderImage3} alt="Slider-Image3" />
+        <div className="gradient-overlay"></div>
+        </div>
+        </Carousel.Item>
+        <Carousel.Item> 
+        <div className="position-relative">
+        <img loading='lazy' className="d-block w-100 slider-image-style" src={sliderImage4} alt="Slider-Image4" />
+        <div className="gradient-overlay"></div>
+        </div>
+        </Carousel.Item>
+        <Carousel.Item> 
+        <div className="position-relative">
+        <img loading='lazy' className="d-block w-100 slider-image-style" src={sliderImage5} alt="Slider-Image5" />
         <div className="gradient-overlay"></div>
         </div>
         </Carousel.Item>

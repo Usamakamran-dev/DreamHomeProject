@@ -1,5 +1,5 @@
 import './Custom.css';
-import { useContext , useState , useEffect } from "react";
+import { useContext , useEffect } from "react";
 import { ProjectCardContext } from "../context/ProjectCardProvider";
 import { BlogContext } from "../context/BlogProvider";
 import { CurrentDataContext } from "../context/CurrentDataProvider";
@@ -15,12 +15,11 @@ import partnerLogo2 from "./../assets/PartnerLogos/Oceanz.png";
 import partnerLogo3 from "./../assets/PartnerLogos/vyb.png";
 import partnerLogo4 from "./../assets/PartnerLogos/Olivia.png";
 import partnerLogo5 from "./../assets/PartnerLogos/samana.png";
-import aboutUsImage from './../assets/Projects/samana/samana.jpg';
+import aboutUsImage from './../assets/Projects/vyb/vybGallery1.jpeg';
 import EnquiryTop from '../components/EnquiryTop';
 import FeedbackSlider from '../components/FeedbackSlider';
 import EnquiryForm from '../forms/EnquiryForm';
 import SuccessForm from '../forms/SuccessForm';
-
 
 function MainPage() {
     const navigate=useNavigate();
@@ -76,7 +75,7 @@ function MainPage() {
                  </div>
                  <div className="col-md-6 py-4 m-0 rounded">
                  <img loading='lazy'
-                 src={aboutUsImage} alt="AboutUs-Image"className="img-fluid p-0 m-0 rounded"/>
+                 src={aboutUsImage} alt="AboutUs-Image"className="about-Img p-0 m-0 rounded"/>
                  </div>
                </div>
               </div>             
@@ -105,7 +104,6 @@ function MainPage() {
                <FeedbackSlider></FeedbackSlider>
                </div>
              </div>
-                
               {/* Partner Section*/}
               <div className='bg-white py-0 py-md-5'>
                 <div className="contact-page-width mx-auto d-flex flex-column align-items-center py-2 py-md-5 gap-3">

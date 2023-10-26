@@ -13,17 +13,25 @@ import EnquiryForm from "../forms/EnquiryForm";
 import LoadingSpinner from "../components/LoadingSpinner";
 import EnquiryTop from '../components/EnquiryTop';
 import SuccessForm from "../forms/SuccessForm";
+import { Link } from "react-router-dom";
+import damacPdf from './../assets/Projects/damac/lagoon.pdf';
+import samanaPdf from './../assets/Projects/samana/samana.pdf';
+import oliviaPdf from './../assets/Projects/olivia/Olivia.pdf';
+import oceanzPdf from './../assets/Projects/oceanz/oceanz.pdf';
+import vybPdf from './../assets/Projects/vyb/VYB.pdf';
 
 function ProjectDetailPage(){
   const showFooter=useShowFooter();
+  const [pdf,setPdf]=useState();
   const { currentProjectData} = useContext(CurrentProjectBlogContext); 
-  const {setShowEnquiryForm,setShowSuccessForm,showEnquiryForm,showSuccessForm } = useContext(CurrentDataContext);
+  const {setShowEnquiryForm,setShowSuccessForm,showEnquiryForm,showSuccessForm ,cardIdentifier } = useContext(CurrentDataContext);
   if(!currentProjectData) return <LoadingSpinner></LoadingSpinner>
   function toggleFormVisibility(isVisible){
     setShowEnquiryForm(isVisible);
     setShowSuccessForm(true);
     }
     useEffect(() => { window.scrollTo(0, 0);}, []);    
+    // Changing background image according to current project
     const bgClass = (() => {
       if (currentProjectData.ProjectHeading === 'SAMANA Manhattan') return 'samanaBg';
       if (currentProjectData.ProjectHeading === 'Damac Lagoons') return 'damacBg';
@@ -32,6 +40,17 @@ function ProjectDetailPage(){
       if (currentProjectData.ProjectHeading === 'VYB Dubai') return 'vybBg';
       return '';
     })();
+   const brochureDownload = (() => {
+    if (cardIdentifier === 'SAMANA Manhattan') return setPdf(samanaPdf);
+    if (cardIdentifier === 'Damac Lagoons') return setPdf(damacPdf);
+    if (cardIdentifier === 'Olivia Residences') return setPdf(oliviaPdf);
+    if (cardIdentifier === 'Danube Oceanz') return setPdf(oceanzPdf);
+    if (cardIdentifier === 'VYB Dubai') return setPdf(vybPdf);
+    return;
+  });
+  useEffect(() => {
+    brochureDownload();
+  }, []);
 
   return(
     <div className={`overflow-hidden ${bgClass}`}>
@@ -63,7 +82,10 @@ function ProjectDetailPage(){
                     <div className='d-flex flex-column gap-2 gap-md-4 flex-md-row'>
                     <button  onClick={()=> setShowEnquiryForm(true)} style={{width: '12rem'}} 
                     className='background-color-primary border-0 button-hover-primary py-3 rounded fs-para fw-semibold text-white'>ENQUIRE NOW</button>
-                    <button onClick={()=> setShowEnquiryForm(true)} style={{width: '12rem'}} className='background-color-secondary border-0 button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>DOWNLOAD BROCHURE</button>
+                 <Link to={pdf} download='example-pdf' target="_blank"
+                 onClick={()=> setShowEnquiryForm(true)} style={{width: '12rem'}} className='background-color-secondary border-0 button-hover-secondary py-3 rounded d-flex align-item-center justify-content-center fs-para fw-semibold text-white'>DOWNLOAD BROCHURE
+                </Link>
+                    {/* <button onClick={()=> setShowEnquiryForm(true)} style={{width: '12rem'}} className='background-color-secondary border-0 button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>DOWNLOAD BROCHURE</button> */}
                     </div>
                  </div>
                  <div className="col-md-6 py-0 py-md-4 m-0 rounded">

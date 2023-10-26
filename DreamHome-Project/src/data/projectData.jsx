@@ -28,6 +28,16 @@ import swimmingPool3 from './../assets/Amenities/swimming-pool3.svg';
 import table from './../assets/Amenities/table.svg';
 import treadmill from './../assets/Amenities/treadmill.svg';
 import waterfall from './../assets/Amenities/waterfall.svg';
+
+import barbeque from './../assets/Amenities/barbeque.png';
+import basketballCourt from './../assets/Amenities/basketball-court.png';
+import bellboy from './../assets/Amenities/bellboy.png';
+import chargingStation from './../assets/Amenities/charging-station.png';
+import cinema from './../assets/Amenities/cinema.png';
+import circus from './../assets/Amenities/circus.png';
+import parking from './../assets/Amenities/parking.png';
+import yoga from './../assets/Amenities/yoga.png';
+
 // Samana Gallery
 import samanaGallery1 from './../assets/Projects/samana/samanaGallery1.jpg';
 import samanaGallery2 from './../assets/Projects/samana/samanaGallery2.jpg';
@@ -75,7 +85,6 @@ import damacLogo from './../assets/PartnerLogos/damacWhite.png';
 import oliviaLogo from './../assets/PartnerLogos/oliviaWhite.png';
 import oceanzLogo from './../assets/PartnerLogos/oceanzWhite.png';
 import vybLogo from './../assets/PartnerLogos/vybWhite.png';
-
 
 const projectData=[
     {
@@ -174,19 +183,19 @@ const projectData=[
          { image: treadmill,
            label: 'Indoor / Outdoor Gym'
          },
-         { image: mail,
+         { image: basketballCourt,
          label: 'Basketball court'
          },
-          { image: mail,
+          { image: yoga,
          label: 'Yoga'
          },
           { image: swimmingPool,
          label: 'Private Swimming Pool Apartments'
          },
-          { image: mail,
+          { image: parking,
          label: 'Valet Parking'
          } ,
-         { image: mail,
+         { image: bellboy,
          label: 'Concierge Services'
          },
          { image: swimmingPool2,
@@ -196,19 +205,19 @@ const projectData=[
              label: 'Infinity Swimming Pool & Jacuzzi'
              }
             ,
-          { image: mail,
+          { image: cinema,
          label: 'Outdoor Cinema'
          },
           { image: playground,
          label: 'Kids Play Area'
          } ,
-         { image: mail,
+         { image: barbeque,
          label: 'Barbeque Area'
          },
          { image: sauna,
            label: 'Steam and Sauna '
            },
-           { image: mail,
+           { image: parking,
              label: 'Green Parking'
              }
        ]
@@ -328,13 +337,13 @@ const projectData=[
          { image: mail,
            label: 'Private tents'
          },
-         { image: mail,
+         { image: parking,
          label: 'Serenity garden'
          },
           { image: mail,
          label: 'Cactus garden'
          },
-          { image: mail,
+          { image: yoga,
          label: 'Outdoor yoga studio'
          },
           { image: mail,
@@ -454,10 +463,10 @@ const projectData=[
           { image: lawn,
          label: 'Parks and Leisure Areas'
          },
-          { image: mail,
+         { image: mail,
          label: 'Restaurants'
          },
-          { image: mail,
+         { image: mail,
          label: 'Retail Outlets'
          } ,
          { image: mail,
@@ -465,12 +474,11 @@ const projectData=[
          },
          { image: swimmingPool,
            label: 'Swimming Pool'
-           },
-           { image: mail,
-             label: 'Dining Outlets'
-             }
-       ]
-       }
+         },
+         { image: mail,
+           label: 'Dining Outlets'
+         }
+         ]}
     },
     {
      ProjectHeading: 'Danube Oceanz',
@@ -558,8 +566,7 @@ const projectData=[
                 percentage: '35%'
               }]
         },
-        amenities:{
-         
+        amenities:{   
          items:[
          { image: treadmill,
            label: 'Aquatic Gym'
@@ -567,7 +574,7 @@ const projectData=[
          { image: mail,
          label: 'Daycare Center'
          },
-          { image: mail,
+          { image: barbeque,
          label: 'BBQ Area'
          },
           { image: mail,
@@ -579,7 +586,7 @@ const projectData=[
          { image: playground,
          label: 'Kids Play Area'
          },
-         { image: mail,
+         { image: cinema,
            label: 'Floating Cinema'
            },
            { image: mail,
@@ -592,7 +599,7 @@ const projectData=[
             { image: mail,
             label: 'Paddle Tennis'
             },
-             { image: mail,
+             { image: basketballCourt,
             label: 'Basket Ball'
             },
              { image: relax,
@@ -610,8 +617,7 @@ const projectData=[
               { image: mail,
                 label: 'Smart Mart'
                 }
-       ]
-       }
+       ]}
     },
     {
       ProjectHeading: 'VYB Dubai',
@@ -681,7 +687,7 @@ const projectData=[
           { image: treadmill,
             label: 'Gym'
           },
-          { image: mail,
+          { image: parking,
           label: 'Covered Parking'
           },
            { image: mail,
