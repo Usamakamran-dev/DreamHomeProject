@@ -31,8 +31,7 @@ function BlogPage(){
         <div className="px-2 px-md-5 py-5 d-flex flex-column align-items-center gap-2 gap-md-5 overflow-hidden">
           <div className="d-flex flex-column align-items-center">           
            <h1 className="font-color-primary fw-bold h-mobile">OUR <span className="font-color-secondary">BLOGS</span></h1>
-           <p className="font-color-light fw-regular px-2 px-md-5 text-center fs-mobile">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nisi quis urna imperdiet vehicula. 
-            Ut interdum dignissim dui. Suspendisse nunc nunc, ornare in dignissim in, efficitur vitae nisl</p>
+           <p className="font-color-light fw-regular px-2 px-md-5 text-center fs-mobile">Our blogs will keep you abreast on trending norms and features in the real estate landscape of Dubai</p>
           </div>
         <div className="row row-cols-1 row-cols-md-3">
         {BlogDetails.map((array, index) => (

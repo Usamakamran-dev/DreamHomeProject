@@ -24,7 +24,7 @@ function Footer({show}) {
   return (
     <>
     <nav className={`container-fluid bg-white shadow-lg fixed-bottom mt-5 ${show ? 'visible' : 'hidden'}`}>
-        <div className="py-2 py-md-3 px-0 px-md-5 d-flex flex-row align-items-end justify-content-around">
+        <div className="py-2 py-md-2 px-0 px-md-5 d-flex flex-row align-items-end justify-content-around">
           <div onClick={enquiryFormHandler}
             className="d-flex flex-column align-items-center gap-2">
             <img src={enquire} alt="Footer-Icon" className='w-auto enquiry-icon'/>

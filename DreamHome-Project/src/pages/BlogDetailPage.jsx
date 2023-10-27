@@ -1,20 +1,20 @@
-import { useContext,useEffect,useState } from "react";
+import { useContext,useEffect} from "react";
 import { CurrentDataContext } from "../context/CurrentDataProvider";
 import { CurrentProjectBlogContext } from "../context/currentProjectBlog";
 import useShowFooter from "../context/useShowFooter";
 import Footer from '../components/Footer';
 import EnquiryTop from '../components/EnquiryTop';
 import EnquiryForm from "../forms/EnquiryForm";
-import facebookIcon from './../assets/social media/facebook.png';
-import whatsappIcon from './../assets/social media/whatsapp.png';
-import linkedinIcon from './../assets/social media/linkedin.png';
-import twitterIcon from './../assets/social media/twitter.png';
 import dubaiImage from './../assets/Images/dubaiImage.jpg';
 import eyeIcon from './../assets/Icons/eye.png';
 import NewsLetter from "../forms/NewLetter";
 import GetInTouchWithUs from "../forms/GetInTouchWithUs";
 import SuccessForm from "../forms/SuccessForm";
 import LoadingSpinner from "../components/LoadingSpinner";
+import { EmailIcon,FacebookIcon,LinkedinIcon,PinterestIcon,TelegramIcon,
+         TwitterIcon,WhatsappIcon } from "react-share";
+// import { EmailShareButton,FacebookShareButton,LinkedinShareButton,PinterestShareButton,TelegramShareButton,
+//          TwitterShareButton,WhatsappShareButton} from "react-share";
 
 function BlogDetailPage(){
   const showFooter=useShowFooter();
@@ -38,7 +38,7 @@ function BlogDetailPage(){
               <label className="fs-mobile fw-medium font-primary-light"> 2.09K</label>
              </div>
             </div>
-            <div className=' m-0 p-0'><img src={dubaiImage} alt="dubai-Image" className='w-100 h-100  img-fluid'/></div>
+            <div className=' m-0 p-0'><img src={currentBlogData.BlogImage} alt="dubai-Image" className='w-100 img-fluid'/></div>
             </div>
             {/* Dummy Blog Data */}
             <div>
@@ -53,18 +53,13 @@ function BlogDetailPage(){
                     <div className="d-flex flex-column align-items-center gap-3 py-5">
                      <label className="fs-5 fw-semibold font-color-primary m-0">Share Now</label>
                      <div className="d-flex flex-row align-items-center gap-3">
-                      <div  style={{backgroundColor: "#3b5998"}} className="rounded-circle p-2 card-hover" >
-                      <img width="40" className="h-auto p-1 p-md-2" src={facebookIcon} alt="facebook-icon" />
-                      </div>
-                      <div style={{backgroundColor: "#25D366"}} className="rounded-circle p-2 card-hover" >
-                      <img width="40" className="h-auto p-1 p-md-2" src={whatsappIcon} alt="whatsapp-icon" />
-                      </div>
-                      <div  style={{backgroundColor: "#0A66C2"}} className="rounded-circle p-2 card-hover" >
-                      <img width="40" className="h-auto p-1 p-md-2" src={twitterIcon} alt="twitter-icon" />
-                      </div>
-                      <div  style={{backgroundColor: "#00a2ed"}} className="rounded-circle p-2 card-hover" >
-                      <img width="40" className="h-auto p-1 p-md-2" src={linkedinIcon} alt="linkedin-icon" />
-                      </div>
+                      <FacebookIcon size={32} round={true} ></FacebookIcon>
+                      <EmailIcon size={32} round={true} ></EmailIcon>
+                      <TwitterIcon size={32} round={true} ></TwitterIcon>
+                      <LinkedinIcon size={32} round={true} ></LinkedinIcon>
+                      <WhatsappIcon size={32} round={true} ></WhatsappIcon>
+                      <PinterestIcon size={32} round={true} ></PinterestIcon>
+                      <TelegramIcon size={32} round={true} ></TelegramIcon>
                      </div>
                     </div>
                     </div>
@@ -84,3 +79,19 @@ function BlogDetailPage(){
                   </div> 
                   )}
                 export default BlogDetailPage;
+
+
+
+
+                 {/* <div  style={{backgroundColor: "#3b5998"}} className="rounded-circle p-2 card-hover" >
+                      <img width="40" className="h-auto p-1 p-md-2" src={facebookIcon} alt="facebook-icon" />
+                      </div>
+                      <div style={{backgroundColor: "#25D366"}} className="rounded-circle p-2 card-hover" >
+                      <img width="40" className="h-auto p-1 p-md-2" src={whatsappIcon} alt="whatsapp-icon" />
+                      </div>
+                      <div  style={{backgroundColor: "#0A66C2"}} className="rounded-circle p-2 card-hover" >
+                      <img width="40" className="h-auto p-1 p-md-2" src={twitterIcon} alt="twitter-icon" />
+                      </div>
+                      <div  style={{backgroundColor: "#00a2ed"}} className="rounded-circle p-2 card-hover" >
+                      <img width="40" className="h-auto p-1 p-md-2" src={linkedinIcon} alt="linkedin-icon" />
+                      </div> */}

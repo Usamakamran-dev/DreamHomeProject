@@ -34,9 +34,20 @@ import basketballCourt from './../assets/Amenities/basketball-court.png';
 import bellboy from './../assets/Amenities/bellboy.png';
 import chargingStation from './../assets/Amenities/charging-station.png';
 import cinema from './../assets/Amenities/cinema.png';
-import circus from './../assets/Amenities/circus.png';
+import tent from './../assets/Amenities/circus.png';
 import parking from './../assets/Amenities/parking.png';
 import yoga from './../assets/Amenities/yoga.png';
+
+import cafe from './../assets/Amenities/cafe.svg';
+import aromaticGarden from './../assets/Amenities/chamomile.svg';
+import cocktail from './../assets/Amenities/cocktail.svg';
+import golf from './../assets/Amenities/golf.svg';
+import artGarden from './../assets/Amenities/growth.svg';
+import juice from './../assets/Amenities/juice.svg';
+import maps from './../assets/Amenities/maps.svg';
+import nature from './../assets/Amenities/nature.svg';
+import streetLight from './../assets/Amenities/street-light.svg';
+
 
 // Samana Gallery
 import samanaGallery1 from './../assets/Projects/samana/samanaGallery1.jpg';
@@ -334,10 +345,10 @@ const projectData=[
         },
         amenities:{
          items:[
-         { image: mail,
+         { image: tent,
            label: 'Private tents'
          },
-         { image: parking,
+         { image: mail,
          label: 'Serenity garden'
          },
           { image: mail,
@@ -346,28 +357,28 @@ const projectData=[
           { image: yoga,
          label: 'Outdoor yoga studio'
          },
-          { image: mail,
+          { image: streetLight,
          label: 'Floating glow lamps'
          } ,
-         { image: mail,
+         { image: nature,
          label: 'Argan tree garden hills'
          },
-         { image: mail,
+         { image: artGarden,
            label: 'Art garden'
            },
-           { image: mail,
+           { image:  juice,
              label: 'Orange clementine café'
              },
-             { image: mail,
+             { image: cocktail,
               label: 'Watermelon bar'
             },
-            { image: mail,
+            { image: aromaticGarden,
             label: 'Aromatic garden'
             },
-             { image: mail,
+             { image: golf,
             label: 'Glow in the dark mini golf'
             },
-             { image: mail,
+             { image: maps,
             label: 'Floating walkways'
             },
              { image: mail,
@@ -463,7 +474,7 @@ const projectData=[
           { image: lawn,
          label: 'Parks and Leisure Areas'
          },
-         { image: mail,
+         { image: cafe,
          label: 'Restaurants'
          },
          { image: mail,

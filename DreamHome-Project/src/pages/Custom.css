@@ -272,6 +272,13 @@ width: 21rem;
 .project-input-width{
   width: 35rem;
 }
+
+.unit-heading-input{
+ width: 20rem;
+}
+.unit-price-input{
+  width: 9rem;
+ }
   /* ...................Media query */
 @media (max-width: 768px) {
   .project-button-width {width: 9rem !important; }
@@ -332,6 +339,15 @@ width: 21rem;
         width: 15rem;
         height: auto !important;
       }
+      .project-input-width{
+        width: 25rem;
+      }
+      .unit-heading-input{
+        width: 15rem;
+       }
+       .unit-price-input{
+         width: 7rem;
+        }
   }
   .custom-style {
     top: 100%;
@@ -354,6 +370,15 @@ width: 21rem;
       width: 10rem;
       height: auto !important;
     }
+    .project-input-width{
+      width: 18rem;
+    }
+    .unit-heading-input{
+      width: 13rem;
+     }
+     .unit-price-input{
+       width: 6rem;
+      }
   }
 
 

@@ -1,10 +1,13 @@
-import dummyImage from './../assets/Images/dubaiImage.jpg';
+import affordabilityImage from './../assets/Images/Affordability of Dubai.jpg'
+import keyEssentialsImage from './../assets/Images/Key Essentials You Need.jpg'
+import jvcImage from './../assets/Images/JVC.jpg'
+
 
 const blogData=[
-    {BlogHeading: 'Discovering the Affordability of Dubai: A Budget-Friendly Haven',
+    {BlogHeading: 'Discovering the Affordability of Dubai: A Budget-Friendly Heaven',
     BlogSource: "The National",
      BlogDate: 'October 2023',
-     BlogImage: dummyImage,
+     BlogImage: affordabilityImage,
      BlogDetail:['Living in New York City offers a vibrant urban experience, but it comes at a high price. However, halfway around the world lies a city renowned for its grandeur and luxury: Dubai. Contrary to popular belief, Dubai is surprisingly affordable when compared to the Big Apple. In this blog, we will explore how living in Dubai can be a budget-friendly alternative.',
      'The cost of housing in New York City is notoriously high, with sky-high rent prices that can drain your wallet. In Dubai, on the other hand, accommodation is considerably cheaper. Whether you choose to rent or buy, you will find a range of options that fit various budgets. Moreover, Dubai boasts modern amenities and spacious apartments with lower rental rates, making it an attractive choice for cost-conscious individuals',
      'Dubai offers a diverse range of affordable lifestyle choices. Dining out, one of the major expenses in most cities, can be surprisingly inexpensive in Dubai. The city is known for its affordable street food, local cafeterias, and a variety of reasonably priced international cuisine options. Additionally, transportation costs in Dubai are relatively low, thanks to an efficient public transportation system, affordable taxi services, and ridesharing apps.',
@@ -15,7 +18,7 @@ const blogData=[
     {BlogHeading: 'The Key Essentials You Need to Know About Buying Property If You Are a New Homebuyer',
     BlogSource: "The National",
      BlogDate: 'October 2023',
-     BlogImage: dummyImage,
+     BlogImage: keyEssentialsImage,
      BlogDetail:['Buying a property is one of the most significant investments you will make in your lifetime. For first-time homebuyers, the process can be overwhelming and filled with numerous uncertainties. However, with the right knowledge and guidance, you can navigate this exciting journey smoothly. In this blog, we will discuss the key essentials you need to know about buying property as a new homebuyer',
      'Before starting your property search, it is crucial to determine your budget. Consider your current financial situation and establish how much you can comfortably afford. Take into account expenses such as down payment, closing costs, property taxes, and ongoing maintenance costs. Setting a budget will help you narrow down your options and avoid falling in love with a property that is beyond your means',
      'Educate yourself about the current real estate market in your desired area. Research sales trends, average property prices, and any upcoming developments that may affect property values. Additionally, familiarize yourself with different types of properties, such as single-family homes, condos, or townhouses, and determine which best suits your needs',
@@ -28,7 +31,7 @@ const blogData=[
      {BlogHeading: 'Top 5 Benefits of Living in Jumeirah Village Circle (Dubai)',
     BlogSource: "The National",
      BlogDate: 'October 2023',
-     BlogImage: dummyImage,
+     BlogImage: jvcImage,
      BlogDetail:['Living in Dubai offers many luxurious and vibrant neighborhoods, and one of the most sought-after areas is Jumeirah Village Circle (JVC). Nestled in the heart of Dubai, JVC offers a unique and modern living experience, attracting residents from all walks of life. Here are the top five benefits of living in this picturesque community:',
      'Jumeirah Village Circle is designed with tranquility in mind. The large landscaped parks and green spaces create a harmonious living environment, perfect for families and individuals looking for a peaceful retreat. Residents can enjoy jogging or biking on well-maintained pathways or simply relax with a book amidst lush gardens. The serene atmosphere helps the residents unwind and escape the hustle and bustle of city life',
      'JVC is known for its family-friendly amenities. The community boasts a wide range of schools, nurseries, and daycare facilities, providing excellent education options for families with young children. Additionally, there are numerous parks, playgrounds, and sports facilities, offering children ample space to play and engage in various activities. The presence of these amenities ensures that residents have everything they need within the neighborhood',
