@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-import sliderImage1 from './../assets/Projects/damac/damacHero.jpg';
-import sliderImage2 from './../assets/Projects/oceanz/oceanzImg.png';
-import sliderImage3 from './../assets/Projects/olivia/oliviaHero.jpeg';
-import sliderImage4 from './../assets/Projects/samana/samanaHero.jpg';
-import sliderImage5 from './../assets/Projects/vyb/vybHero.jpeg';
+import damacImg from './../assets/Projects/damac/damacHero.jpg';
+import oceanzImg from './../assets/Projects/oceanz/oceanzImg.png';
+import oliviaImg from './../assets/Projects/olivia/oliviaHero.jpeg';
+import samanaImg from './../assets/Projects/samana/samanaHero.jpg';
+import vybImg from './../assets/Projects/vyb/vybHero.jpeg';
+import havenImg from './../assets/Projects/haven/havenImg.webp';
 
 function HeroSection() {
     const [index, setIndex] = useState(0);
@@ -13,31 +14,37 @@ function HeroSection() {
     <Carousel activeIndex={index} onSelect={handleSelect} className='carousel-fade'>
         <Carousel.Item>
         <div className="position-relative">
-        <img loading='lazy' className="d-block w-100 slider-image-style" src={sliderImage1} alt="Slider-Image1" />
+        <img loading='lazy' className="d-block w-100 slider-image-style" src={havenImg} alt="Slider-Image1" />
         <div className="gradient-overlay"></div>
         </div>
         </Carousel.Item>
         <Carousel.Item> 
         <div className="position-relative">
-        <img loading='lazy' className="d-block w-100 slider-image-style" src={sliderImage2} alt="Slider-Image2" />
+        <img loading='lazy' className="d-block w-100 slider-image-style" src={oceanzImg} alt="Slider-Image2" />
         <div className="gradient-overlay"></div>
         </div>
         </Carousel.Item>
         <Carousel.Item> 
         <div className="position-relative">
-        <img loading='lazy' className="d-block w-100 slider-image-style" src={sliderImage3} alt="Slider-Image3" />
+        <img loading='lazy' className="d-block w-100 slider-image-style" src={samanaImg} alt="Slider-Image3" />
         <div className="gradient-overlay"></div>
         </div>
         </Carousel.Item>
         <Carousel.Item> 
         <div className="position-relative">
-        <img loading='lazy' className="d-block w-100 slider-image-style" src={sliderImage4} alt="Slider-Image4" />
+        <img loading='lazy' className="d-block w-100 slider-image-style" src={oliviaImg} alt="Slider-Image4" />
         <div className="gradient-overlay"></div>
         </div>
         </Carousel.Item>
         <Carousel.Item> 
         <div className="position-relative">
-        <img loading='lazy' className="d-block w-100 slider-image-style" src={sliderImage5} alt="Slider-Image5" />
+        <img loading='lazy' className="d-block w-100 slider-image-style" src={vybImg} alt="Slider-Image5" />
+        <div className="gradient-overlay"></div>
+        </div>
+        </Carousel.Item>
+        <Carousel.Item> 
+        <div className="position-relative">
+        <img loading='lazy' className="d-block w-100 slider-image-style" src={damacImg} alt="Slider-Image5" />
         <div className="gradient-overlay"></div>
         </div>
         </Carousel.Item>

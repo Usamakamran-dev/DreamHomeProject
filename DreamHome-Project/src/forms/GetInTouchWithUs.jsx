@@ -112,10 +112,10 @@ function GetInTouchWithUs(){
          className={`${firstError? 'border-red' : 'border-black'} fw-medium rounded input-field-style p-3 w-100`}
          onChange={(e) => firstNameChange(e)}
          onKeyPress={(e) => {
-           if (!/^[A-Za-z]$/.test(e.key)) {
-             e.preventDefault();
-           }
-         }}
+          if (!/^[A-Za-z\s]$/.test(e.key)) {
+              e.preventDefault();
+          }
+        }}
          />
         <input ref={emailRef}
         type="email"  name="Email" placeholder='Enter Email' 

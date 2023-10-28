@@ -233,6 +233,14 @@ body {
     background-attachment: fixed;
   }
 
+  .havenBg{
+    background-image: url("./../assets/Projects/haven/havenImg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
   .h-mobile{
     font-size: 2rem;
   }
@@ -279,13 +287,16 @@ width: 21rem;
 .unit-price-input{
   width: 9rem;
  }
+ .arrow-style{
+  font-size: 4rem;
+ }
   /* ...................Media query */
 @media (max-width: 768px) {
   .project-button-width {width: 9rem !important; }
   .fs-para{ font-size: 0.7rem ;}
   .slider-image{
-    width: 25rem;
-    height: 20rem;
+    width: 33rem;
+    height: 25rem;
     object-fit: cover;}
     .enquiry-icon{height: 1rem;}
     .call-icon{height: 1.2rem;}
@@ -348,6 +359,9 @@ width: 21rem;
        .unit-price-input{
          width: 7rem;
         }
+        .arrow-style{
+          font-size: 3rem;
+         }
   }
   .custom-style {
     top: 100%;
@@ -367,7 +381,7 @@ width: 21rem;
       height: 450px;
      }
      .project-logo{
-      width: 10rem;
+      width: 13rem;
       height: auto !important;
     }
     .project-input-width{

@@ -1,29 +1,38 @@
-import MainPage from "../pages/MainPage";
-import ParentElement from "./ParentElement";
-import ProjectDetailPage from "../pages/ProjectDetailPage";
-import BlogDetailPage from "../pages/BlogDetailPage";
-import Contact from "../pages/Contact";
-import ProjectPage from "../pages/ProjectPage";
-import BlogPage from "../pages/BlogPage";
-import Login from "../pages/Login";
-import Residential from "../pages/Residential";
-import VideoGallery from "../pages/VideoGallery";
+import React, { Suspense, lazy } from 'react';
+const MainPage = lazy(() => import('../pages/MainPage'));
+const ParentElement = lazy(() => import('./ParentElement'));
+const ProjectDetailPage = lazy(() => import('../pages/ProjectDetailPage'));
+const BlogDetailPage = lazy(() => import('../pages/BlogDetailPage'));
+const Contact = lazy(() => import('../pages/Contact'));
+const ProjectPage = lazy(() => import('../pages/ProjectPage'));
+const BlogPage = lazy(() => import('../pages/BlogPage'));
+const Login = lazy(() => import('../pages/Login'));
+// const Residential = lazy(() => import('../pages/Residential'));
+const VideoGallery = lazy(() => import('../pages/VideoGallery'));
+import LoadingSpinner from '../components/LoadingSpinner';
 import { createBrowserRouter } from "react-router-dom";
 
 export const router=createBrowserRouter([
-    {path:"/login", element: <Login/>},
-    {path:"/", element: <ParentElement/> ,
+    {path:"/login", element: <Suspense fallback={<LoadingSpinner/>}> <Login/> </Suspense> },
+    {path:"/", element: <Suspense fallback={<LoadingSpinner/>}><ParentElement/></Suspense> ,
      children:[
-        {index:true , element: <MainPage/>},
-        {path:"/projects",element: <ProjectPage/>},
-        {path:"/blogs",element: <BlogPage/>},
-        {path:"/project/:Id", element: <ProjectDetailPage/>},
-        {path:"/blog/:Id", element: <BlogDetailPage/>},
-        {path:"/contact", element: <Contact/>},
-        {path:"/videogallery", element: <VideoGallery/>}
-      //   {path:"/residential", element: <Residential/>}
+        {index:true , 
+        element: <Suspense fallback={<LoadingSpinner/>}> <MainPage/> </Suspense>},
+        {path:"/projects",
+        element: <Suspense fallback={<LoadingSpinner/>}> <ProjectPage/> </Suspense>},
+        {path:"/blogs",
+        element: <Suspense fallback={<LoadingSpinner/>}> <BlogPage/> </Suspense>},
+        {path:"/project/:Id", 
+        element: <Suspense fallback={<LoadingSpinner/>}> <ProjectDetailPage/> </Suspense>},
+        {path:"/blog/:Id", 
+        element: <Suspense fallback={<LoadingSpinner/>}> <BlogDetailPage/> </Suspense>},
+        {path:"/contact", 
+        element: <Suspense fallback={<LoadingSpinner/>}> <Contact/> </Suspense>},
+        {path:"/videogallery", 
+        element: <Suspense fallback={<LoadingSpinner/>}> <VideoGallery/> </Suspense>}
+        // {path:"/residential", 
+        // element: <Suspense fallback={<LoadingSpinner/>}> <Residential/> </Suspense>}
      ]},
      {path:"*", element: <p className="fs-1 fw-bold text-center p-5 text-danger">THERE IS AN UNKNOWN ERROR</p>}
-])
-
-export default router;
+     ])
+     export default router;

@@ -12,27 +12,23 @@ import oliviaImg from './../assets/Projects/olivia/olivia.jpeg';
 import oliviaAbout from './../assets/Projects/olivia/oliviaAbout.jpeg';
 import vybImg from './../assets/Projects/vyb/vybImg.jpeg';
 import vybAbout from './../assets/Projects/vyb/vybAbout.jpeg';
+import havenAbout from './../assets/Projects/haven/havenGallery3.webp';
 
 // Amenities import
 import jacuzzi from './../assets/Amenities/jacuzzi.svg';
-import kidPool from './../assets/Amenities/kid-pool.svg';
 import lawn from './../assets/Amenities/lawn.svg';
-import mainPool from './../assets/Amenities/main-pool.svg';
 import playground from './../assets/Amenities/playground.svg';
 import relax from './../assets/Amenities/relax.svg';
 import running from './../assets/Amenities/running.svg';
 import sauna from './../assets/Amenities/sauna.svg';
 import swimmingPool from './../assets/Amenities/swimming-pool.svg';
 import swimmingPool2 from './../assets/Amenities/swimming-pool2.svg';
-import swimmingPool3 from './../assets/Amenities/swimming-pool3.svg';
-import table from './../assets/Amenities/table.svg';
 import treadmill from './../assets/Amenities/treadmill.svg';
 import waterfall from './../assets/Amenities/waterfall.svg';
 
 import barbeque from './../assets/Amenities/barbeque.png';
 import basketballCourt from './../assets/Amenities/basketball-court.png';
 import bellboy from './../assets/Amenities/bellboy.png';
-import chargingStation from './../assets/Amenities/charging-station.png';
 import cinema from './../assets/Amenities/cinema.png';
 import tent from './../assets/Amenities/circus.png';
 import parking from './../assets/Amenities/parking.png';
@@ -47,6 +43,31 @@ import juice from './../assets/Amenities/juice.svg';
 import maps from './../assets/Amenities/maps.svg';
 import nature from './../assets/Amenities/nature.svg';
 import streetLight from './../assets/Amenities/street-light.svg';
+
+import botanicalGarden from './../assets/Amenities/Botanical Garden.svg';
+import cabanaSeating from './../assets/Amenities/Cabana Seating.svg';
+import cricketPitch from './../assets/Amenities/Cricket Pitch.svg';
+import dayCareCenter from './../assets/Amenities/Daycare Center.svg';
+import diningOutlets from './../assets/Amenities/Dining Outlets.svg';
+import fishingPonds from './../assets/Amenities/Fishing Ponds.svg';
+import hennaArtLounge from './../assets/Amenities/Henna art lounge.svg';
+import lightMaze from './../assets/Amenities/Light Maze and mountains.svg';
+import market from './../assets/Amenities/Market.svg';
+import mpHall from './../assets/Amenities/Multi-Purpose Hall.svg';
+import observationDeck from './../assets/Amenities/Observation deck.svg';
+import paddleTennis from './../assets/Amenities/Paddle Tennis.svg';
+import retailOutlets from './../assets/Amenities/Retail Outlets.svg';
+import security from './../assets/Amenities/Security.svg';
+import smartMart from './../assets/Amenities/Smart Mart.svg';
+import sunsetDeck from './../assets/Amenities/Sunset Deck.svg';
+import cactusGarden from './../assets/Amenities/cactusGarden.svg';
+import serenityGarden from './../assets/Amenities/serenityGarden.svg';
+
+import wellnessCenter from './../assets/Amenities/wellnessCenter.svg';
+import centralPark from './../assets/Amenities/centralPark.svg';
+import mosque from './../assets/Amenities/mosque.svg';
+import picnicPatch from './../assets/Amenities/picnicPatch.svg';
+import school from './../assets/Amenities/school.svg';
 
 
 // Samana Gallery
@@ -90,12 +111,19 @@ import damacGallery4 from './../assets/Projects/damac/damacGallery4.jpg';
 import damacGallery5 from './../assets/Projects/damac/damacGallery5.jpg';
 import damacGallery6 from './../assets/Projects/damac/damacGallery6.jpg';
 import damacGallery7 from './../assets/Projects/damac/damacGallery7.jpg';
+// haven Gallery
+import havenGallery1 from './../assets/Projects/haven/havenGallery1.webp';
+import havenGallery2 from './../assets/Projects/haven/havenGallery2.webp';
+import havenGallery3 from './../assets/Projects/haven/havenGallery3.webp';
+import havenGallery4 from './../assets/Projects/haven/havenGallery4.webp';
+import havenGallery5 from './../assets/Projects/haven/havenGallery5.webp';
 // Project Logos
 import samanaLogo from './../assets/PartnerLogos/samanaWhite.png';
 import damacLogo from './../assets/PartnerLogos/damacWhite.png';
 import oliviaLogo from './../assets/PartnerLogos/oliviaWhite.png';
 import oceanzLogo from './../assets/PartnerLogos/oceanzWhite.png';
 import vybLogo from './../assets/PartnerLogos/vybWhite.png';
+import havenLogo from './../assets/PartnerLogos/HavenWhite.png';
 
 const projectData=[
     {
@@ -160,7 +188,7 @@ const projectData=[
               percentage: '5%'
             }, {
               heading: "on 18th Months",
-              percentage: '0.5%'
+              percentage: '5%'
             }, {
               heading: "x60 Months",
               percentage: '0.5%'
@@ -330,17 +358,17 @@ const projectData=[
                 percentage: '5%'
               }, {
                 heading: "12th Installment (70% completion)",
-                percentage: '5%'
+                percentage: '2%'
               }, {
                 heading: "13th Installment (80% completion)",
                 percentage: '2%'
               }, {
                 heading: "14th Installment (90% completion)",
-                percentage: '2%'
+                percentage: '1%'
               },
               {
                 heading: "15th Installment (On completion)",
-                percentage: '1%'
+                percentage: '20%'
               }]
         },
         amenities:{
@@ -348,10 +376,10 @@ const projectData=[
          { image: tent,
            label: 'Private tents'
          },
-         { image: mail,
+         { image: serenityGarden,
          label: 'Serenity garden'
          },
-          { image: mail,
+          { image: cactusGarden,
          label: 'Cactus garden'
          },
           { image: yoga,
@@ -381,22 +409,22 @@ const projectData=[
              { image: maps,
             label: 'Floating walkways'
             },
-             { image: mail,
+             { image: fishingPonds,
             label: 'Fishing ponds'
             } ,
             { image: playground,
             label: 'Play area'
             },
-            { image: mail,
+            { image: lightMaze,
             label: 'Light maze and mountains'
             },
-            { image: mail,
+            { image: botanicalGarden,
             label: 'Botanical garden'
             },
-            { image: mail,
+            { image: observationDeck,
             label: 'Observation deck'
             },
-            { image: mail,
+            { image: hennaArtLounge,
             label: 'Henna art lounge'
             }
              ]}
@@ -477,16 +505,16 @@ const projectData=[
          { image: cafe,
          label: 'Restaurants'
          },
-         { image: mail,
+         { image: retailOutlets,
          label: 'Retail Outlets'
          } ,
-         { image: mail,
+         { image: market,
          label: 'Supermarket'
          },
          { image: swimmingPool,
            label: 'Swimming Pool'
          },
-         { image: mail,
+         { image:  diningOutlets,
            label: 'Dining Outlets'
          }
          ]}
@@ -566,7 +594,7 @@ const projectData=[
                 percentage: '5%'
               },
               {
-                heading: "26th to 28th Installment (1% monthly)",
+                heading: "26th to 38th Installment (1% monthly)",
                 percentage: '13%'
               },
               {
@@ -582,13 +610,13 @@ const projectData=[
          { image: treadmill,
            label: 'Aquatic Gym'
          },
-         { image: mail,
+         { image: dayCareCenter,
          label: 'Daycare Center'
          },
           { image: barbeque,
          label: 'BBQ Area'
          },
-          { image: mail,
+          { image: sunsetDeck,
          label: 'Sunset Deck'
          },
           { image: jacuzzi,
@@ -600,14 +628,14 @@ const projectData=[
          { image: cinema,
            label: 'Floating Cinema'
            },
-           { image: mail,
+           { image: cricketPitch,
              label: 'Cricket Pitch'
              }
              ,
              { image: running,
               label: 'Jogging Track'
             },
-            { image: mail,
+            { image: paddleTennis,
             label: 'Paddle Tennis'
             },
              { image: basketballCourt,
@@ -616,16 +644,16 @@ const projectData=[
              { image: relax,
             label: 'Relaxation Zone'
             },
-             { image: mail,
+             { image: cabanaSeating,
             label: 'Cabana Seating'
             } ,
-            { image: mail,
+            { image: mpHall,
             label: 'Multi-Purpose Hall'
             },
             { image: waterfall,
               label: 'Water Feature'
               },
-              { image: mail,
+              { image: smartMart,
                 label: 'Smart Mart'
                 }
        ]}
@@ -670,6 +698,10 @@ const projectData=[
              startingPrice: "1.23M",
              column1: [
               {
+                heading: "At the time of booking",
+                percentage: '10%'
+              },
+              {
                 heading: "30 days from booking",
                 percentage: '10%'
               },
@@ -701,15 +733,134 @@ const projectData=[
           { image: parking,
           label: 'Covered Parking'
           },
-           { image: mail,
+           { image: security,
           label: 'Security'
           },
            { image: swimmingPool,
           label: 'Shared Pool'
           },
-           { image: mail,
+           { image: paddleTennis,
           label: 'Tennis Court'
           } 
+        ]
+        }
+     }
+     ,
+     {
+      ProjectHeading: 'Haven Aldar',
+      ProjectSubHeading: "By Asyan Properties",
+      ProjectImage: havenAbout,
+         hero: {
+           heading: "3 TO 6 BEDROOM WITH ELITE VILLAS AND TOWNHOUSES",
+           logo: havenLogo,
+         },
+         monthlyPayment: 
+         {
+           heading: "MONTHLY PAYMENTS",
+           paragraph: "3 to 6 Bedroom Villas and TownHouses",
+           label: "2.5M",
+         },
+         aboutUs: 
+         {
+           paragraph: "Introducing Aldar’s first residential development in Dubai, that brings community-wide wellness to the region. Nestled under a treehouse, every moment at Haven has been curated to enhance your wellbeing, while the gently flowing stream provides a rippling soundtrack to your every day",
+           image: havenAbout,
+         },
+         unitTypes: {
+           cards: [
+             {
+               title: "4-6 BED ELITE HAVEN VILLAS",
+               price: "2.5M",
+             },
+             {
+              title: "3-5 BED ELITE SERENE VILLAS",
+              price: "2.5M",
+            }, 
+            {
+              title: "3-4 BED HAVEN TOWNHOUSES",
+              price: "2.5M",
+            }
+          ]
+         },
+         gallery:{
+            images: [havenGallery1,havenGallery2,havenGallery3,havenGallery4,havenGallery5]
+         },
+         paymentPlan:{
+             heading: "PAYMENT PLAN",
+             footerHeading:"HAVEN ALDER , 3 to 6 Bedroom Villas and TownHouses",
+             startingPrice: "2.5M",
+             column1: [
+              {
+                heading: "On booking",
+                percentage: '15%'
+              },
+              {
+                heading: "November 2023",
+                percentage: '5%'
+              },
+              {
+                heading: "February 2024",
+                percentage: '5%'
+              }, {
+                heading: "May 2024",
+                percentage: '5%'
+              }
+            ],
+            column2: [
+              {
+                heading: "August , 2024",
+                percentage: '5%'
+              }, {
+                heading: "November 2024",
+                percentage: '5%'
+              }, {
+                heading: "on Completion",
+                percentage: '60%'
+              }]
+         },
+         amenities:{
+          items:[
+          { image: wellnessCenter,
+            label: 'Wellness Center'
+          },
+          { image: maps,
+          label: 'Run & Ride Tracks'
+          },
+           { image: playground,
+          label: 'Shaded Play Zone'
+          },
+           { image: centralPark,
+          label: 'Haven Central Park'
+          },
+           { image: yoga,
+          label: 'Meditation Pavilion'
+          },
+          { image: treadmill,
+            label: 'Air Fitness'
+          },
+          { image: school,
+          label: 'Little Haven'
+          },
+           { image: mosque,
+          label: 'Mosque'
+          },
+           { image: retailOutlets,
+          label: 'Retail Therapy'
+          },
+           { image: botanicalGarden,
+          label: 'Garden'
+          },
+          { image: swimmingPool,
+            label: 'Transquility Pool'
+          },
+          { image: picnicPatch,
+          label: 'Picnic Patch'
+          },
+           { image: basketballCourt,
+          label: 'BasketBall Court'
+          },
+           { image: paddleTennis,
+          label: 'Padel Haven'
+          }
         ]
         }
      }

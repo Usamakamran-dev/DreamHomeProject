@@ -179,8 +179,8 @@ function handleSelectedCountry(arr){
                 rounded  bg-light px-3 py-2 fs-mobile input-width`}
                 onChange={(e) => firstNameChange(e)}
                 onKeyPress={(e) => {
-                  if (!/^[A-Za-z]$/.test(e.key)) {
-                    e.preventDefault();
+                  if (!/^[A-Za-z\s]$/.test(e.key)) {
+                      e.preventDefault();
                   }
                 }}
               />
@@ -193,8 +193,8 @@ function handleSelectedCountry(arr){
                 rounded  bg-light px-3 py-2 fs-mobile text-black input-width`}
                 onChange={(e) => lastNameChange(e)}  
                 onKeyPress={(e) => {
-                  if (!/^[A-Za-z]$/.test(e.key)) {
-                    e.preventDefault();
+                  if (!/^[A-Za-z\s]$/.test(e.key)) {
+                      e.preventDefault();
                   }
                 }}
               />

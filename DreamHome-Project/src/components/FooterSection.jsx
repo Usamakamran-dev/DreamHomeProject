@@ -63,13 +63,13 @@ function FooterSection(){
              <div className="col d-flex flex-column align-items-start gap-2">
                <h1 className="fs-4 fw-bold text-white m-0 py-2">GALLERY</h1>
                <Link to="/videogallery" ><label className="fs-para fw-regular text-white">Video Gallery</label></Link>
-               <label onClick={()=> value.setFormVisible(true)} className="fs-para fw-regular text-white">Project Form</label>
+               {/* <label onClick={()=> value.setFormVisible(true)} className="fs-para fw-regular text-white">Project Form</label> */}
              </div>
           </div>
           <p className="fs-para text-white mx-auto text-center fw-regular py-2 px-5">Realtor Nine, a premium real estate marketing company in the heart of Dubai to let you experience the best side of real estate in Dubai</p>
           {showCompanyForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
           {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
-          {value.formVisible && <MultiStepForm/>}
+          {/* {value.formVisible && <MultiStepForm/>} */}
         </div>
         )}
 

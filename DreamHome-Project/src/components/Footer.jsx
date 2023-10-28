@@ -42,10 +42,10 @@ function Footer({show}) {
               <label className="fw-semibold font-color-primary fs-para">WHATSAPP</label>
             </div>
             </Link>
-            {/* <div onClick={()=> navigate("/contact")} className="d-flex flex-column align-items-center gap-2">
+            <div onClick={()=> navigate("/contact")} className="d-flex flex-column align-items-center gap-2">
             <img src={contact} alt="Footer-Icon" className='w-auto contact-icon'/>
             <label className="fw-semibold font-color-primary fs-para">CONTACT</label>
-          </div> */}
+          </div>
         </div>
       </nav>
       {showEnquiryForm && <EnquiryForm  toggleFormVisibility={toggleFormVisibility} onCancel={cancelEnquiryForm}/>}

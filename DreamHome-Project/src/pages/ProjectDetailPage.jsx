@@ -19,6 +19,7 @@ import samanaPdf from './../assets/Projects/samana/samana.pdf';
 import oliviaPdf from './../assets/Projects/olivia/Olivia.pdf';
 import oceanzPdf from './../assets/Projects/oceanz/oceanz.pdf';
 import vybPdf from './../assets/Projects/vyb/VYB.pdf';
+import havenPdf from './../assets/Projects/haven/HavenBrochure.pdf';
 
 function ProjectDetailPage(){
   const showFooter=useShowFooter();
@@ -38,6 +39,7 @@ function ProjectDetailPage(){
       if (currentProjectData.ProjectHeading === 'Olivia Residences') return 'oliviaBg';
       if (currentProjectData.ProjectHeading === 'Danube Oceanz') return 'oceanzBg';
       if (currentProjectData.ProjectHeading === 'VYB Dubai') return 'vybBg';
+      if (currentProjectData.ProjectHeading === 'Haven Aldar') return 'havenBg';
       return '';
     })();
    const brochureDownload = (() => {
@@ -46,6 +48,7 @@ function ProjectDetailPage(){
     if (cardIdentifier === 'Olivia Residences') return setPdf(oliviaPdf);
     if (cardIdentifier === 'Danube Oceanz') return setPdf(oceanzPdf);
     if (cardIdentifier === 'VYB Dubai') return setPdf(vybPdf);
+    if (cardIdentifier === 'Haven Aldar') return setPdf(havenPdf);
     return;
   });
   useEffect(() => {
@@ -107,7 +110,7 @@ function ProjectDetailPage(){
         {/*Transparent Section*/}
         <div style={{width: '100%',height: "30rem"}}></div>
         {/* Gallery Section */}
-        <div className="background-color-primary py-5 d-flex flex-column align-items-center gap-4">
+        <div className="background-color-primary py-5 d-flex flex-column align-items-center justify-content-center gap-4">
         <h1 className="h-mobile fw-bold text-white"> PROJECT GALLERY</h1>
         <ProjectGallery images={currentProjectData.gallery.images}></ProjectGallery>
         </div>

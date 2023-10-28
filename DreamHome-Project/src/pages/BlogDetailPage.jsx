@@ -5,25 +5,28 @@ import useShowFooter from "../context/useShowFooter";
 import Footer from '../components/Footer';
 import EnquiryTop from '../components/EnquiryTop';
 import EnquiryForm from "../forms/EnquiryForm";
-import dubaiImage from './../assets/Images/dubaiImage.jpg';
 import eyeIcon from './../assets/Icons/eye.png';
-import NewsLetter from "../forms/NewLetter";
+import NewsLetter from "../forms/NewsLetter";
 import GetInTouchWithUs from "../forms/GetInTouchWithUs";
 import SuccessForm from "../forms/SuccessForm";
 import LoadingSpinner from "../components/LoadingSpinner";
-import { EmailIcon,FacebookIcon,LinkedinIcon,PinterestIcon,TelegramIcon,
-         TwitterIcon,WhatsappIcon } from "react-share";
-// import { EmailShareButton,FacebookShareButton,LinkedinShareButton,PinterestShareButton,TelegramShareButton,
-//          TwitterShareButton,WhatsappShareButton} from "react-share";
+import instaIcon from "./../assets/social media/instagramIcon.png";
+import { FacebookIcon,LinkedinIcon,TelegramIcon,TwitterIcon,WhatsappIcon} from "react-share";
+import { FacebookShareButton,LinkedinShareButton,WhatsappShareButton,
+         TelegramShareButton, TwitterShareButton} from 'react-share';
 
 function BlogDetailPage(){
   const showFooter=useShowFooter();
+  const currentURL = window.location.href;
   const { currentBlogData }=useContext(CurrentProjectBlogContext);
   if(!currentBlogData) return <LoadingSpinner></LoadingSpinner>
   const {setShowEnquiryForm,setShowSuccessForm,showEnquiryForm,
   showSuccessForm } = useContext(CurrentDataContext);     
   useEffect(() => { window.scrollTo(0, 0);}, []);
-
+  function toggleFormVisibility(isVisible){
+    setShowEnquiryForm(isVisible);
+    setShowSuccessForm(true);
+  }
   return(
         <div className="overflow-hidden w-100 my-4 px-2 px-md-5">
          <div className="row">
@@ -52,15 +55,28 @@ function BlogDetailPage(){
             </div>
                     <div className="d-flex flex-column align-items-center gap-3 py-5">
                      <label className="fs-5 fw-semibold font-color-primary m-0">Share Now</label>
+                     <div class="d-flex flex-row align-items-center gap-3">
                      <div className="d-flex flex-row align-items-center gap-3">
-                      <FacebookIcon size={32} round={true} ></FacebookIcon>
-                      <EmailIcon size={32} round={true} ></EmailIcon>
-                      <TwitterIcon size={32} round={true} ></TwitterIcon>
-                      <LinkedinIcon size={32} round={true} ></LinkedinIcon>
-                      <WhatsappIcon size={32} round={true} ></WhatsappIcon>
-                      <PinterestIcon size={32} round={true} ></PinterestIcon>
-                      <TelegramIcon size={32} round={true} ></TelegramIcon>
+                     <FacebookShareButton className="card-hover" url={currentURL}>
+                      <FacebookIcon size={40} round={true} />
+                     </FacebookShareButton>
+                     <TwitterShareButton className="card-hover" url={currentURL}>
+                      <TwitterIcon size={40} round={true} />
+                     </TwitterShareButton>
+                     <LinkedinShareButton className="card-hover" url={currentURL}>
+                      <LinkedinIcon size={40} round={true} />
+                     </LinkedinShareButton>
+                     <TelegramShareButton className="card-hover" url={currentURL}>
+                      <TelegramIcon size={40} round={true} />
+                     </TelegramShareButton>
+                     <WhatsappShareButton className="card-hover" url={currentURL}>
+                      <WhatsappIcon size={40} round={true} />
+                     </WhatsappShareButton>
+                     <img onClick={()=>window.open(`https://www.instagram.com/share?url=${currentURL}`, '_blank')}
+                     src={instaIcon} width='40' alt="instagram-Icon" className="card-hover"/>
                      </div>
+                     </div>
+
                     </div>
                     </div>
                     {/* for ads */}

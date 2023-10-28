@@ -1,4 +1,3 @@
-import './Custom.css';
 import { useContext , useEffect } from "react";
 import { ProjectCardContext } from "../context/ProjectCardProvider";
 import { BlogContext } from "../context/BlogProvider";
@@ -15,6 +14,7 @@ import partnerLogo2 from "./../assets/PartnerLogos/Oceanz.png";
 import partnerLogo3 from "./../assets/PartnerLogos/vyb.png";
 import partnerLogo4 from "./../assets/PartnerLogos/Olivia.png";
 import partnerLogo5 from "./../assets/PartnerLogos/samana.png";
+import partnerLogo6 from "./../assets/PartnerLogos/Haven.png";
 import aboutUsImage from './../assets/Projects/vyb/vybGallery1.jpeg';
 import EnquiryTop from '../components/EnquiryTop';
 import FeedbackSlider from '../components/FeedbackSlider';
@@ -44,7 +44,7 @@ function MainPage() {
       setShowCompanyForm(isVisible);
       setShowSuccessForm(true);
     };
-    const partnerImages=[partnerLogo,partnerLogo2,partnerLogo3,partnerLogo4,partnerLogo5];
+    const partnerImages=[partnerLogo,partnerLogo2,partnerLogo3,partnerLogo4,partnerLogo5,partnerLogo6];
     useEffect(() => { window.scrollTo(0, 0);}, []);
     
     return(
@@ -73,9 +73,9 @@ function MainPage() {
                     <button onClick={()=>setShowCompanyForm(true)} style={{width: '12rem'}} className='background-color-secondary border-0 button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>COMPANY PROFILE</button>
                     </div>
                  </div>
-                 <div className="col-md-6 py-4 m-0 rounded">
+                 <div className="col-md-6 py-4 m-0 rounded d-flex align-items-center justify-content-center">
                  <img loading='lazy'
-                 src={aboutUsImage} alt="AboutUs-Image"className="about-Img p-0 m-0 rounded"/>
+                 src={aboutUsImage} alt="AboutUs-Image"className="w-100 p-0 m-0 rounded"/>
                  </div>
                </div>
               </div>             
@@ -117,7 +117,7 @@ function MainPage() {
                      {partnerImages.map((arr, index) => (
                       <div className="col" key={index}>
                       <img src={arr} alt="partner-logo" 
-                      className="image-fluid w-100 h-100 p-2 p-md-4" />
+                      className="w-100 h-100 p-2 p-md-4" />
                      </div> ))}
                   </div>
                 </div>     

@@ -1,40 +1,41 @@
 import React, { useState } from 'react';
-import sarahImage from "./../assets/Images/sarah.png";
-import lisaImage from "./../assets/Images/lisa.png";
-import jamesImage from "./../assets/Images/james.png";
-import emilyImage from "./../assets/Images/emily.png";
-import cameronImage from "./../assets/Images/cameron.png";
+// import sarahImage from "./../assets/Images/sarah.png";
+// import lisaImage from "./../assets/Images/lisa.png";
+// import jamesImage from "./../assets/Images/james.png";
+// import emilyImage from "./../assets/Images/emily.png";
+// import cameronImage from "./../assets/Images/cameron.png";
+import maleImage from './../assets/Images/male.svg';
 import starIcon from "./../assets/Icons/starIcon.png";
 
 const feedbackData = [
   {
-    title: 'Sarah Taylor',
-    image: sarahImage,
+    title: 'Milad',
+    image: maleImage,
     extraDescription: 'As a first-time homebuyer, I was both excited and overwhelmed by the process of finding the perfect property.Their knowledgeable team guided me through every step!',
   },
   {
-    title: 'John Martin',
-    image: cameronImage,
+    title: 'Hunain',
+    image: maleImage,
     extraDescription: 'Working with Realtor Nine was such a pleasure! Their agents are professional, approachable, and have a deep understanding of the local market.',
   },
   {
-    title: 'Lisa Roberts',
-    image: lisaImage,
+    title: 'Muhammad Salman',
+    image: maleImage,
     extraDescription: 'R9 conducted a thorough market analysis to determine the ideal asking price, marketed my property extensively, and skillfully negotiated with potential buyers.I would trust Realtor 9 with any future real estate transactions without hesitation',
   },
   {
-    title: 'James Peter',
-    image: jamesImage,
+    title: 'Abu Rayan',
+    image: maleImage,
     extraDescription: 'Realtor Nine exceeded my expectations when it came to selling my home.Their team of experienced agents worked tirelessly to showcase the unique features of my home and attract potential buyers.',
   },
   {
-    title: 'Emily H.',
-    image: emilyImage,
+    title: 'Amir',
+    image: maleImage,
     extraDescription: 'I had the pleasure of working with Realtor Nine for both buying and selling properties, and they consistently delivered exceptional service. Their team went above and beyond to understand my needs.',
   },
   {
-    title: 'Cameron Ford',
-    image: cameronImage,
+    title: 'Osama',
+    image: maleImage,
     extraDescription: 'Realtor Nine extensive knowledge of the market, combined with their network of industry connections, allowed me to find lucrative investment opportunities.',
   }
 ];
@@ -78,7 +79,7 @@ const FeedbackSlider = () => {
 
   return (
     <div className="feedback-slider container">
-      <button onClick={handlePrev} className='card-hover'>&#8592;</button>
+      <button onClick={handlePrev} className='card-hover arrow-style'>&#8592;</button>
       {visibleCards.map((card, index) => (
         <FeedbackCard
           key={index}
@@ -92,7 +93,7 @@ const FeedbackSlider = () => {
           extraDescription={index === 1 ? card.extraDescription : ''}
         />
       ))}
-      <button onClick={handleNext} className='card-hover'>&#8594;</button>
+      <button onClick={handleNext} className='card-hover arrow-style'>&#8594;</button>
       <style>
         {`
           .feedback-slider {
