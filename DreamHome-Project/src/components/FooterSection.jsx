@@ -5,12 +5,8 @@ import EnquiryForm from "../forms/EnquiryForm";
 import locationIcon from './../assets/Icons/locationWhite.png';
 import mailIcon from './../assets/Icons/mailWhite.png';
 import phoneIcon from './../assets/Icons/phoneWhite.png';
-import { MultiFormContext } from "../context/MultiFormProvider";
-import MultiStepForm from "../forms/MultiStepForm";
-
 
 function FooterSection(){
-  const value=useContext(MultiFormContext);
   const [showEnquiryForm, setShowEnquiryForm] = useState(false);
   const [showCompanyForm, setShowCompanyForm] = useState(false);
   const enquiryFormHandler = () => { setShowEnquiryForm(true) }
@@ -57,20 +53,20 @@ function FooterSection(){
               <Link to="/contact"><label className="fs-para fw-regular text-white">Contact Us </label></Link> 
               <Link onClick={enquiryFormHandler}><label className="fs-para fw-regular text-white">Enquire Now </label></Link> 
               <Link onClick={companyFormHandler}><label className="fs-para fw-regular text-white">Company Profile </label></Link>
-              <Link  to="tel:+971568343200"><label className="fs-para fw-regular text-white">Call Now </label></Link>
-              <Link to="https://web.whatsapp.com" target="_blank"><label className="fs-para fw-regular text-white">WhatsApp Now </label></Link>
+              <Link  to="tel:+971568343200" className="fs-para fw-regular text-white">Call Now</Link>
+              <Link to="https://api.whatsapp.com/send?phone=971568343200" 
+              target="_blank" className="fs-para fw-regular text-white">Whatsapp Now</Link>
              </div>
              <div className="col d-flex flex-column align-items-start gap-2">
                <h1 className="fs-4 fw-bold text-white m-0 py-2">GALLERY</h1>
                <Link to="/videogallery" ><label className="fs-para fw-regular text-white">Video Gallery</label></Link>
-               {/* <label onClick={()=> value.setFormVisible(true)} className="fs-para fw-regular text-white">Project Form</label> */}
+               <Link to="/residential" ><label className="fs-para fw-regular text-white">Residential List</label></Link>
+               <Link to="/projectForm" ><label className="fs-para fw-regular text-white">Project Form</label></Link>
              </div>
           </div>
           <p className="fs-para text-white mx-auto text-center fw-regular py-2 px-5">Realtor Nine, a premium real estate marketing company in the heart of Dubai to let you experience the best side of real estate in Dubai</p>
           {showCompanyForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
           {showEnquiryForm && <EnquiryForm  onCancel={cancelEnquiryForm}/>}
-          {/* {value.formVisible && <MultiStepForm/>} */}
-        </div>
-        )}
-
-       export default FooterSection;
+          </div>
+          )}
+          export default FooterSection;

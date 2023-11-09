@@ -16,7 +16,7 @@ function PaymentPlan(props){
                       <div className="d-flex flex-column align-items-start gap-2">
                         {paymentPlan.column1?.map((arr,index)=> ( <div key={index} className="d-flex flex-row align-items-center">
                        <label className="fs-6 font-color-primary fw-semibold payment-heading-width">{arr.heading}</label>
-                       <span className="fs-4 fw-semibold font-color-secondary">{arr.percentage}</span>
+                       <span className="fs-4 fw-semibold font-color-secondary">{arr.percentage}%</span>
                        </div>
                         ))}
                       </div>
@@ -27,18 +27,17 @@ function PaymentPlan(props){
                      <div className="d-flex flex-column align-items-start gap-2">
                         {paymentPlan.column2?.map((arr,index)=> ( <div key={index} className="d-flex flex-row align-items-center">
                        <label className="fs-6 font-color-primary fw-semibold payment-heading-width">{arr.heading}</label>
-                       <span className="fs-4 fw-semibold font-color-secondary">{arr.percentage}</span>
+                       <span className="fs-4 fw-semibold font-color-secondary">{arr.percentage}%</span>
                        </div>
                         ))}
                       </div>
                      </div>
                 </div>
               </div>
-              <h2 className="fs-6 px-2 px-md-0 fw-semibold text-center font-color-primary">
+              {/* <h2 className="fs-6 px-2 px-md-0 fw-semibold text-center font-color-primary">
                 <span>{paymentPlan.footerHeading}</span> Offering
-                 the Best Percentage and Attractive Payment Plan. <br />Book Your Apartment Today!</h2>
+                 the Best Percentage and Attractive Payment Plan. <br />Book Your Apartment Today!</h2> */}
             </div>
-           
         </div>
     )
 }

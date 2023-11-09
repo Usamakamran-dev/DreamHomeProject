@@ -7,11 +7,13 @@ import { RouterProvider } from 'react-router-dom';
 import CurrentDataProvider from './context/CurrentDataProvider';
 import CountryDataProvider from './context/CountryDataProvider';
 import router from './routes/AppRoutes';
-import CurrentProjectBlogProvider from './context/currentProjectBlog';
+import CurrentProjectBlogProvider from './context/CurrentProjectBlog';
 import MultiFormProvider from './context/MultiFormProvider';
+import ResidentialCardProvider from './context/ResidentialCardProvider';
 
 function App() {
   return (
+  <ResidentialCardProvider>
    <MultiFormProvider>
      <CurrentProjectBlogProvider>
        <CountryDataProvider>
@@ -25,5 +27,6 @@ function App() {
         </CountryDataProvider>
         </CurrentProjectBlogProvider>
         </MultiFormProvider>
+   </ResidentialCardProvider>
      )}
      export default App;

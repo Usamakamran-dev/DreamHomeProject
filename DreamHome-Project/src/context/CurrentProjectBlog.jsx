@@ -1,5 +1,4 @@
-
-import React , {useState , useEffect} from "react";
+import React , { useState } from "react";
 
 export const CurrentProjectBlogContext=React.createContext();
 
@@ -10,6 +9,10 @@ function CurrentProjectBlogProvider(props){
       const [currentBlogData, setCurrentBlogData] = useState(
         JSON.parse(localStorage.getItem("currentBlogData")) || null
       );
+      const [currentResidentialData, setCurrentResidentialData] = useState(
+        JSON.parse(localStorage.getItem("currentResidentialData")) || null
+      );
+
       const updateCurrentProjectData = (data) => {
         setCurrentProjectData(data);
         localStorage.setItem("currentProjectData", JSON.stringify(data));
@@ -17,12 +20,20 @@ function CurrentProjectBlogProvider(props){
       const updateCurrentBlogData = (data) => {
         setCurrentBlogData(data);
         localStorage.setItem("currentBlogData", JSON.stringify(data));
-      };    
+      };  
+      const updateCurrentResidentialData = (data) => {
+        setCurrentResidentialData(data);
+        localStorage.setItem("currentResidentialData", JSON.stringify(data));
+      };  
+
+
     const value = {
         currentProjectData,
         updateCurrentProjectData,
         currentBlogData,
         updateCurrentBlogData,
+        currentResidentialData,
+        updateCurrentResidentialData
       }; 
 
     return(

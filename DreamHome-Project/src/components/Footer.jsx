@@ -36,7 +36,8 @@ function Footer({show}) {
             <label className="fw-semibold font-color-primary fs-para">CALL</label>
           </div>
           </Link>
-            <Link to="https://web.whatsapp.com" target="_blank" className='text-decoration-none'>
+            <Link to="https://api.whatsapp.com/send?phone=971568343200"
+            target="_blank" className='text-decoration-none'>
             <div className="d-flex flex-column align-items-center gap-2">
               <img src={whatsapp} alt="Footer-Icon" className='w-auto whatsapp-icon'/>
               <label className="fw-semibold font-color-primary fs-para">WHATSAPP</label>

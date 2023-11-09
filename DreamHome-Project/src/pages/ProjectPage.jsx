@@ -1,7 +1,7 @@
 import { useContext , useEffect } from "react";
 import { ProjectCardContext } from "../context/ProjectCardProvider";
 import { CurrentDataContext } from "../context/CurrentDataProvider";
-import { CurrentProjectBlogContext } from "../context/currentProjectBlog";
+import { CurrentProjectBlogContext } from "../context/CurrentProjectBlog";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
 import useShowFooter from "../context/useShowFooter";
@@ -21,7 +21,7 @@ function ProjectPage(){
       showEnquiryForm,showSuccessForm } = useContext(CurrentDataContext);
     function currentProjectHandler(currentProjectData,id){
       updateCurrentProjectData(currentProjectData);
-        setCardIdentifier(currentProjectData.ProjectHeading);
+        setCardIdentifier(currentProjectData.name);
         navigate(`/project/${id.split(' ').join('-')}`)}
     function toggleFormVisibility(isVisible){
       setShowEnquiryForm(isVisible);
@@ -39,11 +39,11 @@ function ProjectPage(){
                     {ProjectCardDetails.map((array, index) => (
                       <div className="col p-3" key={index}>
                         <ProjectCard
-                          onClick={() => currentProjectHandler(array, array.ProjectHeading)}
-                          heading={array.ProjectHeading}
-                          subHeading={array.ProjectSubHeading}
+                          onClick={() => currentProjectHandler(array, array.name)}
+                          heading={array.name}
+                          subHeading={array.developer}
                           paragraph={array.aboutUs.paragraph}
-                          image={array.ProjectImage}
+                          image={array.projectImage}
                         />
                       </div>
                     ))}

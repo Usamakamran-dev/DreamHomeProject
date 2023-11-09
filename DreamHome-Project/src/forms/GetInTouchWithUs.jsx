@@ -104,8 +104,9 @@ function GetInTouchWithUs(){
           }
         }
     return(
+        <div className="background-color-primary rounded p-3 d-flex flex-column align-items-center gap-2">
         <form  onSubmit={formSubmitHandler}
-        className="background-color-primary rounded p-3 w-100 d-flex flex-column align-items-center gap-3">
+        className=" w-100 d-flex flex-column align-items-center gap-3">
         <h1 className="fs-3 text-white text-center">Get in touch with us !</h1>
         <input ref={nameRef}
          type="text" name="Name" placeholder='Enter Name' 
@@ -129,19 +130,18 @@ function GetInTouchWithUs(){
          {
            e.preventDefault();
          }}}/>
-         <div className="d-flex flex-column align-items-center gap-3 w-100">
          <button 
-        className="button-hover-secondary py-3 w-100 fs-para fw-bold text-white background-color-secondary border-0 rounded">ENQUIRE NOW</button>
+         className="button-hover-secondary py-3 w-100 fs-para fw-bold text-white background-color-secondary border-0 rounded">ENQUIRE NOW</button>
+          </form>
         <label className="fs-para fw-medium text-white">OR</label>
-        <button onClick={() => window.open("https://web.whatsapp.com", "_blank")} style={{backgroundColor: "#25D366"}} 
+        <button onClick={() => window.open("https://api.whatsapp.com/send?phone=971568343200")} style={{backgroundColor: "#25D366"}} 
         className="button-hover-light py-3 w-100 fs-para fw-bold text-white border-0 rounded">WHATSAPP NOW</button>
-         </div>
          {showSuccessForm && (
             <SuccessForm
             onClick={cancelEnquiryForm}/>
           )}
-         </form>
-    )
-}
+        </div>
+      )
+      }
 
-export default GetInTouchWithUs;
+      export default GetInTouchWithUs;

@@ -1,88 +1,100 @@
-import React , { useContext , useState } from "react";
-import cancelIcon from './../assets/Icons/cancel.svg';
+import React , { useContext , useState , useEffect } from "react";
 import { MultiFormContext } from "../context/MultiFormProvider";
 
-function ProjectForm4(props){
-    const [units,setUnits]=useState([1])
-    const [unitHeading,setUnitHeading]=useState('');
-    const [unitPrice,setUnitPrice]=useState('');
-    // Errors
-    const [unitHeadingError,setUnitHeadingError]=useState(false);
+function ProjectForm4(){
+  const [unitHeadingError,setUnitHeadingError]=useState(false);
     const [unitPriceError,setUnitPriceError]=useState(false);
+    useEffect(() => { window.scrollTo(0, 0);}, []);
     const value=useContext(MultiFormContext);
+    const [units,setUnits]=useState([
+      {
+      heading: '',
+      price: ''
+      }
+    ]);
+   
+    
     function submitFormHandler(e){
         e.preventDefault();
-        let hasError = false;
-        if(!unitHeading){
-          setUnitHeadingError(true);
-          hasError = true;
+        for (let i = 0; i < units.length; i++) {
+          if (units[i].heading === '' || units[i].price === '') {
+            return; 
+          }
         }
-        if(!unitPrice){
-          setUnitPriceError(true);
-          hasError = true;
+       const unitTypes={ 
+         unitTypes: {
+          cards: units
         }
-        if(hasError) return
+       }
+       console.log(unitTypes);
         value.setFormIndex(4);
       }
 
+      function headingChangeHandler(index,e){
+       const updatedUnits=[...units];
+       updatedUnits[index].heading=e.target.value;
+       setUnits(updatedUnits);
+       }
 
-      // OnChange Handlers
-      function headingChangeHandler(e){
-       const input=e.target.value;
-       setUnitHeading(input);
-       if(!input){
-        setUnitHeadingError(true);
-       }
-       else{
-        setUnitHeadingError(false);
-       }
+      function priceChangeHandler(index,e){
+       const updatedUnits = [...units];
+       updatedUnits[index].price=e.target.value;
+       setUnits(updatedUnits);        
       }
 
-      function priceChangeHandler(e){
-        const input=e.target.value;
-        setUnitPrice(input);
-        if(!input){
-          setUnitPriceError(true);
-        }
-        else{
-          setUnitPriceError(false);
+      function addMore() {
+        if (units.length === 0 || (units[units.length - 1].heading !== '' && units[units.length - 1].price !== '')) {
+          const newUnit = {
+            heading: '',
+            price: ''
+          };
+          setUnits([...units, newUnit]);
         }
       }
+      
 
-    return(
-            <div className="bg-white p-3 p-md-4 rounded d-flex flex-column gap-2">
-                <div className="d-flex flex-row align-items-start justify-content-between">
-                  <div className="d-flex flex-column align-items-start gap-2">
-                  <h1 className="h-mobile fw-bold font-color-primary m-0">STEP 4</h1>
-                  <p className="fw-medium font-color-secondary fs-mobile">Enter Unit Types</p>
-                  </div>
-                  <img onClick={props.onCancel}
-                  src={cancelIcon} alt="cancel-icon" width='30' height='auto' className="py-1"/>
-                </div>
-                {/* Form 4 */}
-                <form onSubmit={submitFormHandler} className="rounded text-center d-flex flex-column align-items-center gap-3 gap-md-4">
+       return(
+                <form onSubmit={submitFormHandler} 
+                className="rounded text-center d-flex flex-column align-items-center justify-content-between gap-3 gap-md-4 h-100 w-100">
                 {/* Unit type */}
-                {units.map((arr,index)=>(
-                 <div key={index} className="d-flex flex-row align-items-center gap-2">
-                 <div className="d-flex flex-column align-items-start gap-2">
-                 <label className="font-color-primary fw-semibold fs-mobile">Enter Heading</label>
-                 <input type="text" onChange={headingChangeHandler}
-                 className={`${unitHeadingError? 'border-red' : 'border-black'} rounded bg-light px-1 px-md-3 py-2 fs-mobile unit-heading-input`}
+                <div className="w-100 d-flex flex-column gap-3 h-100">
+                 {/* Unit type fields */}
+                 <div className={`d-flex flex-column gap-3 px-2 ${units.length >= 4 ? 'scrollable' : ''}`}>
+                 {units.map((unit,index)=>(
+                 <div key={index} className="d-flex flex-row align-items-start gap-3 w-100">
+                 <div className="d-flex flex-column align-items-start w-100">
+                 <label className="font-color-primary fw-medium fs-mobile">Enter Unit Type Heading</label>
+                 <input type="text" 
+                 value={unit.heading}
+                 onChange={(e)=> headingChangeHandler(index,e)}
+                 onKeyPress={(e) => {
+                  if (!/[\w\s]/.test(e.key)) {
+                    e.preventDefault();
+                  }
+                }}
+                
+                 className={`${unitHeadingError? 'border-red' : 'border-black'} rounded bg-light px-1 px-md-3 py-2 fs-mobile w-100`}
                  />
                  </div>
-                 <div className="d-flex flex-column align-items-start gap-2">
-                 <label className="font-color-primary fw-semibold fs-mobile">Enter Price</label>
-                 <input type="text" onChange={priceChangeHandler}
-                 className={`${unitPriceError? 'border-red' : 'border-black'} rounded bg-light px-1 px-md-3 py-2 fs-mobile unit-price-input`}
+                 <div className="d-flex flex-column align-items-start w-100">
+                 <label className="font-color-primary fw-medium fs-mobile">Enter Unit Type Price</label>
+                 <input type="text"
+                 value={unit.price} 
+                 onChange={(e) => priceChangeHandler(index,e)}
+                 className={`${unitPriceError? 'border-red' : 'border-black'} rounded bg-light px-1 px-md-3 py-2 fs-mobile w-100`}
                  />
+                  <p className="fs-para fw-medium py-1 font-color-secondary">
+                  (Value can be in K and M)</p>
                  </div>
                  </div>
                 ))}
-                <label onClick={()=> setUnits((prev)=> [...prev,1])}
+                 </div>
+                 {/* Add more label */}
+                <label onClick={addMore}
                 className="font-color-light fw-bold fs-para background-primary-light">Add More</label>
-                <button className="button-hover-primary px-5 py-3 rounded w-100 text-white fw-bold fs-para background-color-primary border-0">NEXT</button>
-                </form>
                 </div>
+                <button className="button-hover-primary px-5 py-3 rounded w-50 text-white fw-bold fs-para background-color-primary border-0">NEXT</button>
+                </form>
                 )}
 
-export default ProjectForm4;
+                export default ProjectForm4;

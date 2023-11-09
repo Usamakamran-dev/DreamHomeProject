@@ -1,5 +1,4 @@
-import React , { useContext , useState } from "react";
-import cancelIcon from './../assets/Icons/cancel.svg';
+import React , { useContext , useState , useEffect} from "react";
 import { MultiFormContext } from "../context/MultiFormProvider";
 
 function ProjectForm3(props){
@@ -9,8 +8,7 @@ function ProjectForm3(props){
     // Errors
     const [aboutDescError,setAboutDescError]=useState(false);
     const [paymentDescError,setPaymentDescError]=useState(false);
-
-
+    useEffect(() => { window.scrollTo(0, 0);}, []);
 
     function submitFormHandler(e){
         e.preventDefault();
@@ -25,9 +23,12 @@ function ProjectForm3(props){
         }
         if(hasError) return
         // After Form Submission
+        const description={
+          paragraph: aboutDesc,
+          monthlydescription: paymentDesc
+        }
+        console.log(description);
         value.setFormIndex(3);
-        // console.log(aboutDesc);
-        // console.log(paymentDesc);
       }
 
       // onChangeHandler
@@ -51,39 +52,33 @@ function ProjectForm3(props){
           else{
             setPaymentDescError(false);
            }
-           
           }
 
     return(
-            <div className="bg-white p-3 p-md-4 rounded d-flex flex-column gap-2">
-                <div className="d-flex flex-row align-items-start justify-content-between">
-                  <div className="d-flex flex-column align-items-start gap-2">
-                  <h1 className="h-mobile fw-bold font-color-primary m-0">STEP 3</h1>
-                  <p className="fw-medium font-color-light fs-mobile">Description information *</p>
-                  </div>
-                  <img onClick={props.onCancel}
-                  src={cancelIcon} alt="cancel-icon" width='30' height='auto' className="py-1"/>
-                </div>
-                {/* Form 3 */}
-                <form onSubmit={submitFormHandler} className="rounded text-center d-flex flex-column align-items-start gap-4">
-                <div className="d-flex flex-column align-items-start gap-2">
+                <form onSubmit={submitFormHandler} 
+                className="rounded text-center d-flex flex-column align-items-center gap-5 h-100">
+                <div className="d-flex flex-column align-items-start gap-2 w-100">
                 <label className="font-color-primary fw-semibold fs-mobile">Enter About Description</label>
                 <textarea
                 rows='7'
-                className={`${aboutDescError? 'border-red' : 'border-black'} rounded bg-light px-1 px-md-3 py-2 fs-mobile project-input-width`}
+                className={`${aboutDescError? 'border-red' : 'border-black'} rounded bg-light px-1 px-md-3 py-2 fs-mobile w-100 h-100`}
                 onChange={aboutChangeHandler}
+                onKeyPress={(e) => {
+                  if (!/^[A-Za-z\s]$/.test(e.key)) {
+                      e.preventDefault();
+                  }
+                }}
                 />
                 </div>
-                <div className="d-flex flex-column align-items-start gap-2">
+                <div className="d-flex flex-column align-items-start gap-2 w-100">
                 <label className="font-color-primary fw-semibold fs-mobile">Enter Monthly Payment Description</label>
                 <textarea
                 type="2" 
-                className={`${paymentDescError? 'border-red' : 'border-black'} rounded bg-light px-1 px-md-3 py-2 fs-mobile project-input-width`}
+                className={`${paymentDescError? 'border-red' : 'border-black'} rounded bg-light px-1 px-md-3 py-2 fs-mobile w-100 h-100`}
                 onChange={paymentDescriptionChangeHandler}
                 />
                 </div>
-                <button className="button-hover-primary px-5 py-3 rounded w-100 text-white fw-bold fs-para background-color-primary border-0">NEXT</button>
+                <button className="button-hover-primary px-5 py-3 rounded w-50 text-white fw-bold fs-para background-color-primary border-0">NEXT</button>
                 </form>
-                </div>
                 )}
 export default ProjectForm3;

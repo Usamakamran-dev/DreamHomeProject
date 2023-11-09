@@ -1,20 +1,17 @@
-import ProjectForm1 from "./ProjectForm1";
-import ProjectForm2 from "./ProjectForm2";
-import ProjectForm3 from "./ProjectForm3";
-import ProjectForm4 from "./ProjectForm4";
-import ProjectForm5 from "./ProjectForm5";
-import ProjectForm6 from "./ProjectForm6";
-import cancelIcon from './../assets/Icons/cancel.svg';
+import ProjectForm1 from './../forms/ProjectForm1';
+import ProjectForm2 from './../forms/ProjectForm2';
+import ProjectForm3 from './../forms/ProjectForm3';
+import ProjectForm4 from './../forms/ProjectForm4';
+import ProjectForm5 from './../forms/ProjectForm5';
+import ProjectForm6 from './../forms/ProjectForm6';
 import { useContext } from "react";
 import { MultiFormContext } from "../context/MultiFormProvider";
+import useShowFooter from '../context/useShowFooter';
+import Footer from '../components/Footer';
 
 function MultiStepForm(){
     const value=useContext(MultiFormContext);
-    function cancelFormHandler(){
-      value.setFormVisible(false);
-      value.setFormIndex(0);
-    }
-
+    const showFooter=useShowFooter();
     const renderFormStep = () => {
       switch (value.formIndex) {
         case 0:
@@ -33,16 +30,16 @@ function MultiStepForm(){
           return (
            <ProjectForm4/>
           );
-          case 4:
-            return (
-             <ProjectForm5/>
-            );
-            case 5:
-              return (
-               <ProjectForm6/>
-              );
-              case 6:
-                return (
+        case 4:
+          return (
+           <ProjectForm5/>
+          );
+        case 5:
+          return (
+           <ProjectForm6/>
+          );
+        case 6:
+          return (
                   <form className="rounded mx-auto text-center d-flex flex-column align-items-center justify-content-center gap-2 px-2 py-5 px-md-4">
                   <div className="d-flex p-5 flex-column align-items-center">
                   <h1 className="fs-1 font-color-secondary fw-bold">Thank You!</h1>
@@ -66,16 +63,10 @@ function MultiStepForm(){
     }
 
     return(
-      <div style={{zIndex: '1000000'}} 
-        className="light-black-bg start-0 bottom-0 end-0 position-fixed d-flex align-items-center justify-content-center w-100 h-100">
-      <div className="bg-white py-3 px-3 px-md-4 rounded d-flex flex-column gap-3 gap-md-5">
-      <div className="d-flex flex-column align-items-end gap-3">
-                 <div className="d-flex flex-row align-items-start justify-content-between w-100">
-                  <h1 className="fs-5 fw-semibold font-color-secondary">Project Detail Form <span className="fs-para font-color-light">({headingHandler()})</span></h1>
-                 <img onClick={cancelFormHandler}
-                  src={cancelIcon} alt="cancel-icon" width='22' height='auto'/>
-                 </div>
-                 <div className="d-flex flex-row align-items-center justify-content-around w-100">
+      <div className="bg-white d-flex flex-column gap-3 gap-md-5 py-3 py-md-5 px-2 container multiform-dimension">
+      <div className="d-flex flex-column align-items-center gap-5">
+            <h1 className="fs-2 fw-semibold font-color-secondary">Project Detail Form <span className="fs-para font-color-light">({headingHandler()})</span></h1>
+              <div className="d-flex flex-row align-items-center justify-content-around w-100">
                  {[1, 2, 3, 4, 5, 6].map((stepNumber) => (
                  <div key={stepNumber} className={`rounded px-3 py-2 ${stepNumber <= value.formIndex ? 'active-step' : 'non-active-step'}`}>
                  <h1 className="fs-para fw-semibold m-0">
@@ -83,10 +74,10 @@ function MultiStepForm(){
                  </h1>
                  </div>
                   ))}
-                 </div>
-                 </div>
+              </div>
+      </div>
                  {renderFormStep()}
-                 </div>
-                 </div>
-                 )}
-                export default MultiStepForm;
+                 {showFooter && <Footer show={showFooter} />}
+      </div>
+      )}
+      export default MultiStepForm;

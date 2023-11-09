@@ -2,7 +2,7 @@ import { useContext , useEffect } from "react";
 import { ProjectCardContext } from "../context/ProjectCardProvider";
 import { BlogContext } from "../context/BlogProvider";
 import { CurrentDataContext } from "../context/CurrentDataProvider";
-import { CurrentProjectBlogContext } from '../context/currentProjectBlog';
+import { CurrentProjectBlogContext } from "../context/CurrentProjectBlog";
 import { useNavigate } from "react-router-dom";
 import useShowFooter from "../context/useShowFooter";
 import HeroSection from "../components/HeroSection";
@@ -32,7 +32,7 @@ function MainPage() {
     // Setting the currently clicked project card
     function currentProjectHandler(currentProjectData,id){
       updateCurrentProjectData(currentProjectData);
-      setCardIdentifier(currentProjectData.ProjectHeading);
+      setCardIdentifier(currentProjectData.name);
       navigate(`/project/${id.split(' ').join('-')}`);}
     // Setting the currently clicked blog card
     function currentBlogHandler(currentBlogData,id){
@@ -86,11 +86,11 @@ function MainPage() {
                       {ProjectCardDetails.slice(0, 3).map((array, index) => (
                       <div className="col p-3" key={index}>
                         <ProjectCard
-                          onClick={() => currentProjectHandler(array, array.ProjectHeading)}
-                          heading={array.ProjectHeading}
-                          subHeading={array.ProjectSubHeading}
+                          onClick={() => currentProjectHandler(array, array.name)}
+                          heading={array.name}
+                          subHeading={array.developer}
                           paragraph={array.aboutUs.paragraph}
-                          image={array.ProjectImage}
+                          image={array.projectImage}
                         />
                       </div>))}
                  </div>

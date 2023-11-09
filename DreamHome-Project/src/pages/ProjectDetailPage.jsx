@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import './Custom.css';
 import ProjectGallery from '../components/ProjectGallery';
 import { CurrentDataContext } from "../context/CurrentDataProvider";
-import { CurrentProjectBlogContext } from "../context/currentProjectBlog";
+import { CurrentProjectBlogContext } from "../context/CurrentProjectBlog";
 import ProjectHeroSection from "../components/ProjectHeroSection";
 import PaymentPlan from "../components/PaymentPlan";
 import Feature from "../components/Feature";
@@ -34,12 +34,12 @@ function ProjectDetailPage(){
     useEffect(() => { window.scrollTo(0, 0);}, []);    
     // Changing background image according to current project
     const bgClass = (() => {
-      if (currentProjectData.ProjectHeading === 'SAMANA Manhattan') return 'samanaBg';
-      if (currentProjectData.ProjectHeading === 'Damac Lagoons') return 'damacBg';
-      if (currentProjectData.ProjectHeading === 'Olivia Residences') return 'oliviaBg';
-      if (currentProjectData.ProjectHeading === 'Danube Oceanz') return 'oceanzBg';
-      if (currentProjectData.ProjectHeading === 'VYB Dubai') return 'vybBg';
-      if (currentProjectData.ProjectHeading === 'Haven Aldar') return 'havenBg';
+      if (currentProjectData.name === 'SAMANA Manhattan') return 'samanaBg';
+      if (currentProjectData.name === 'Damac Lagoons') return 'damacBg';
+      if (currentProjectData.name === 'Olivia Residences') return 'oliviaBg';
+      if (currentProjectData.name === 'Danube Oceanz') return 'oceanzBg';
+      if (currentProjectData.name === 'VYB Dubai') return 'vybBg';
+      if (currentProjectData.name === 'Haven Aldar') return 'havenBg';
       return '';
     })();
    const brochureDownload = (() => {
@@ -101,7 +101,7 @@ function ProjectDetailPage(){
           <div className="px-2 px-md-5 py-3 py-md-5 d-flex flex-column align-items-center  gap-2 gap-md-5 m-0">
             <h3 className="h-mobile fw-bold font-color-primary text-center">UNIT <span className="font-color-secondary">TYPES</span></h3>
              <div className="d-flex flex-row align-items-center justify-content-md-center gap-3 mx-auto w-100 overflow-auto py-2 px-0 px-md-2">
-             {currentProjectData.unitTypes?.cards?.map((arr,index)=> (
+             {currentProjectData.unitTypes?.map((arr,index)=> (
               <Feature key={index} label={arr.title} price={arr.price}></Feature>
              ))}
              </div>
@@ -112,14 +112,14 @@ function ProjectDetailPage(){
         {/* Gallery Section */}
         <div className="background-color-primary py-5 d-flex flex-column align-items-center justify-content-center gap-4">
         <h1 className="h-mobile fw-bold text-white"> PROJECT GALLERY</h1>
-        <ProjectGallery images={currentProjectData.gallery.images}></ProjectGallery>
+        <ProjectGallery images={currentProjectData.gallery}></ProjectGallery>
         </div>
         {/* Amenities */}
         <div className="bg-white">
           <div className="d-flex flex-column align-items-center mx-auto py-5">
             <h1 className="h-mobile m-0 fw-bold font-color-primary ">AMENITIES</h1>
             <div className="row row-cols-2 row-cols-md-4 py-2 py-md-5">
-            {currentProjectData.amenities?.items?.map((arr, index) => (
+            {currentProjectData.amenities?.map((arr, index) => (
               <div className="col" key={index}>
                 <AmenitiesCard label={arr.label} image={arr.image}/>
               </div>

@@ -127,10 +127,11 @@ import havenLogo from './../assets/PartnerLogos/HavenWhite.png';
 
 const projectData=[
     {
-    ProjectHeading: 'SAMANA Manhattan',
-    ProjectSubHeading: "By Samana Skyros",
-    ProjectImage: samanaImg,
-       hero: {
+    name: 'SAMANA Manhattan',
+    developer: "By Samana Skyros",
+    projectImage: samanaImg,
+       hero: 
+       {
          heading: "1 & 2 BEDROOMS AND STUDIO WITH PRIVATE POOL",
          logo: samanaLogo,
        },
@@ -142,11 +143,11 @@ const projectData=[
        },
        aboutUs: 
        {
-         paragraph: "Nestled in JVC Dubai, the ultimate combination of sophisticated architecture and opulent luxury is Samana Developers' recent launch Samana Manhattan. Samana Manhattan presents an exceptional chance for investment, enabling you to generate an amazing rental income. Following the project's completion in October 2026, you can choose to make the remaining 25% payment while still retaining a significant sum. Additionally, you have the option to sell the property and earn a profit from capital gains, even during the development phase.",
+         paragraph: "Nestled in JVC Dubai, the ultimate combination of sophisticated architecture and opulent luxury is Samana Developers' recent launch Samana Manhattan. Samana Manhattan presents an exceptional chance for investment, enabling you to generate an amazing rental income. Following the project's completion in October 2026, you can choose to make the remaining 25 payment while still retaining a significant sum. Additionally, you have the option to sell the property and earn a profit from capital gains, even during the development phase.",
          image: samanaAbout,
        },
-       unitTypes: {
-         cards: [
+       unitTypes:
+         [
            {
              title: "STUDIO WITHOUT POOL",
              price: "689K",
@@ -163,62 +164,64 @@ const projectData=[
              title: "2 BEDROOM WITH POOL",
              price: "1.7M",
            },
-         ],
-       },
-       gallery:{
-          images: [samanaGallery1,samanaGallery2,samanaGallery3,samanaGallery4,samanaGallery5,samanaGallery6,samanaGallery7,samanaGallery8,samanaGallery9,samanaGallery10]
-       },
-       paymentPlan:{
-           heading: "PAYMENT PLAN",
-           footerHeading: "SAMANA Manhattan - Studio, 1 & 2 Bedroom Apartments ",
+          ]
+       ,
+       gallery: 
+       [samanaGallery1,samanaGallery2,samanaGallery3,samanaGallery4,samanaGallery5,samanaGallery6,samanaGallery7,samanaGallery8,samanaGallery9,samanaGallery10],
+       paymentPlan:
+           {
            startingPrice: "689K",
            column1: [
             {
               heading: "On Booking",
-              percentage: '15%'
+              percentage: '15'
             },
             {
               heading: "x35 Months",
-              percentage: '1%'
+              percentage: '1'
             }, {
               heading: "on 6th Months",
-              percentage: '10%'
+              percentage: '10'
             }, {
               heading: "on 12th Months",
-              percentage: '5%'
+              percentage: '5'
             }, {
               heading: "on 18th Months",
-              percentage: '5%'
+              percentage: '5'
             }, {
               heading: "x60 Months",
-              percentage: '0.5%'
+              percentage: '0.5'
             },
           ],
           column2: [
             {
               heading: "Down Payment",
-              percentage: '20%'
+              percentage: '20'
             },
             {
               heading: "x35 Months",
-              percentage:'1%'
-            }, {
+              percentage:'1'
+            }, 
+            {
               heading: "on 6th Months",
-              percentage: '10%'
-            }, {
+              percentage: '10'
+            }, 
+            {
               heading: "on 12th Months",
-              percentage: '5%'
-            }, {
+              percentage: '5'
+            }, 
+            {
               heading: "on 18th Months",
-              percentage: '5%'
-            }, {
+              percentage: '5'
+            }, 
+            {
               heading: "on 6th Months",
-              percentage: '0.5%'
+              percentage: '0.5'
             },
           ]
        },
-        amenities:{
-         items:[
+        amenities: 
+         [
          { image: treadmill,
            label: 'Indoor / Outdoor Gym'
          },
@@ -260,12 +263,12 @@ const projectData=[
              label: 'Green Parking'
              }
        ]
-       }
-   },
-   {
-     ProjectHeading: 'Damac Lagoons',
-     ProjectSubHeading: "Dubailand, Dubai, United Arab Emirates",
-     ProjectImage: damacImg,
+      }
+    ,
+    {
+     name: 'Damac Lagoons',
+     developer: "Dubailand, Dubai, United Arab Emirates",
+     projectImage: damacImg,
         hero: {
           heading: "BEDROOMS WITH TOWNHOUSES AND PRIVATE VILLAS",
           logo: damacLogo,
@@ -281,8 +284,8 @@ const projectData=[
           paragraph: "Embark on a Mediterranean journey and experience the alluring charm of sun-kissed sands, calm waters, cobblestone streets and island living at DAMAC Lagoons – Dubai's most awaited water-inspired community. With a perfect blend of contemporary living and traditional Mediterranean charm, DAMAC Lagoons offers the beauty of clear lagoons, lush landscapes and serene, calming vibes.",
           image: damacAbout,
         },
-        unitTypes: {
-          cards: [
+        unitTypes:
+          [
             {
               title: "4 BEDROOM TOWNHOUSE",
               price: "2.99M",
@@ -304,75 +307,72 @@ const projectData=[
               price: "20.92M",
             }
           ],
-        },
-        gallery:{
-           images: [damacGallery1,damacGallery2,damacGallery3,damacGallery4,damacGallery5,damacGallery6,damacGallery7]
-        },
+        gallery:
+           [damacGallery1,damacGallery2,damacGallery3,damacGallery4,damacGallery5,damacGallery6,damacGallery7]
+        ,
         paymentPlan:{
-            heading: "PAYMENT PLAN",
-            footerHeading:"DAMAC LAGOONS - Bedrooms with TownHouses and Villas ",
             startingPrice: "2.99M",
             column1: [
               {
                 heading: "Deposit (intermediate)",
-                percentage: '20%'
+                percentage: '20'
               },
               {
                 heading: "1st Installment (within 3 months)",
-                percentage: '5%'
+                percentage: '5'
               }, {
                 heading: "2nd Installment (within 6 months)",
-                percentage: '5%'
+                percentage: '5'
               }, {
                 heading: "3rd Installment (within 9 months)",
-                percentage: '5%'
+                percentage: '5'
               }, {
                 heading: "4th Installment (within 12 months)",
-                percentage: '5%'
+                percentage: '5'
               }, {
                 heading: "5th Installment (within 15 months)",
-                percentage: '5%'
+                percentage: '5'
               },
               {
                 heading: "6th Installment (within 18 months)",
-                percentage: '5%'
+                percentage: '5'
               }, {
                 heading: "7th Installment (within 21 months)",
-                percentage: '5%'
+                percentage: '5'
               }
             ],
             column2: [
               {
                 heading: "8th Installment (within 24 months)",
-                percentage: '5%'
+                percentage: '5'
               },
               {
                 heading: "9th Installment (within 27 months)",
-                percentage: '5%'
+                percentage: '5'
               },
               {
                 heading: "10th Installment (within 30 months)",
-                percentage:'5%'
+                percentage:'5'
               }, {
                 heading: "11th Installment (within 33 months)",
-                percentage: '5%'
+                percentage: '5'
               }, {
-                heading: "12th Installment (70% completion)",
-                percentage: '2%'
+                heading: "12th Installment (70 completion)",
+                percentage: '2'
               }, {
-                heading: "13th Installment (80% completion)",
-                percentage: '2%'
+                heading: "13th Installment (80 completion)",
+                percentage: '2'
               }, {
-                heading: "14th Installment (90% completion)",
-                percentage: '1%'
+                heading: "14th Installment (90 completion)",
+                percentage: '1'
               },
               {
                 heading: "15th Installment (On completion)",
-                percentage: '20%'
+                percentage: '20'
               }]
         },
-        amenities:{
-         items:[
+        amenities:
+        [
          { image: tent,
            label: 'Private tents'
          },
@@ -427,12 +427,12 @@ const projectData=[
             { image: hennaArtLounge,
             label: 'Henna art lounge'
             }
-             ]}
+             ]
     },
     {
-     ProjectHeading: 'Olivia Residences',
-     ProjectSubHeading: "By Karma Developers",
-     ProjectImage: oliviaImg,
+     name: 'Olivia Residences',
+     developer: "By Karma Developers",
+     projectImage: oliviaImg,
         hero: {
           heading: "1 2 & 3 BEDROOMS WITH PARK AND SWIMMING POOL",
           logo: oliviaLogo,
@@ -448,8 +448,8 @@ const projectData=[
           paragraph:"Discover luxurious living at Olivia Residences in Dubai Investment Park (DIP), a project by Karma Developers that features 1, 2 and 3 bedroom apartments. This exceptional residential project redefines the art of modern living, offering residents an unmatched experience of convenience lifestyle in the G+6 structure offers a modern and efficient layout. The development is strategically located in Dubai Investment Park, a thriving hub of growth and innovation in Dubai. Dubai Investment Park is known for its integrated community with essential amenities, making it an attractive destination for both residents and businesses.",
           image: oliviaAbout,
         },
-        unitTypes: {
-          cards: [
+        unitTypes:
+          [
             {
               title: "01 BEDROOM WITH 96 UNITS",
               price: "700K",
@@ -463,36 +463,33 @@ const projectData=[
               price: "1.34M",
             }
           ],
-        },
-        gallery:{
-           images: [oliviaGallery1,oliviaGallery2,oliviaGallery3,oliviaGallery4,oliviaGallery5,oliviaGallery6,oliviaGallery7,oliviaGallery8,oliviaGallery9]
-        },
+        gallery:
+        [oliviaGallery1,oliviaGallery2,oliviaGallery3,oliviaGallery4,oliviaGallery5,oliviaGallery6,oliviaGallery7,oliviaGallery8,oliviaGallery9]
+        ,
         paymentPlan:{
-          heading: "PAYMENT PLAN",
-          footerHeading:"OLIVIA RESEDENCIES - Bedrooms with Luxury Pools ",
             startingPrice: "700K",
             column1:[
               {
                 heading: "Down Payment",
-                percentage: '10%'
+                percentage: '10'
               },
               {
-                heading: "30 Months* 1% during construction",
-                percentage: '1%'
+                heading: "30 Months* 1 during construction",
+                percentage: '1'
               }
             ],
             column2:[
               {
                 heading: "Handover April 2026",
-                percentage: '1%'
+                percentage: '1'
               }, {
-                heading: "59 Months * 1% Post Handover Plan",
-                percentage: '1%'
+                heading: "59 Months * 1 Post Handover Plan",
+                percentage: '1'
               }
             ]
         },
-        amenities:{
-         items:[
+        amenities:
+        [
          { image: treadmill,
            label: 'Gymnasium'
          },
@@ -517,12 +514,12 @@ const projectData=[
          { image:  diningOutlets,
            label: 'Dining Outlets'
          }
-         ]}
+         ]
     },
     {
-     ProjectHeading: 'Danube Oceanz',
-     ProjectSubHeading: "By Danube Properties",
-     ProjectImage: oceanzImg,
+     name: 'Danube Oceanz',
+     developer: "By Danube Properties",
+     projectImage: oceanzImg,
         hero: {
           heading: "1 2 & 3 BEDROOMS AND STUDIO WITH LUXURY POOL",
           logo: oceanzLogo,
@@ -538,8 +535,8 @@ const projectData=[
           paragraph: "Inspired by the sea, Oceanz by Danube gracefully blends architectural sophistication with the enchanting allure of maritime charisma. Located in the heart of the thriving Maritime City community, Get ready to be mesmerized by sweeping ocean vistas and the opulent interiors and luxury furnishing by Tonino Lamborghini CASA.The strategic location of Dubai Maritime City offers great capital appreciation for investors and buyers, and it boasts a connected causeway to an extensive road network, granting swift access to major expressways for seamless commuting.",
           image: oceanzAbout,
         },
-        unitTypes: {
-          cards: [
+        unitTypes:
+          [
             {
               title: "STUDIO AND POOL",
               price: "1.25M",
@@ -561,52 +558,48 @@ const projectData=[
               price: "3.8M",
             }
           ],
-        },
-        gallery:{
-           images: [oceanzGallery1, oceanzGallery2, oceanzGallery3,oceanzGallery4,oceanzGallery5]
-        },
+        gallery:
+           [oceanzGallery1, oceanzGallery2, oceanzGallery3,oceanzGallery4,oceanzGallery5],
         paymentPlan:{
-            heading: "PAYMENT PLAN",
-            footerHeading:"DANUBE OCEANZ - Bedrooms and Studio with Pool ",
             startingPrice: "1.25M",
             column1: [
               {
                 heading: "Down Payment (booking date)",
-                percentage: '10%'
+                percentage: '10'
               },
               {
                 heading: "1st Installment (within 2 months)",
-                percentage: '10%'
+                percentage: '10'
               }, {
-                heading: "2nd to 12th Installment (1% monthly)",
-                percentage: '11%'
+                heading: "2nd to 12th Installment (1 monthly)",
+                percentage: '11'
               }, {
                 heading: "13th Installment (within 14 months)",
-                percentage: '4%'
+                percentage: '4'
               }, {
-                heading: "14th to 24th Installment (1% monthly)",
-                percentage: '11%'
+                heading: "14th to 24th Installment (1 monthly)",
+                percentage: '11'
               }
             ],
             column2: [
               {
                 heading: "25th Installment (within 26 months)",
-                percentage: '5%'
+                percentage: '5'
               },
               {
-                heading: "26th to 38th Installment (1% monthly)",
-                percentage: '13%'
+                heading: "26th to 38th Installment (1 monthly)",
+                percentage: '13'
               },
               {
                 heading: "39th Installment (on handover)",
-                percentage:'1%'
+                percentage:'1'
               }, {
                 heading: "Easy Installments (within 35 months)",
-                percentage: '35%'
+                percentage: '35'
               }]
         },
-        amenities:{   
-         items:[
+        amenities:
+         [
          { image: treadmill,
            label: 'Aquatic Gym'
          },
@@ -656,12 +649,12 @@ const projectData=[
               { image: smartMart,
                 label: 'Smart Mart'
                 }
-       ]}
+       ]
     },
     {
-      ProjectHeading: 'VYB Dubai',
-      ProjectSubHeading: "By Ginco Properties",
-      ProjectImage: vybImg,
+      name: 'VYB Dubai',
+      developer: "By Ginco Properties",
+      projectImage: vybImg,
          hero: {
            heading: "1 & 2 BEDROOMS WITH PRIVATE SWIMMING POOL",
            logo: vybLogo,
@@ -677,8 +670,8 @@ const projectData=[
            paragraph: "VYB, a 21-storey residential building planned for Dubai's vibrant Business Bay district. Developed by Ginco Properties, this exceptional project aims to redefine urban living in one of the city's most sought-after locations. With sleek design and stylish interiors, each unit exudes modernity and welcomes an abundance of natural light. Residents will relish a host of world-class amenities, including a state-of-the-art gym, a swimming pool, and convenient dedicated parking spaces.",
            image: vybAbout,
          },
-         unitTypes: {
-           cards: [
+         unitTypes:
+           [
              {
                title: "01 BEDROOM",
                price: "1.23M",
@@ -688,45 +681,42 @@ const projectData=[
                price: "1.67M",
              }
            ],
-         },
-         gallery:{
-            images: [vybGallery1,vybGallery2,vybGallery3,vybGallery4,vybGallery5]
-         },
+         gallery:
+            [vybGallery1,vybGallery2,vybGallery3,vybGallery4,vybGallery5],
          paymentPlan:{
-             heading: "PAYMENT PLAN",
-             footerHeading:"VYB DUBAI - Bedrooms with Luxury Pools ",
              startingPrice: "1.23M",
              column1: [
               {
                 heading: "At the time of booking",
-                percentage: '10%'
+                percentage: '10'
               },
               {
                 heading: "30 days from booking",
-                percentage: '10%'
+                percentage: '10'
               },
               {
                 heading: "15th December , 2023",
-                percentage: '5%'
-              }, {
+                percentage: '5'
+              }, 
+              {
                 heading: "15th April , 2024",
-                percentage: '5%'
+                percentage: '5'
               }
             ],
             column2: [
               {
                 heading: "15th August , 2024",
-                percentage: '5%'
+                percentage: '5'
               }, {
                 heading: "15th December , 2024",
-                percentage: '5%'
+                percentage: '5'
               }, {
                 heading: "on Handover",
-                percentage: '60%'
+                percentage: '60'
               }]
          },
-         amenities:{
-          items:[
+         amenities:
+          [
           { image: treadmill,
             label: 'Gym'
           },
@@ -743,13 +733,11 @@ const projectData=[
           label: 'Tennis Court'
           } 
         ]
-        }
-     }
-     ,
+     },
      {
-      ProjectHeading: 'Haven Aldar',
-      ProjectSubHeading: "By Asyan Properties",
-      ProjectImage: havenAbout,
+      name: 'Haven Aldar',
+      developer: "By Asyan Properties",
+      projectImage: havenAbout,
          hero: {
            heading: "3 TO 6 BEDROOM WITH ELITE VILLAS AND TOWNHOUSES",
            logo: havenLogo,
@@ -765,60 +753,57 @@ const projectData=[
            paragraph: "Introducing Aldar’s first residential development in Dubai, that brings community-wide wellness to the region. Nestled under a treehouse, every moment at Haven has been curated to enhance your wellbeing, while the gently flowing stream provides a rippling soundtrack to your every day",
            image: havenAbout,
          },
-         unitTypes: {
-           cards: [
+         unitTypes:
+           [
              {
                title: "4-6 BED ELITE HAVEN VILLAS",
-               price: "2.5M",
+               price: "0",
              },
              {
               title: "3-5 BED ELITE SERENE VILLAS",
-              price: "2.5M",
+              price: "0",
             }, 
             {
               title: "3-4 BED HAVEN TOWNHOUSES",
-              price: "2.5M",
+              price: "0",
             }
           ]
-         },
-         gallery:{
-            images: [havenGallery1,havenGallery2,havenGallery3,havenGallery4,havenGallery5]
-         },
+         ,
+         gallery:
+            [havenGallery1,havenGallery2,havenGallery3,havenGallery4,havenGallery5],
          paymentPlan:{
-             heading: "PAYMENT PLAN",
-             footerHeading:"HAVEN ALDER , 3 to 6 Bedroom Villas and TownHouses",
              startingPrice: "2.5M",
              column1: [
               {
                 heading: "On booking",
-                percentage: '15%'
+                percentage: '15'
               },
               {
                 heading: "November 2023",
-                percentage: '5%'
+                percentage: '5'
               },
               {
                 heading: "February 2024",
-                percentage: '5%'
+                percentage: '5'
               }, {
                 heading: "May 2024",
-                percentage: '5%'
+                percentage: '5'
               }
             ],
             column2: [
               {
                 heading: "August , 2024",
-                percentage: '5%'
+                percentage: '5'
               }, {
                 heading: "November 2024",
-                percentage: '5%'
+                percentage: '5'
               }, {
                 heading: "on Completion",
-                percentage: '60%'
+                percentage: '60'
               }]
          },
-         amenities:{
-          items:[
+         amenities:
+         [
           { image: wellnessCenter,
             label: 'Wellness Center'
           },
@@ -862,7 +847,6 @@ const projectData=[
           label: 'Padel Haven'
           }
         ]
-        }
      }
    ]
 

@@ -1,38 +1,89 @@
-import React , { useContext } from "react";
-import cancelIcon from './../assets/Icons/cancel.svg';
+import React , { useContext , useState , useEffect } from "react";
 import { MultiFormContext } from "../context/MultiFormProvider";
 
-function ProjectForm6(props){
+function ProjectForm6(){
     const value=useContext(MultiFormContext);
+    const [paymentPlan,setPaymentPlan]=useState([
+      {
+      heading: '',
+      percentage: ''
+      }
+    ]);
+
+    useEffect(() => { window.scrollTo(0, 0);}, []);
+    const [unitHeadingError,setUnitHeadingError]=useState(false);
+    const [unitPriceError,setUnitPriceError]=useState(false);
     function submitFormHandler(e){
         e.preventDefault();
-
+        for (let i = 0; i < paymentPlan.length; i++) {
+          if (paymentPlan[i].heading === '' || paymentPlan[i].percentage === '') {
+            return;
+          }
+        }
+        const plan = {
+          paymentPlan: paymentPlan
+        }
+        console.log(plan);
         value.setFormIndex(6);
       }
+ 
+    function headingChangeHandler(index,e){
+       const updatedPlan=[...paymentPlan];
+       updatedPlan[index].heading=e.target.value;
+       setPaymentPlan(updatedPlan);
+      }
 
-    return(
-            <div className="bg-white p-3 p-md-4 rounded d-flex flex-column gap-2">
-                <div className="d-flex flex-row align-items-start justify-content-between">
-                  <div className="d-flex flex-column align-items-start gap-2">
-                  <h1 className="h-mobile fw-bold font-color-primary m-0">STEP 6</h1>
-                  <p className="fw-medium font-color-secondary fs-mobile">Payment Plan Detail</p>
-                  </div>
-                  <img onClick={props.onCancel}
-                  src={cancelIcon} alt="cancel-icon" width='30' height='auto' className="py-1"/>
+      function percentageChangeHandler(index,e){
+       const updatedPlan = [...paymentPlan];
+       updatedPlan[index].percentage=e.target.value;
+       setPaymentPlan(updatedPlan);        
+      }
+      
+      function addMore() {
+        if ( paymentPlan.length === 0 || (paymentPlan[paymentPlan.length - 1].heading !== '' && paymentPlan[paymentPlan.length - 1].percentage !== '')) {
+          const newPlan = {
+            heading: '',
+            price: ''
+          };
+          setPaymentPlan([...paymentPlan, newPlan]);
+        }
+      }
+      
+
+       return(
+                <form onSubmit={submitFormHandler} 
+                className="rounded text-center d-flex flex-column align-items-center justify-content-between gap-3 gap-md-4 h-100 w-100">
+                {/* Unit type */}
+                <div className="w-100 d-flex flex-column gap-3 h-100">
+                 {/* Unit type fields */}
+                 <div className={`d-flex flex-column gap-3 px-2 ${paymentPlan.length >= 4 ? 'scrollable' : ''}`}>
+                 {paymentPlan.map((paymentPlan,index)=>(
+                 <div key={index} className="d-flex flex-row align-items-center gap-3 w-100">
+                 <div className="d-flex flex-column align-items-start w-100">
+                 <label className="font-color-primary fw-medium fs-mobile">Enter Plan Heading</label>
+                 <input type="text" 
+                 value={paymentPlan.heading}
+                 onChange={(e)=> headingChangeHandler(index,e)}
+                 className={`${unitHeadingError? 'border-red' : 'border-black'} rounded bg-light px-1 px-md-3 py-2 fs-mobile w-100`}
+                 />
+                 </div>
+                 <div className="d-flex flex-column align-items-start w-100">
+                 <label className="font-color-primary fw-medium fs-mobile">Enter Percentage Value</label>
+                 <input type="number"
+                 value={paymentPlan.percentage} 
+                 onChange={(e) => percentageChangeHandler(index,e)}
+                 className={`${unitPriceError? 'border-red' : 'border-black'} rounded bg-light px-1 px-md-3 py-2 fs-mobile w-100`}
+                 />
+                 </div>
+                 </div>
+                ))}
+                 </div>
+                 {/* Add more label */}
+                <label onClick={addMore}
+                className="font-color-light fw-bold fs-para background-primary-light">Add More</label>
                 </div>
-                {/* Form 5*/}
-                <form onSubmit={submitFormHandler} className="rounded text-center d-flex flex-column align-items-start gap-4">
-                 <div className="d-flex flex-column align-items-start gap-2">
-                  <label className="font-color-primary fw-semibold fs-mobile">Enter Plan Description</label>
-                  <textarea
-                   rows='2'
-                   className='border-black rounded bg-light px-3 py-2 fs-mobile project-input-width'
-                   />
-                  </div>
-                 
-                <button className="button-hover-primary px-5 py-3 rounded w-100 text-white fw-bold fs-para background-color-primary border-0">NEXT</button>
+                <button className="button-hover-primary px-5 py-3 rounded w-50 text-white fw-bold fs-para background-color-primary border-0">NEXT</button>
                 </form>
-            </div>
                 )}
 
-export default ProjectForm6;
+                export default ProjectForm6;

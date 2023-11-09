@@ -1,6 +1,6 @@
 import { useContext,useEffect} from "react";
 import { CurrentDataContext } from "../context/CurrentDataProvider";
-import { CurrentProjectBlogContext } from "../context/currentProjectBlog";
+import { CurrentProjectBlogContext } from "../context/CurrentProjectBlog";
 import useShowFooter from "../context/useShowFooter";
 import Footer from '../components/Footer';
 import EnquiryTop from '../components/EnquiryTop';
