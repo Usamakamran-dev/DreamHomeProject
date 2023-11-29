@@ -4,51 +4,41 @@ import { BlogContext } from "../context/BlogProvider";
 import { CurrentDataContext } from "../context/CurrentDataProvider";
 import { CurrentProjectBlogContext } from "../context/CurrentProjectBlog";
 import { useNavigate } from "react-router-dom";
-import useShowFooter from "../context/useShowFooter";
 import HeroSection from "../components/HeroSection";
 import ProjectCard from "../components/ProjectCard";
 import BlogCard from "../components/BlogCard";
-import Footer from "../components/Footer";
-import partnerLogo  from "./../assets/PartnerLogos/Damac.png";
-import partnerLogo2 from "./../assets/PartnerLogos/Oceanz.png";
-import partnerLogo3 from "./../assets/PartnerLogos/vyb.png";
-import partnerLogo4 from "./../assets/PartnerLogos/Olivia.png";
-import partnerLogo5 from "./../assets/PartnerLogos/samana.png";
-import partnerLogo6 from "./../assets/PartnerLogos/Haven.png";
+import damacLogo  from "./../assets/PartnerLogos/Damac.png";
+import oceanzLogo from "./../assets/PartnerLogos/Oceanz.png";
+import vybLogo from "./../assets/PartnerLogos/vyb.png";
+import oliviaLogo from "./../assets/PartnerLogos/Olivia.png";
+import samanaLogo from "./../assets/PartnerLogos/samana.png";
+import havenLogo from "./../assets/PartnerLogos/Haven.png";
+import southBayLogo from './../assets/PartnerLogos/southBayLogoBlack.svg';
 import aboutUsImage from './../assets/Projects/vyb/vybGallery1.jpeg';
-import EnquiryTop from '../components/EnquiryTop';
 import FeedbackSlider from '../components/FeedbackSlider';
-import EnquiryForm from '../forms/EnquiryForm';
-import SuccessForm from '../forms/SuccessForm';
 
 function MainPage() {
     const navigate=useNavigate();
-    const showFooter=useShowFooter();
-    const ProjectCardDetails = useContext(ProjectCardContext);
+    const {ProjectCardDetails} = useContext(ProjectCardContext);
     const { updateCurrentProjectData, updateCurrentBlogData }= useContext(CurrentProjectBlogContext);
-    const {setCardIdentifier,setShowCompanyForm,setShowEnquiryForm , setShowSuccessForm , showCompanyForm ,
-    showEnquiryForm,showSuccessForm } = useContext(CurrentDataContext);
+    const {setCardIdentifier,setShowCompanyForm,setShowEnquiryForm } = useContext(CurrentDataContext);
     const BlogDetails = useContext(BlogContext);
     // Setting the currently clicked project card
-    function currentProjectHandler(currentProjectData,id){
+    const currentProjectHandler = (currentProjectData,id) => {
       updateCurrentProjectData(currentProjectData);
       setCardIdentifier(currentProjectData.name);
-      navigate(`/project/${id.split(' ').join('-')}`);}
+      navigate(`/project/${id.split(' ').join('-')}`);
+    }
     // Setting the currently clicked blog card
-    function currentBlogHandler(currentBlogData,id){
+    const currentBlogHandler = (currentBlogData,id) => {
       updateCurrentBlogData(currentBlogData);
-      navigate(`/blog/${id.split(' ').join('-')}`);}
-
-    function toggleFormVisibility(isVisible){
-      setShowEnquiryForm(isVisible);
-      setShowCompanyForm(isVisible);
-      setShowSuccessForm(true);
-    };
-    const partnerImages=[partnerLogo,partnerLogo2,partnerLogo3,partnerLogo4,partnerLogo5,partnerLogo6];
-    useEffect(() => { window.scrollTo(0, 0);}, []);
+      navigate(`/blog/${id.split(' ').join('-')}`);
+    }
+    const partnerImages=[damacLogo,oceanzLogo,vybLogo,oliviaLogo,samanaLogo,havenLogo,southBayLogo];
     
     return(
-          <div className="overflow-hidden transparent-section">
+          <div style={{margin: '4rem auto'}}
+          className="overflow-hidden transparent-section">
               <HeroSection></HeroSection>
               <div className='bg-white'>
                 <div className="row py-5 container mx-auto">
@@ -69,8 +59,13 @@ function MainPage() {
                     </div> 
                     <div className='d-flex flex-column gap-2 gap-md-4 flex-md-row'>
                     <button onClick={()=>setShowEnquiryForm(true)} style={{width: '12rem'}} 
-                    className='background-color-primary border-0 button-hover-primary py-3 rounded fs-para fw-semibold text-white'>ENQUIRE NOW</button>
-                    <button onClick={()=>setShowCompanyForm(true)} style={{width: '12rem'}} className='background-color-secondary border-0 button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>COMPANY PROFILE</button>
+                    className='background-color-primary border-0 button-hover-primary py-3 rounded fs-para fw-semibold text-white'>
+                    ENQUIRE NOW
+                    </button>
+                    <button onClick={()=>setShowCompanyForm(true)} style={{width: '12rem'}} 
+                    className='background-color-secondary border-0 button-hover-secondary py-3 rounded  fs-para fw-semibold text-white'>
+                    COMPANY PROFILE
+                    </button>
                     </div>
                  </div>
                  <div className="col-md-6 py-4 m-0 rounded d-flex align-items-center justify-content-center">
@@ -92,12 +87,13 @@ function MainPage() {
                           paragraph={array.aboutUs.paragraph}
                           image={array.projectImage}
                         />
-                      </div>))}
+                      </div>))
+                      }
                  </div>
                  <button onClick={()=> navigate("/projects")}
                  className="fs-6 border-0 fw-medium font-color-light">See more</button>
                </div>
-                {/*Testimonial Section*/}
+              {/*Testimonial Section*/}
              <div className='bg-white py-5'>
                <div className='w-100 d-flex flex-column align-items-center gap-3 py-5'>
                <h1 className="font-color-primary text-center fw-bold h-mobile">WHAT OUR <span className='font-color-secondary'>CLIENT SAYS</span></h1>
@@ -122,8 +118,8 @@ function MainPage() {
                   </div>
                 </div>     
               </div>
-              {/*Transparent Section*/}
-              <div style={{width: '100%',height: "30rem"}}></div>
+             {/*Transparent Section*/}
+             <div style={{width: '100%',height: "30rem"}}></div>
              {/* Blog Section*/}
              <div className='bg-white'>
                  <div className="container-fluid d-flex flex-column align-items-center gap-4 py-md-5 py-4 px-2 px-md-5">
@@ -140,14 +136,7 @@ function MainPage() {
                  className="fs-6 border-0 fw-medium font-color-light">See more</button>
                  </div>
              </div>
-              {showFooter && <Footer show={showFooter} />}
-              {showCompanyForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}
-               onCancel={()=>setShowCompanyForm(false)}></EnquiryForm>}
-              {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility}
-               onCancel={()=>setShowEnquiryForm(false)}/>}
-               {showSuccessForm && (
-            <SuccessForm onClick={()=> setShowSuccessForm(false)}/>)}
-             <EnquiryTop onClick={()=> setShowEnquiryForm(true)}/>
-              </div>)}
+              </div>
+              )}
             
               export default MainPage;

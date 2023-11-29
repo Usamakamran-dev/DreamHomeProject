@@ -5,8 +5,8 @@ function ResidentialSlider(props) {
     const [index, setIndex] = useState(0);
     const handleSelect = (selectedIndex) => {setIndex(selectedIndex)};
     return (
-      <div style={{zIndex: '22222222'}}
-      className='background-color-primary position-fixed top-0 h-100 w-100 d-flex align-items-center justify-content-center'>
+      <div style={{zIndex:'1212121'}}
+      className='fixed-top start-0 bottom-0 end-0 position-fixed d-flex align-items-center justify-content-center w-100 h-100 background-color-primary'>
       <div className='w-100 d-flex flex-column align-items-start gap-4 px-2 px-md-5'>
       <label style={{ textUnderlineOffset: '0.2em'}}
       className='card-hover text-white fs-6 fw-regular text-decoration-underline' onClick={props.onClick}>Go Back</label>

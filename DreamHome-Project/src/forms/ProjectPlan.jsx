@@ -1,7 +1,7 @@
 import React , { useContext , useState , useEffect } from "react";
 import { MultiFormContext } from "../context/MultiFormProvider";
 
-function ProjectForm6(){
+function ProjectPlan(){
     const value=useContext(MultiFormContext);
     const [paymentPlan,setPaymentPlan]=useState([
       {
@@ -9,49 +9,48 @@ function ProjectForm6(){
       percentage: ''
       }
     ]);
-
     useEffect(() => { window.scrollTo(0, 0);}, []);
-    const [unitHeadingError,setUnitHeadingError]=useState(false);
-    const [unitPriceError,setUnitPriceError]=useState(false);
-    function submitFormHandler(e){
+
+    const formSubmitHandler = (e) => {
         e.preventDefault();
-        for (let i = 0; i < paymentPlan.length; i++) {
-          if (paymentPlan[i].heading === '' || paymentPlan[i].percentage === '') {
+        for (let i = 0; i < paymentPlan.length; i++) 
+        {
+          if (paymentPlan[i].heading === '' || paymentPlan[i].percentage === '') 
+          {
             return;
           }
         }
-        const plan = {
-          paymentPlan: paymentPlan
-        }
-        console.log(plan);
         value.setFormIndex(6);
       }
- 
-    function headingChangeHandler(index,e){
-       const updatedPlan=[...paymentPlan];
-       updatedPlan[index].heading=e.target.value;
-       setPaymentPlan(updatedPlan);
-      }
 
-      function percentageChangeHandler(index,e){
-       const updatedPlan = [...paymentPlan];
-       updatedPlan[index].percentage=e.target.value;
-       setPaymentPlan(updatedPlan);        
-      }
-      
-      function addMore() {
-        if ( paymentPlan.length === 0 || (paymentPlan[paymentPlan.length - 1].heading !== '' && paymentPlan[paymentPlan.length - 1].percentage !== '')) {
-          const newPlan = {
+    const addMore = () => {
+        if ( paymentPlan.length === 0 || (paymentPlan[paymentPlan.length - 1].heading !== '' && paymentPlan[paymentPlan.length - 1].percentage !== '')) 
+        {
+          const newPlan = 
+          {
             heading: '',
             price: ''
           };
           setPaymentPlan([...paymentPlan, newPlan]);
         }
       }
+
+    const headingChangeHandler = (index,e) => {
+        const updatedPlan=[...paymentPlan];
+        updatedPlan[index].heading=e.target.value;
+        setPaymentPlan(updatedPlan);
+       }
+ 
+    const percentageChangeHandler = (index,e) => {
+        const updatedPlan = [...paymentPlan];
+        updatedPlan[index].percentage=e.target.value;
+        setPaymentPlan(updatedPlan);        
+       }
+       
       
 
        return(
-                <form onSubmit={submitFormHandler} 
+                <form onSubmit={formSubmitHandler} 
                 className="rounded text-center d-flex flex-column align-items-center justify-content-between gap-3 gap-md-4 h-100 w-100">
                 {/* Unit type */}
                 <div className="w-100 d-flex flex-column gap-3 h-100">
@@ -64,7 +63,7 @@ function ProjectForm6(){
                  <input type="text" 
                  value={paymentPlan.heading}
                  onChange={(e)=> headingChangeHandler(index,e)}
-                 className={`${unitHeadingError? 'border-red' : 'border-black'} rounded bg-light px-1 px-md-3 py-2 fs-mobile w-100`}
+                 className={`border-black rounded bg-light px-1 px-md-3 py-2 fs-mobile w-100`}
                  />
                  </div>
                  <div className="d-flex flex-column align-items-start w-100">
@@ -72,7 +71,7 @@ function ProjectForm6(){
                  <input type="number"
                  value={paymentPlan.percentage} 
                  onChange={(e) => percentageChangeHandler(index,e)}
-                 className={`${unitPriceError? 'border-red' : 'border-black'} rounded bg-light px-1 px-md-3 py-2 fs-mobile w-100`}
+                 className={`border-black rounded bg-light px-1 px-md-3 py-2 fs-mobile w-100`}
                  />
                  </div>
                  </div>
@@ -86,4 +85,4 @@ function ProjectForm6(){
                 </form>
                 )}
 
-                export default ProjectForm6;
+                export default ProjectPlan;

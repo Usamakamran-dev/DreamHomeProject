@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import './pages/Custom.css';
 import ProjectCardProvider from './context/ProjectCardProvider';
@@ -9,11 +9,15 @@ import CountryDataProvider from './context/CountryDataProvider';
 import router from './routes/AppRoutes';
 import CurrentProjectBlogProvider from './context/CurrentProjectBlog';
 import MultiFormProvider from './context/MultiFormProvider';
-import ResidentialCardProvider from './context/ResidentialCardProvider';
+import ListingCardProvider from './context/ListingCardProvider';
+import { trackPageView } from './components/PageCount';
 
 function App() {
+  useEffect(() => {
+    trackPageView();
+  }, []);
   return (
-  <ResidentialCardProvider>
+  <ListingCardProvider>
    <MultiFormProvider>
      <CurrentProjectBlogProvider>
        <CountryDataProvider>
@@ -27,6 +31,6 @@ function App() {
         </CountryDataProvider>
         </CurrentProjectBlogProvider>
         </MultiFormProvider>
-   </ResidentialCardProvider>
+   </ListingCardProvider>
      )}
      export default App;

@@ -4,7 +4,7 @@ import image2 from './../assets/Images/sliderImage2.jpg';
 import mail from "./../assets/Icons/enquire.svg";
 import damacImg from "./../assets/Projects/damac/damac.jpg";
 import damacAbout from "./../assets/Projects/damac/damacAbout.jpg";
-import samanaImg from "./../assets/Projects/samana/samana.jpg";
+import samanaImg from "./../assets/Projects/samana/samanaGallery8.jpg";
 import samanaAbout from "./../assets/Projects/samana/samanaAbout.jpg";
 import oceanzImg from "./../assets/Projects/oceanz/oceanzImg.png";
 import oceanzAbout from "./../assets/Projects/oceanz/oceanzAbout.png";
@@ -13,6 +13,9 @@ import oliviaAbout from './../assets/Projects/olivia/oliviaAbout.jpeg';
 import vybImg from './../assets/Projects/vyb/vybImg.jpeg';
 import vybAbout from './../assets/Projects/vyb/vybAbout.jpeg';
 import havenAbout from './../assets/Projects/haven/havenGallery3.webp';
+import parkGreenAbout from './../assets/Projects/parkGreen/parkGreenAbout.webp';
+import southBayAbout from './../assets/Projects/southBay/southBayAbout.jpeg';
+
 
 // Amenities import
 import jacuzzi from './../assets/Amenities/jacuzzi.svg';
@@ -68,6 +71,10 @@ import centralPark from './../assets/Amenities/centralPark.svg';
 import mosque from './../assets/Amenities/mosque.svg';
 import picnicPatch from './../assets/Amenities/picnicPatch.svg';
 import school from './../assets/Amenities/school.svg';
+import beach from './../assets/Amenities/beach.svg';
+import kayakClub from './../assets/Amenities/kayakClub.svg';
+import lake from './../assets/Amenities/lake.svg';
+
 
 
 // Samana Gallery
@@ -117,6 +124,25 @@ import havenGallery2 from './../assets/Projects/haven/havenGallery2.webp';
 import havenGallery3 from './../assets/Projects/haven/havenGallery3.webp';
 import havenGallery4 from './../assets/Projects/haven/havenGallery4.webp';
 import havenGallery5 from './../assets/Projects/haven/havenGallery5.webp';
+// parkGreen Gallery
+import parkGreenGallery1 from './../assets/Projects/parkGreen/parkGreenGallery1.webp';
+import parkGreenGallery2 from './../assets/Projects/parkGreen/parkGreenGallery2.webp';
+import parkGreenGallery3 from './../assets/Projects/parkGreen/parkGreenGallery3.webp';
+import parkGreenGallery4 from './../assets/Projects/parkGreen/parkGreenGallery4.webp';
+import parkGreenGallery5 from './../assets/Projects/parkGreen/parkGreenGallery5.webp';
+import parkGreenGallery6 from './../assets/Projects/parkGreen/parkGreenGallery6.webp';
+// southBay Gallery
+import southBayGallery1 from './../assets/Projects/southBay/southBayGallery1.jpeg';
+import southBayGallery2 from './../assets/Projects/southBay/southBayGallery2.jpeg';
+import southBayGallery3 from './../assets/Projects/southBay/southBayGallery3.jpeg';
+import southBayGallery4 from './../assets/Projects/southBay/southBayGallery4.jpeg';
+import southBayGallery5 from './../assets/Projects/southBay/southBayGallery5.jpeg';
+import southBayGallery6 from './../assets/Projects/southBay/southBayGallery6.jpeg';
+import southBayGallery7 from './../assets/Projects/southBay/southBayGallery7.jpeg';
+import southBayGallery8 from './../assets/Projects/southBay/southBayGallery8.jpeg';
+
+
+
 // Project Logos
 import samanaLogo from './../assets/PartnerLogos/samanaWhite.png';
 import damacLogo from './../assets/PartnerLogos/damacWhite.png';
@@ -124,11 +150,152 @@ import oliviaLogo from './../assets/PartnerLogos/oliviaWhite.png';
 import oceanzLogo from './../assets/PartnerLogos/oceanzWhite.png';
 import vybLogo from './../assets/PartnerLogos/vybWhite.png';
 import havenLogo from './../assets/PartnerLogos/HavenWhite.png';
+import southBayLogo from './../assets/PartnerLogos/southBayLogoWhite.svg';
 
+// {
+//   name: 'SAMANA Manhattan',
+//   developer: "By Samana Skyros",
+//   background: "./../assets/Projects/samana/samanaGallery8.jpg",
+//   projectImage: samanaImg,
+//      hero: 
+//      {
+//        heading: "1 & 2 BEDROOMS AND STUDIO WITH PRIVATE POOL",
+//        logo: samanaLogo,
+//      },
+//      monthlyPayment: 
+//      {
+//        heading: "MONTHLY PAYMENTS",
+//        paragraph: "1,2 Bedrooms and Studio with Pool",
+//        label: "689K",
+//      },
+//      aboutUs: 
+//      {
+//        paragraph: "Nestled in JVC Dubai, the ultimate combination of sophisticated architecture and opulent luxury is Samana Developers' recent launch Samana Manhattan. Samana Manhattan presents an exceptional chance for investment, enabling you to generate an amazing rental income. Following the project's completion in October 2026, you can choose to make the remaining 25 payment while still retaining a significant sum. Additionally, you have the option to sell the property and earn a profit from capital gains, even during the development phase.",
+//        image: samanaAbout,
+//      },
+//      unitTypes:
+//        [
+//          {
+//            title: "STUDIO WITHOUT POOL",
+//            price: "689K",
+//          },
+//          {
+//            title: "STUDIO WITH POOL",
+//            price: "689K",
+//          },
+//          {
+//            title: "1 BEDROOM WITH POOL",
+//            price: "1.09M",
+//          },
+//          {
+//            title: "2 BEDROOM WITH POOL",
+//            price: "1.7M",
+//          },
+//         ]
+//      ,
+//      gallery: 
+//      [samanaGallery1,samanaGallery2,samanaGallery3,samanaGallery4,samanaGallery5,samanaGallery6,samanaGallery7,samanaGallery8,samanaGallery9,samanaGallery10],
+//      paymentPlan:
+//          {
+//          startingPrice: "689K",
+//          column1: [
+//           {
+//             heading: "On Booking",
+//             percentage: '15'
+//           },
+//           {
+//             heading: "x35 Months",
+//             percentage: '1'
+//           }, {
+//             heading: "on 6th Months",
+//             percentage: '10'
+//           }, {
+//             heading: "on 12th Months",
+//             percentage: '5'
+//           }, {
+//             heading: "on 18th Months",
+//             percentage: '5'
+//           }, {
+//             heading: "x60 Months",
+//             percentage: '0.5'
+//           },
+//         ],
+//         column2: [
+//           {
+//             heading: "Down Payment",
+//             percentage: '20'
+//           },
+//           {
+//             heading: "x35 Months",
+//             percentage:'1'
+//           }, 
+//           {
+//             heading: "on 6th Months",
+//             percentage: '10'
+//           }, 
+//           {
+//             heading: "on 12th Months",
+//             percentage: '5'
+//           }, 
+//           {
+//             heading: "on 18th Months",
+//             percentage: '5'
+//           }, 
+//           {
+//             heading: "on 6th Months",
+//             percentage: '0.5'
+//           },
+//         ]
+//      },
+//       amenities: 
+//        [
+//        { image: treadmill,
+//          label: 'Indoor / Outdoor Gym'
+//        },
+//        { image: basketballCourt,
+//        label: 'Basketball court'
+//        },
+//         { image: yoga,
+//        label: 'Yoga'
+//        },
+//         { image: swimmingPool,
+//        label: 'Private Pool'
+//        },
+//         { image: parking,
+//        label: 'Valet Parking'
+//        } ,
+//        { image: bellboy,
+//        label: 'Concierge Services'
+//        },
+//        { image: swimmingPool2,
+//          label: 'Leisure Pool Deck'
+//          },
+//          { image: jacuzzi,
+//            label: 'Pool & Jacuzzi'
+//            }
+//           ,
+//         { image: cinema,
+//        label: 'Outdoor Cinema'
+//        },
+//         { image: playground,
+//        label: 'Kids Play Area'
+//        } ,
+//        { image: barbeque,
+//        label: 'Barbeque Area'
+//        },
+//        { image: sauna,
+//          label: 'Steam and Sauna '
+//          },
+//          { image: parking,
+//            label: 'Green Parking'
+//            }
+//      ]
+//     }
 const projectData=[
     {
     name: 'SAMANA Manhattan',
     developer: "By Samana Skyros",
+    background: "./../assets/Projects/samana/samanaGallery8.jpg",
     projectImage: samanaImg,
        hero: 
        {
@@ -232,7 +399,7 @@ const projectData=[
          label: 'Yoga'
          },
           { image: swimmingPool,
-         label: 'Private Swimming Pool Apartments'
+         label: 'Private Pool'
          },
           { image: parking,
          label: 'Valet Parking'
@@ -244,7 +411,7 @@ const projectData=[
            label: 'Leisure Pool Deck'
            },
            { image: jacuzzi,
-             label: 'Infinity Swimming Pool & Jacuzzi'
+             label: 'Pool & Jacuzzi'
              }
             ,
           { image: cinema,
@@ -764,7 +931,7 @@ const projectData=[
               price: "0",
             }, 
             {
-              title: "3-4 BED HAVEN TOWNHOUSES",
+              title: "3-4 BED PARK HAVEN TOWNHOUSES",
               price: "0",
             }
           ]
@@ -847,7 +1014,204 @@ const projectData=[
           label: 'Padel Haven'
           }
         ]
+     },
+     {
+      name: 'Park Green',
+      developer: "By Damac Hills",
+      projectImage: parkGreenAbout,
+         hero: {
+           heading: "5 BEDROOM LUXURY TWIN VILLAS WITH PRIVATE POOL",
+           logo: damacLogo,
+         },
+         monthlyPayment: 
+         {
+           heading: "MONTHLY PAYMENTS",
+           paragraph: "5 Bedroom with Luxury Twin Villas with Private Pool",
+           label: "2.89M",
+         },
+         aboutUs: 
+         {
+           paragraph: "Within the dynamic tapestry of Damac Hills 2 in Dubai, Park Greens emerges as a jewel in Damac Properties’ crown—a testament to their unwavering commitment to redefining contemporary living. This community is not just a collection of residences; it’s a meticulously crafted lifestyle designed to elevate the everyday experience.Developed by the visionary Damac Properties, this residential enclave offers rich, world-class amenities that promise comfort and luxury.",
+           image: parkGreenAbout,
+         },
+         unitTypes:
+           [
+             {
+               title: "LUXURY TWIN VILLAS",
+               price: "2.89M",
+             }
+          ]
+         ,
+         gallery:
+            [parkGreenGallery1,parkGreenGallery2,parkGreenGallery3,parkGreenGallery4,parkGreenGallery5,parkGreenGallery6],
+         paymentPlan:{
+             startingPrice: "2.89M",
+             column1: [
+              {
+                heading: "On booking (Down Payment)",
+                percentage: '20'
+              },
+              {
+                heading: "Easy Installments (On Contruction)",
+                percentage: '50'
+              }
+              ,
+              {
+                heading: "100% Completion (On Handover)",
+                percentage: '30'
+              }
+            ]
+         },
+         amenities:
+         [
+          { image: beach,
+            label: 'Malibu Beach'
+          },
+          { image: treadmill,
+          label: 'Gym'
+          },
+           { image: centralPark,
+          label: 'Green Parks'
+          },
+           { image: cabanaSeating,
+          label: 'Restaurants'
+          },
+           { image: diningOutlets,
+          label: 'Dining Outlet'
+          },
+          { image: retailOutlets,
+            label: 'Retail Outlet'
+          },
+          { image: mpHall,
+          label: 'Shopping Mall'
+          },
+           { image: swimmingPool,
+          label: 'Swimming Pool'
+          },
+           { image: running,
+          label: 'Cycling Trails'
+          },
+           { image: wellnessCenter,
+          label: 'Health Center'
+          },
+          { image:  lake,
+            label: 'Lakes'
+          },
+          { image: playground,
+          label: 'Kids Play Area'
+          }
+        ]
      }
-   ]
+    ,
+    {
+     name: 'South Bay',
+     developer: "By Dubai South",
+     projectImage: southBayAbout,
+        hero: {
+          heading: "3 4 5 & 7 LUXURY BEDROOMS AND MANSION",
+          logo: southBayLogo,
+        },
+        monthlyPayment: 
+        {
+          heading: "MONTHLY PAYMENTS",
+          paragraph: "3,4,5 & 7 Luxury Bedrooms and Mansion",
+          label: "3.2M",
+        },
+        aboutUs: 
+        {
+          paragraph: "The master-developer Dubai South Properties has launched the South Bay at the heart of The Residential District. To feature more than 800 villas and townhouses and more than 200 waterfront mansions, there will also be a 1-kilometre long crystal lagoon and 'multiple beaches'. The project includes more than 3 kilometres of a waterfront promenade,Townhouses and villas at South Bay will be spread across a built-up area from 2,900 to 4,800 square feet in a mix of three-, four-, and five-bedroom townhouses and semi-detached villas. The mansions, all on the waterfront, will feature five-, six-, and seven-bedroom options with a maximum built-up area of around 13,000 square feet.",
+          image: southBayAbout,
+        },
+        unitTypes:
+          [
+            {
+              title: "4 BR LUXURY TH",
+              price: "2.7M",
+            },
+            {
+              title: "4 BR SEMI DETACHED VILLAS",
+              price: "2.9M",
+            },
+            {
+              title: "5 BR SEMI DETACHED VILLAS",
+              price: "3.4M",
+            },
+            {
+              title: "5 BR LUXURY MANSION",
+              price: "7.2M",
+            },
+            {
+              title: "6 BR LUXURY MANSION",
+              price: "9.5M",
+            }
+            ,
+            {
+              title: "7 BR LUXURY MANSION",
+              price: "13.8M",
+            }
+         ]
+        ,
+        gallery:
+           [southBayGallery1,southBayGallery2,southBayGallery3,southBayGallery4,southBayGallery5,southBayGallery6,southBayGallery7,southBayGallery8],
+        paymentPlan:{
+            startingPrice: "3.2M",
+            column1: [
+            
+             {
+               heading: "Down Payment",
+               percentage: '5'
+             }
+             ,
+             {
+               heading: "During Construction",
+               percentage: '60'
+             },
+             ,
+             {
+               heading: "Upon Completion",
+               percentage: '20'
+             },
+
+             {
+              heading: "2 Years Post Completion",
+              percentage: '20'
+            }
+            ]
+        },
+        amenities:
+        [
+         { image: wellnessCenter,
+           label: 'Wellness Center'
+         },
+         { image: beach,
+         label: 'Beach Clubs'
+         },
+          { image: kayakClub,
+         label: 'Kayak Club and Cafe'
+         },
+          { image: mosque,
+         label: 'Mosque'
+         },
+          { image: school,
+         label: 'IB Certified School'
+         },
+         { image: mpHall,
+           label: 'Shopping Mall'
+         },
+         { image: picnicPatch,
+         label: 'Lake Park'
+         },
+          { image: nature,
+         label: 'Community Park'
+         },
+          { image: running,
+         label: 'Jogging & Cycling Trails'
+         },
+          { image: playground,
+         label: 'Exclusive Kids Club'
+         }
+       ]
+    }
+  ]
 
    export default projectData;

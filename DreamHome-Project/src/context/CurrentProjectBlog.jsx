@@ -9,8 +9,8 @@ function CurrentProjectBlogProvider(props){
       const [currentBlogData, setCurrentBlogData] = useState(
         JSON.parse(localStorage.getItem("currentBlogData")) || null
       );
-      const [currentResidentialData, setCurrentResidentialData] = useState(
-        JSON.parse(localStorage.getItem("currentResidentialData")) || null
+      const [currentListingData, setCurrentListingData] = useState(
+        JSON.parse(localStorage.getItem("currentListingData")) || null
       );
 
       const updateCurrentProjectData = (data) => {
@@ -21,9 +21,9 @@ function CurrentProjectBlogProvider(props){
         setCurrentBlogData(data);
         localStorage.setItem("currentBlogData", JSON.stringify(data));
       };  
-      const updateCurrentResidentialData = (data) => {
-        setCurrentResidentialData(data);
-        localStorage.setItem("currentResidentialData", JSON.stringify(data));
+      const updateCurrentListingData = (data) => {
+        setCurrentListingData(data);
+        localStorage.setItem("currentListingData", JSON.stringify(data));
       };  
 
 
@@ -32,8 +32,8 @@ function CurrentProjectBlogProvider(props){
         updateCurrentProjectData,
         currentBlogData,
         updateCurrentBlogData,
-        currentResidentialData,
-        updateCurrentResidentialData
+        currentListingData,
+        updateCurrentListingData
       }; 
 
     return(

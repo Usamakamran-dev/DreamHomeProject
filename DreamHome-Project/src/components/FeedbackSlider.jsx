@@ -1,9 +1,4 @@
 import React, { useState } from 'react';
-// import sarahImage from "./../assets/Images/sarah.png";
-// import lisaImage from "./../assets/Images/lisa.png";
-// import jamesImage from "./../assets/Images/james.png";
-// import emilyImage from "./../assets/Images/emily.png";
-// import cameronImage from "./../assets/Images/cameron.png";
 import maleImage from './../assets/Images/male.svg';
 import starIcon from "./../assets/Icons/starIcon.png";
 

@@ -7,15 +7,38 @@ const Contact = lazy(() => import('../pages/Contact'));
 const ProjectPage = lazy(() => import('../pages/ProjectPage'));
 const BlogPage = lazy(() => import('../pages/BlogPage'));
 const Login = lazy(() => import('../pages/Login'));
-const Residential = lazy(() => import('../pages/Residential'));
+const ListingPage = lazy(() => import('../pages/ListingPage'));
 const VideoGallery = lazy(() => import('../pages/VideoGallery'));
 const MultiStepForm=lazy(()=> import('../pages/MultiStepForm'));
-const ResidentialDetail=lazy(() => import('../pages/ResidentialDetail'));
+const ListingDetail=lazy(() => import('../pages/ListingDetail'));
+const ListingForm=lazy(()=> import('../forms/ListingForm'));
+const AdminParent=lazy(() => import('./AdminParent'));
+const AdminHome=lazy(() => import('./../pages/AdminHome'));
+const AdminProject=lazy(() => import('./../pages/AdminProject'));
+const AdminResidency=lazy(() => import('./../pages/AdminResidency'));
 import LoadingSpinner from '../components/LoadingSpinner';
 import { createBrowserRouter } from "react-router-dom";
+import ResidentialSlider from '../components/ResidentialSlider';
 
 export const router=createBrowserRouter([
     {path:"/login", element: <Suspense fallback={<LoadingSpinner/>}> <Login/> </Suspense> },
+
+    {path: "/dashboard",
+        element: <Suspense fallback={<LoadingSpinner/>}> <AdminParent/> </Suspense>,
+     children:[
+        {index: true,
+         element: <Suspense fallback={<LoadingSpinner/>}> <AdminHome/> </Suspense>},
+        {path:"projectForm", 
+         element: <Suspense fallback={<LoadingSpinner/>}> <MultiStepForm/> </Suspense>},
+        {path:"listingForm", 
+         element: <Suspense fallback={<LoadingSpinner/>}> <ListingForm/> </Suspense>},
+         {path:"project", 
+         element: <Suspense fallback={<LoadingSpinner/>}> <AdminProject/> </Suspense>},
+        {path:"residency", 
+         element: <Suspense fallback={<LoadingSpinner/>}> <AdminResidency/> </Suspense>},
+     ]},
+
+
     {path:"/", element: <Suspense fallback={<LoadingSpinner/>}><ParentElement/></Suspense> ,
      children:[
         {index:true , 
@@ -39,14 +62,14 @@ export const router=createBrowserRouter([
         {path:"/videogallery", 
         element: <Suspense fallback={<LoadingSpinner/>}> <VideoGallery/> </Suspense>},
 
-        {path:"/residential", 
-        element: <Suspense fallback={<LoadingSpinner/>}> <Residential/> </Suspense>},
+        {path:"/listing", 
+        element: <Suspense fallback={<LoadingSpinner/>}> <ListingPage/> </Suspense>},
 
-        {path:"/residential/:Id", 
-        element: <Suspense fallback={<LoadingSpinner/>}> <ResidentialDetail/> </Suspense>},
+        {path:"/residentialSlider", 
+        element: <Suspense fallback={<LoadingSpinner/>}> <ResidentialSlider/> </Suspense>},
 
-        {path:"/projectForm", 
-        element: <Suspense fallback={<LoadingSpinner/>}> <MultiStepForm/> </Suspense>} 
+        {path:"/listing/:Id", 
+        element: <Suspense fallback={<LoadingSpinner/>}> <ListingDetail/> </Suspense>},
         ]},
         {path:"*", element: <p className="fs-1 fw-bold text-center p-5 text-danger">THERE IS AN UNKNOWN ERROR</p>}
         ])

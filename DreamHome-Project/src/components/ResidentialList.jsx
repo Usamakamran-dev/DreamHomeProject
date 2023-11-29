@@ -5,7 +5,7 @@ import callIcon from './../assets/Icons/callWhite.png';
 import enquiryIcon from './../assets/Icons/mailFill.png';
 import whatsappIcon from './../assets/Icons/whatsappFill.png';
 import { Link } from 'react-router-dom';
-import EnquiryForm from '../forms/EnquiryForm';
+import EnquiryModel from '../forms/EnquiryModel';
 
 function ResidentialList(props){
      const [showEnquiryForm, setShowEnquiryForm] = useState(false);
@@ -63,7 +63,7 @@ function ResidentialList(props){
 
                 </div>
             </div>
-            {showEnquiryForm && <EnquiryForm toggleFormVisibility={toggleFormVisibility} onCancel={cancelEnquiryForm}/>}
+            {showEnquiryForm && <EnquiryModel toggleFormVisibility={toggleFormVisibility} onCancel={cancelEnquiryForm}/>}
          {showSuccessForm && (
             <SuccessForm
             onClick={cancelEnquiryForm}/>

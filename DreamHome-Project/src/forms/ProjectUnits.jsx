@@ -1,10 +1,7 @@
 import React , { useContext , useState , useEffect } from "react";
 import { MultiFormContext } from "../context/MultiFormProvider";
 
-function ProjectForm4(){
-  const [unitHeadingError,setUnitHeadingError]=useState(false);
-    const [unitPriceError,setUnitPriceError]=useState(false);
-    useEffect(() => { window.scrollTo(0, 0);}, []);
+function ProjectUnits(){
     const value=useContext(MultiFormContext);
     const [units,setUnits]=useState([
       {
@@ -12,49 +9,46 @@ function ProjectForm4(){
       price: ''
       }
     ]);
+    useEffect(() => { window.scrollTo(0, 0);}, []);
    
-    
-    function submitFormHandler(e){
+    const formSubmitHandler=(e)=>{
         e.preventDefault();
-        for (let i = 0; i < units.length; i++) {
-          if (units[i].heading === '' || units[i].price === '') {
+        for (let i = 0; i < units.length; i++) 
+        {
+          if (units[i].heading === '' || units[i].price === '') 
+          {
             return; 
           }
         }
-       const unitTypes={ 
-         unitTypes: {
-          cards: units
-        }
-       }
-       console.log(unitTypes);
         value.setFormIndex(4);
       }
 
-      function headingChangeHandler(index,e){
-       const updatedUnits=[...units];
-       updatedUnits[index].heading=e.target.value;
-       setUnits(updatedUnits);
-       }
-
-      function priceChangeHandler(index,e){
-       const updatedUnits = [...units];
-       updatedUnits[index].price=e.target.value;
-       setUnits(updatedUnits);        
-      }
-
-      function addMore() {
-        if (units.length === 0 || (units[units.length - 1].heading !== '' && units[units.length - 1].price !== '')) {
-          const newUnit = {
+      const addMore=() => {
+        if (units.length === 0 || (units[units.length - 1].heading !== '' && units[units.length - 1].price !== '')) 
+        {
+          const newUnit =
+          {
             heading: '',
             price: ''
           };
           setUnits([...units, newUnit]);
         }
       }
-      
+
+      const headingChangeHandler= (index,e) => {
+        const updatedUnits=[...units];
+        updatedUnits[index].heading=e.target.value;
+        setUnits(updatedUnits);
+        }
+ 
+      const priceChangeHandler= (index,e)=> {
+        const updatedUnits = [...units];
+        updatedUnits[index].price=e.target.value;
+        setUnits(updatedUnits);        
+       }
 
        return(
-                <form onSubmit={submitFormHandler} 
+                <form onSubmit={formSubmitHandler} 
                 className="rounded text-center d-flex flex-column align-items-center justify-content-between gap-3 gap-md-4 h-100 w-100">
                 {/* Unit type */}
                 <div className="w-100 d-flex flex-column gap-3 h-100">
@@ -73,7 +67,7 @@ function ProjectForm4(){
                   }
                 }}
                 
-                 className={`${unitHeadingError? 'border-red' : 'border-black'} rounded bg-light px-1 px-md-3 py-2 fs-mobile w-100`}
+                 className={`border-black rounded bg-light px-1 px-md-3 py-2 fs-mobile w-100`}
                  />
                  </div>
                  <div className="d-flex flex-column align-items-start w-100">
@@ -81,7 +75,7 @@ function ProjectForm4(){
                  <input type="text"
                  value={unit.price} 
                  onChange={(e) => priceChangeHandler(index,e)}
-                 className={`${unitPriceError? 'border-red' : 'border-black'} rounded bg-light px-1 px-md-3 py-2 fs-mobile w-100`}
+                 className={`border-black rounded bg-light px-1 px-md-3 py-2 fs-mobile w-100`}
                  />
                   <p className="fs-para fw-medium py-1 font-color-secondary">
                   (Value can be in K and M)</p>
@@ -97,4 +91,4 @@ function ProjectForm4(){
                 </form>
                 )}
 
-                export default ProjectForm4;
+                export default ProjectUnits;

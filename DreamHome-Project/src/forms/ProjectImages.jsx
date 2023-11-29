@@ -2,46 +2,14 @@ import React , { useContext , useState, useEffect } from "react";
 import addFile from './../assets/Icons/add-file.png';
 import { MultiFormContext } from "../context/MultiFormProvider";
 
-function ProjectForm2(){
+function ProjectImages(){
     const value=useContext(MultiFormContext);
-    // File Names
-    // const [galleryFileNames, setGalleryFileNames] = useState([]);
-    // const [heroFileName, setHeroFileName] = useState('');
-    // const [aboutFileName, setAboutFileName] = useState('');
-    // const [logoFileName, setLogoFileName] = useState('');
-    // Files
-    // const [galleryImg, setGalleryImg] = useState([]);
-    // const [heroImg, setHeroImg] = useState('');
-    // const [logoImg, setLogoImg] = useState('');
-    // const [aboutImg, setAboutImg] = useState('');
-    // Errors
-     // const [logoError, setLogoError] = useState(false);
-    // const [heroError, setHeroError] = useState(false);
-    // const [aboutError, setAboutError] = useState(false);
-    // const [galleryError, setGalleryError] = useState(false);
-      // if(!logoImg){
-      //  setLogoError(true);
-      //  hasError=true;
-      // }
-      // if(!aboutImg){
-      //   setAboutError(true);
-      //   hasError=true;
-      // }
-      // if(!heroImg){
-      //   setHeroError(true);
-      //   hasError=true;
-      // }
-      // if(!galleryImg || galleryImg.length<=0){
-      //   setGalleryError(true);
-      //   hasError=true;
-      // }
-    useEffect(() => { window.scrollTo(0, 0);}, []);
     const [form, setForm]=useState({
       gallery: [],
       hero: '',
       logo: '',
       about: '',
-      broochure:''
+      brochure:''
     })
     const [fileNames, setFileNames]=useState({
       gallery: [],
@@ -57,8 +25,9 @@ function ProjectForm2(){
         about: false,
         brochure: false
       })
+    useEffect(() => { window.scrollTo(0, 0);}, []);
 
-    function submitFormHandler(e){
+    const submitFormHandler=(e)=>{
       e.preventDefault();
       let fieldsToValidate=['gallery','hero','logo','about','brochure'];
       let hasError=false;
@@ -75,18 +44,9 @@ function ProjectForm2(){
       });
 
       if(hasError) return
-       const projectImages={
-        gallery: form.gallery,
-        ProjectImage: form.about,
-        ProjectLogo: form.logo,
-        BgImage: form.hero
-       }
-       console.log(projectImages)
-       value.setFormIndex(2);
+      value.setFormIndex(2);
     }
 
-     //.............  onChange Functions
-     
      function handleLogoChange(event) {
       const input = event.target;
       if (input.files.length > 0) {
@@ -272,7 +232,7 @@ function ProjectForm2(){
       
       return (
                 <form onSubmit={submitFormHandler}
-                className="rounded text-center d-flex flex-column align-items-center justify-content-around gap-4 h-100">
+                className="rounded text-center d-flex flex-column align-items-center justify-content-around gap-4 w-100 h-100">
                 <div className="d-flex flex-row align-items-start gap-3 h-100 w-100">
                 <div  onClick={() => document.getElementById('logoFile').click()}
                 className={`${errors.logo? 'border-red':'border-black'} d-flex flex-column align-items-center justify-content-center gap-1 rounded p-2 w-100 h-100`}>
@@ -368,4 +328,4 @@ function ProjectForm2(){
                 <button className="button-hover-primary px-5 py-3 rounded w-50 text-white fw-bold fs-para background-color-primary border-0">NEXT</button>
                 </form>
                 )}
-export default ProjectForm2;
+                export default ProjectImages;

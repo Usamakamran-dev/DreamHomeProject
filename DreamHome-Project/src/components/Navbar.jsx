@@ -35,8 +35,6 @@ function MyNavbar() {
             <Nav.Link as={NavLink} to="/projects" onClick={closeMenu}  className="text-decoration-none font-color-primary fw-medium fs-mobile p-0">Projects</Nav.Link>
             <Nav.Link as={NavLink} to="/blogs" onClick={closeMenu}  className="text-decoration-none font-color-primary fw-medium fs-mobile p-0">Blogs</Nav.Link>
             <Nav.Link as={NavLink} to="/contact" onClick={closeMenu}  className="text-decoration-none font-color-primary fw-medium fs-mobile p-0">Contact</Nav.Link>
-            {/* <Nav.Link as={NavLink} to="/projectForm" onClick={closeMenu}  className="text-decoration-none font-color-primary fw-medium fs-mobile p-0">Project Form</Nav.Link> */}
-            {/* <Nav.Link as={NavLink} to="/residential" onClick={closeMenu} className="text-decoration-none font-color-primary fw-medium fs-mobile p-0">Residential</Nav.Link> */}
             <button onClick={() => { navigate("/login"); closeMenu(); }} className='button-hover-secondary background-color-secondary fw-medium fs-6 text-white border-0 rounded px-3 py-1 px-md-4 py-md-2'>Login</button>
           </Nav>
         </Navbar.Collapse>

@@ -7,7 +7,7 @@ function SuccessForm(props) {
        <img src={cancelIcon} alt="cancelIcon" className='width-1halfrem' onClick={props.onClick} />
        <div className="d-flex p-5 flex-column align-items-center">
        <h1 className="fs-1 font-color-secondary fw-bold">Thank You!</h1>
-       <p className="fs-3 font-color-primary fs-bold">You will be contacted shortly</p>
+       <p className="fs-3 font-color-primary fs-bold">{props.mainText}</p>
         </div>
        </form>
       </div>

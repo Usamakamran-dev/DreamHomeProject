@@ -42,6 +42,8 @@ body {
   object-fit: cover;
   transition: transform 0.5s ease;
 }
+
+
 .slider-image:hover{ transform: scale(1.1) }
 .about-Img{
   height: 30rem;
@@ -247,6 +249,30 @@ body {
     background-attachment: fixed;
   }
 
+  .parkGreenBg{
+    background-image: url("./../assets/Projects/parkGreen/parkGreenGallery6.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .southBayBg{
+    background-image: url("./../assets/Projects/southBay/southBayHero.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .bg-residential{
+    background-image: url("./../assets/Projects/southBay/southBayHero.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
   .h-mobile{
     font-size: 2rem;
   }
@@ -393,6 +419,47 @@ width: 21rem;
   background: var(--color-primary);
 }
 
+.dashboard-list-hover:hover {
+  background-color: rgba(241, 238, 238, 0.534);
+}
+
+.admin-link-hover:hover{
+  background-color: #17234c1c;
+}
+
+.footer-link-hover{
+  color: white;
+}
+
+.footer-link-hover:hover{
+   color: rgb(221, 216, 216);
+}
+
+.dashboard-table-height {
+  height: 15rem;
+  overflow-y: scroll;
+}
+
+.dashboard-table-height::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 6px;
+}
+
+.dashboard-table-height::-webkit-scrollbar-thumb {
+  background-color: rgba(119, 117, 117, 0.678);
+  border-radius: 6px;
+}
+
+.dashboard-table-height::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary);
+}
+
+.dashboard-table-height::-webkit-scrollbar-track {
+  background-color: rgba(236, 230, 230, 0.342);
+  border-radius: 6px;
+
+}
+
   /* ...................Media query */
 @media (max-width: 768px) {
   .project-button-width {width: 9rem !important; }
@@ -489,6 +556,11 @@ width: 21rem;
   }
 
   @media (max-width: 550px) {
+    .slider-image-style{
+      height: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
     .fs-heroSection{
       font-size:1.8rem !important;
     }

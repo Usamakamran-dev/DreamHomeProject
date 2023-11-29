@@ -1,5 +1,4 @@
 import React, { useContext, useState , useEffect } from "react";
-// import addFile from './../assets/Icons/add-file.png';
 import { MultiFormContext } from "../context/MultiFormProvider";
 import jacuzzi from './../assets/Amenities/jacuzzi.svg';
 import lawn from './../assets/Amenities/lawn.svg';
@@ -50,7 +49,6 @@ import centralPark from './../assets/Amenities/centralPark.svg';
 import mosque from './../assets/Amenities/mosque.svg';
 import picnicPatch from './../assets/Amenities/picnicPatch.svg';
 import school from './../assets/Amenities/school.svg';
-
 const options = [
   { image: treadmill, label: 'Gym' },
   { image: basketballCourt, label: 'Basketball court' },
@@ -122,52 +120,56 @@ const options = [
 ];
 
 
-// ..........................
+import { ProjectCardContext } from "../context/ProjectCardProvider";
 
-function ProjectForm5() {
+function ProjectAmenities() {
   const value = useContext(MultiFormContext);
+  // const ProjectCardDetails=useContext(ProjectCardContext);
+  // console.log(ProjectCardDetails);
   const [selectedOptions, setSelectedOptions] = useState([]);
   useEffect(() => { window.scrollTo(0, 0);}, []);
-  function submitFormHandler(e) {
+
+  const formSubmitHandler = (e) => {
     e.preventDefault();
     if (selectedOptions.length === 0) return
-    console.log(selectedOptions)
     value.setFormIndex(5);
     }
 
-   function handleCheckboxChange(index){
+  const handleCheckboxChange = (index) => {
     const selectedOption = options[index];
     if (selectedOptions.some(option => option.label === selectedOption.label)) 
-    {
-      const updatedOptions = selectedOptions.filter(option => option.label !== selectedOption.label);
-      setSelectedOptions(updatedOptions);
-    } 
-    else
-    {
-      setSelectedOptions([...selectedOptions, selectedOption]);
-    }
+      {
+        const updatedOptions = selectedOptions.filter(option => option.label !== selectedOption.label);
+        setSelectedOptions(updatedOptions);
+      } 
+      else
+      {
+        setSelectedOptions([...selectedOptions, selectedOption]);
+      }
     }
  
     return (
-    <form onSubmit={submitFormHandler} className="rounded text-center d-flex flex-column align-items-center gap-3 gap-md-5 w-100">
-      <div className="w-100 row row-cols-md-4 row-cols-2 amenity-list-height">
-      {options.map((option, index) => (
-        <div key={index} className="col py-3 px-2">
-          <label className="d-flex flex-row align-items-center gap-3">
-            <input 
-            type="checkbox" 
-            name="option"
-            onChange={() => handleCheckboxChange(index)}
-            />
-            <div style={{width:'3rem'}} className="d-flex align-items-start">
-              <img src={option.image} width="35" height="auto" /></div>
-            <p className="fs-para m-0 font-color-primary fw-medium">{option.label}</p>
-          </label>
+    <form onSubmit={formSubmitHandler} className="rounded text-center d-flex flex-column align-items-center gap-3 gap-md-5 w-100">
+          <div className="w-100 row row-cols-md-4 row-cols-2 amenity-list-height">
+              {options.map((option, index) => (
+                <div key={index} className="col py-3 px-2">
+                    <label className="d-flex flex-row align-items-center gap-3">
+                        <input 
+                        type="checkbox" 
+                        name="option"
+                        onChange={() => handleCheckboxChange(index)}
+                        />
+                        <div style={{width:'3rem'}} className="d-flex align-items-start">
+                          <img src={option.image} width="35" height="auto" />
+                        </div>
+                        <p className="fs-para m-0 font-color-primary fw-medium">{option.label}</p>
+                    </label>
+                </div>
+              ))}
         </div>
-      ))}
-    </div>
       <button className="button-hover-primary px-5 py-3 rounded w-50 text-white fw-bold fs-para background-color-primary border-0">NEXT</button>
     </form>
-    );}
-    export default ProjectForm5;
+    )
+  }
+    export default ProjectAmenities;
 
